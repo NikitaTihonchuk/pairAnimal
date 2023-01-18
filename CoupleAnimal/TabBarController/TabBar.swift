@@ -15,7 +15,7 @@ final class TabBarController: UITabBarController {
     }
 
     private func setupTabBar() {
-        let dataSource: [TabBarItem] = [.main, .favourite, .chat, .search, .profile]
+        let dataSource: [TabBarItem] = [.main, .chat, .search, .profile]
         self.viewControllers = dataSource.map {
             switch $0 {
             case .main:
@@ -27,12 +27,9 @@ final class TabBarController: UITabBarController {
             case .profile:
                 let profileController = ProfileViewController()
                     return self.wrappedInNavigationController(with: profileController, title: $0.title)
-            case .favourite:
+            case .chat:
                 let chatController = ChatViewController()
                     return self.wrappedInNavigationController(with: chatController, title: $0.title)
-            case .chat:
-                let searchController = SearchViewController()
-                    return self.wrappedInNavigationController(with: searchController, title: $0.title)
             }
         }
         
@@ -52,7 +49,6 @@ final class TabBarController: UITabBarController {
 private enum TabBarItem {
     case profile
     case search
-    case favourite
     case chat
     case main
    
@@ -65,8 +61,6 @@ private enum TabBarItem {
             return "Поиск"
         case .profile:
             return "Профиль"
-        case .favourite:
-            return "Избранное"
         case .chat:
             return "Сообщения"
         }
@@ -80,8 +74,6 @@ private enum TabBarItem {
             return "magnifyingglass"
         case .profile:
             return "person"
-        case .favourite:
-            return "star"
         case .chat:
             return "message"
         }
