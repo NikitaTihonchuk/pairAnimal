@@ -21,6 +21,7 @@
 		1194D69329780C7A001E51BC /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1194D69129780C7A001E51BC /* SearchViewController.xib */; };
 		1194D69629780C9D001E51BC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1194D69429780C9D001E51BC /* ProfileViewController.swift */; };
 		1194D69729780C9D001E51BC /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1194D69529780C9D001E51BC /* ProfileViewController.xib */; };
+		1194D69A29780E50001E51BC /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1194D69929780E50001E51BC /* TabBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		1194D69129780C7A001E51BC /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
 		1194D69429780C9D001E51BC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		1194D69529780C9D001E51BC /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
+		1194D69929780E50001E51BC /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 		1194D669297808C0001E51BC /* CoupleAnimal */ = {
 			isa = PBXGroup;
 			children = (
+				1194D69829780E37001E51BC /* TabBarController */,
 				1194D68729780C3E001E51BC /* Controllers */,
 				1194D66A297808C0001E51BC /* AppDelegate.swift */,
 				1194D66C297808C0001E51BC /* SceneDelegate.swift */,
@@ -137,6 +140,14 @@
 				1194D68229780BB9001E51BC /* MainViewController */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		1194D69829780E37001E51BC /* TabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				1194D69929780E50001E51BC /* TabBar.swift */,
+			);
+			path = TabBarController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,6 +228,7 @@
 				1194D69229780C7A001E51BC /* SearchViewController.swift in Sources */,
 				1194D68529780C0C001E51BC /* MainViewController.swift in Sources */,
 				1194D66B297808C0001E51BC /* AppDelegate.swift in Sources */,
+				1194D69A29780E50001E51BC /* TabBar.swift in Sources */,
 				1194D68A29780C5B001E51BC /* ChatViewController.swift in Sources */,
 				1194D69629780C9D001E51BC /* ProfileViewController.swift in Sources */,
 				1194D68E29780C6B001E51BC /* FavouriteViewController.swift in Sources */,
