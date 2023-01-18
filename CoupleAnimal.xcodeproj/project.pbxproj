@@ -15,8 +15,6 @@
 		1194D68629780C0C001E51BC /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1194D68429780C0C001E51BC /* MainViewController.xib */; };
 		1194D68A29780C5B001E51BC /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1194D68829780C5B001E51BC /* ChatViewController.swift */; };
 		1194D68B29780C5B001E51BC /* ChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1194D68929780C5B001E51BC /* ChatViewController.xib */; };
-		1194D69229780C7A001E51BC /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1194D69029780C7A001E51BC /* SearchViewController.swift */; };
-		1194D69329780C7A001E51BC /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1194D69129780C7A001E51BC /* SearchViewController.xib */; };
 		1194D69629780C9D001E51BC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1194D69429780C9D001E51BC /* ProfileViewController.swift */; };
 		1194D69729780C9D001E51BC /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1194D69529780C9D001E51BC /* ProfileViewController.xib */; };
 		1194D69A29780E50001E51BC /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1194D69929780E50001E51BC /* TabBar.swift */; };
@@ -33,8 +31,6 @@
 		1194D68429780C0C001E51BC /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		1194D68829780C5B001E51BC /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		1194D68929780C5B001E51BC /* ChatViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatViewController.xib; sourceTree = "<group>"; };
-		1194D69029780C7A001E51BC /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		1194D69129780C7A001E51BC /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
 		1194D69429780C9D001E51BC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		1194D69529780C9D001E51BC /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		1194D69929780E50001E51BC /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
@@ -90,15 +86,6 @@
 			path = ProfileViewController;
 			sourceTree = "<group>";
 		};
-		1194D67F29780B6D001E51BC /* SearchViewController */ = {
-			isa = PBXGroup;
-			children = (
-				1194D69029780C7A001E51BC /* SearchViewController.swift */,
-				1194D69129780C7A001E51BC /* SearchViewController.xib */,
-			);
-			path = SearchViewController;
-			sourceTree = "<group>";
-		};
 		1194D68129780BA8001E51BC /* ChatViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -121,7 +108,6 @@
 			isa = PBXGroup;
 			children = (
 				1194D67E29780B4E001E51BC /* ProfileViewController */,
-				1194D67F29780B6D001E51BC /* SearchViewController */,
 				1194D68129780BA8001E51BC /* ChatViewController */,
 				1194D68229780BB9001E51BC /* MainViewController */,
 			);
@@ -197,7 +183,6 @@
 				1194D69729780C9D001E51BC /* ProfileViewController.xib in Resources */,
 				1194D677297808C3001E51BC /* LaunchScreen.storyboard in Resources */,
 				1194D68629780C0C001E51BC /* MainViewController.xib in Resources */,
-				1194D69329780C7A001E51BC /* SearchViewController.xib in Resources */,
 				1194D68B29780C5B001E51BC /* ChatViewController.xib in Resources */,
 				1194D674297808C3001E51BC /* Assets.xcassets in Resources */,
 			);
@@ -210,7 +195,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1194D69229780C7A001E51BC /* SearchViewController.swift in Sources */,
 				1194D68529780C0C001E51BC /* MainViewController.swift in Sources */,
 				1194D66B297808C0001E51BC /* AppDelegate.swift in Sources */,
 				1194D69A29780E50001E51BC /* TabBar.swift in Sources */,
