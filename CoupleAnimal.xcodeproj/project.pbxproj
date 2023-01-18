@@ -15,8 +15,6 @@
 		1194D68629780C0C001E51BC /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1194D68429780C0C001E51BC /* MainViewController.xib */; };
 		1194D68A29780C5B001E51BC /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1194D68829780C5B001E51BC /* ChatViewController.swift */; };
 		1194D68B29780C5B001E51BC /* ChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1194D68929780C5B001E51BC /* ChatViewController.xib */; };
-		1194D68E29780C6B001E51BC /* FavouriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1194D68C29780C6B001E51BC /* FavouriteViewController.swift */; };
-		1194D68F29780C6B001E51BC /* FavouriteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1194D68D29780C6B001E51BC /* FavouriteViewController.xib */; };
 		1194D69229780C7A001E51BC /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1194D69029780C7A001E51BC /* SearchViewController.swift */; };
 		1194D69329780C7A001E51BC /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1194D69129780C7A001E51BC /* SearchViewController.xib */; };
 		1194D69629780C9D001E51BC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1194D69429780C9D001E51BC /* ProfileViewController.swift */; };
@@ -35,8 +33,6 @@
 		1194D68429780C0C001E51BC /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		1194D68829780C5B001E51BC /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		1194D68929780C5B001E51BC /* ChatViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatViewController.xib; sourceTree = "<group>"; };
-		1194D68C29780C6B001E51BC /* FavouriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteViewController.swift; sourceTree = "<group>"; };
-		1194D68D29780C6B001E51BC /* FavouriteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavouriteViewController.xib; sourceTree = "<group>"; };
 		1194D69029780C7A001E51BC /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		1194D69129780C7A001E51BC /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
 		1194D69429780C9D001E51BC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -103,15 +99,6 @@
 			path = SearchViewController;
 			sourceTree = "<group>";
 		};
-		1194D68029780B93001E51BC /* FavouriteViewController */ = {
-			isa = PBXGroup;
-			children = (
-				1194D68C29780C6B001E51BC /* FavouriteViewController.swift */,
-				1194D68D29780C6B001E51BC /* FavouriteViewController.xib */,
-			);
-			path = FavouriteViewController;
-			sourceTree = "<group>";
-		};
 		1194D68129780BA8001E51BC /* ChatViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -135,7 +122,6 @@
 			children = (
 				1194D67E29780B4E001E51BC /* ProfileViewController */,
 				1194D67F29780B6D001E51BC /* SearchViewController */,
-				1194D68029780B93001E51BC /* FavouriteViewController */,
 				1194D68129780BA8001E51BC /* ChatViewController */,
 				1194D68229780BB9001E51BC /* MainViewController */,
 			);
@@ -214,7 +200,6 @@
 				1194D69329780C7A001E51BC /* SearchViewController.xib in Resources */,
 				1194D68B29780C5B001E51BC /* ChatViewController.xib in Resources */,
 				1194D674297808C3001E51BC /* Assets.xcassets in Resources */,
-				1194D68F29780C6B001E51BC /* FavouriteViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,7 +216,6 @@
 				1194D69A29780E50001E51BC /* TabBar.swift in Sources */,
 				1194D68A29780C5B001E51BC /* ChatViewController.swift in Sources */,
 				1194D69629780C9D001E51BC /* ProfileViewController.swift in Sources */,
-				1194D68E29780C6B001E51BC /* FavouriteViewController.swift in Sources */,
 				1194D66D297808C0001E51BC /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
