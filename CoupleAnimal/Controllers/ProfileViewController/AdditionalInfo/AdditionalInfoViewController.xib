@@ -33,7 +33,7 @@
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pinsk, Belarus" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LCn-Bb-qu0">
                                     <rect key="frame" x="0.0" y="42" width="292" height="42"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -72,17 +72,17 @@
                             </constraints>
                         </imageView>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="zM5-8w-RT8">
-                            <rect key="frame" x="48" y="8" width="41.333333333333343" height="40"/>
+                            <rect key="frame" x="48.000000000000007" y="8" width="68.666666666666686" height="40"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wJF-jL-Mez">
-                                    <rect key="frame" x="0.0" y="0.0" width="41.333333333333336" height="18.666666666666668"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nikita" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wJF-jL-Mez">
+                                    <rect key="frame" x="0.0" y="0.0" width="68.666666666666671" height="18.666666666666668"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qEW-P6-zgu">
-                                    <rect key="frame" x="0.0" y="21.666666666666686" width="41.333333333333336" height="18.333333333333329"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Barny owner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qEW-P6-zgu">
+                                    <rect key="frame" x="0.0" y="21.666666666666686" width="68.666666666666671" height="18.333333333333329"/>
+                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="12"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>

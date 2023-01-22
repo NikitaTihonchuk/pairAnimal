@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileViewController" customModule="CoupleAnimal" customModuleProvider="target">
             <connections>
+                <outlet property="doggyImage" destination="Z1M-Rm-AOS" id="0ex-sj-RTf"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,51 +20,23 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="63o-EM-JSL">
-                    <rect key="frame" x="0.0" y="0.0" width="393" height="818"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doggy" translatesAutoresizingMaskIntoConstraints="NO" id="Z1M-Rm-AOS">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="426"/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DU4-9g-7v4">
-                    <rect key="frame" x="337" y="48" width="40" height="40"/>
-                    <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="40" id="X5d-ON-NYf"/>
-                        <constraint firstAttribute="height" constant="40" id="uki-r5-s9S"/>
-                    </constraints>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" image="gearshape" catalog="system"/>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z4T-x4-dI4">
-                    <rect key="frame" x="16" y="48" width="40" height="40"/>
-                    <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="40" id="0XQ-R6-pqw"/>
-                        <constraint firstAttribute="width" constant="40" id="dpG-iQ-99h"/>
-                    </constraints>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" image="list.bullet" catalog="system"/>
-                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="63o-EM-JSL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="9hM-Fp-cho"/>
-                <constraint firstItem="DU4-9g-7v4" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="48" id="Emy-hD-1el"/>
-                <constraint firstItem="63o-EM-JSL" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="KAS-r3-fip"/>
-                <constraint firstItem="Z4T-x4-dI4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="U1x-Tk-fH7"/>
-                <constraint firstItem="63o-EM-JSL" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="j27-bN-Poo"/>
-                <constraint firstItem="Z4T-x4-dI4" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="48" id="ng0-AA-mEz"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="63o-EM-JSL" secondAttribute="bottom" id="nyw-xc-VrD"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="DU4-9g-7v4" secondAttribute="trailing" constant="16" id="qM7-2v-JNc"/>
+                <constraint firstItem="Z1M-Rm-AOS" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="6eI-q5-JzR"/>
+                <constraint firstItem="Z1M-Rm-AOS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="6g9-Se-Cc6"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Z1M-Rm-AOS" secondAttribute="trailing" id="Y5e-84-Y4O"/>
+                <constraint firstItem="Z1M-Rm-AOS" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.5" id="nlZ-9d-Srg"/>
             </constraints>
             <point key="canvasLocation" x="136.64122137404578" y="19.718309859154932"/>
         </view>
     </objects>
     <resources>
-        <image name="gearshape" catalog="system" width="128" height="123"/>
-        <image name="list.bullet" catalog="system" width="128" height="87"/>
-        <systemColor name="secondarySystemBackgroundColor">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
+        <image name="doggy" width="240" height="113.33333587646484"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
