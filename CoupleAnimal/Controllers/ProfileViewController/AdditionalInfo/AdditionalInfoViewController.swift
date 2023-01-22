@@ -1,13 +1,13 @@
 //
-//  ProfileViewController.swift
+//  AdditionalInfoViewController.swift
 //  CoupleAnimal
 //
-//  Created by Nikita on 18.01.23.
+//  Created by Nikita on 22.01.23.
 //
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class AdditionalInfoViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
