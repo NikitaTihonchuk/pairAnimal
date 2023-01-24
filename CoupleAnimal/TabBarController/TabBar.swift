@@ -52,14 +52,18 @@ final class TabBarController: UITabBarController {
         
         let roundLayer = CAShapeLayer()
         
-        let bezierPath = UIBezierPath(roundedRect: CGRect(x: positionOnX, y: tabBar.bounds.minY - positionOnY, width: width, height: height), cornerRadius: height / 2)
+        let bezierPath = UIBezierPath(roundedRect: CGRect(x: positionOnX,
+                                                          y: tabBar.bounds.minY - positionOnY,
+                                                          width: width,
+                                                          height: height),
+                                                          cornerRadius: height / 2)
         
         roundLayer.path = bezierPath.cgPath
         tabBar.layer.insertSublayer(roundLayer, at: 0)
         tabBar.itemWidth = width / 5
         tabBar.itemPositioning = .centered
         roundLayer.fillColor = UIColor.white.cgColor
-        tabBar.tintColor = .gray
+        tabBar.tintColor = .red
     }
     
     
