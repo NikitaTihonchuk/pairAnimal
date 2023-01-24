@@ -90,7 +90,7 @@
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </stackView>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="dgB-ru-OAN" secondAttribute="bottom" constant="8" id="0TG-mV-hIN"/>
                         <constraint firstItem="zM5-8w-RT8" firstAttribute="centerY" secondItem="dgB-ru-OAN" secondAttribute="centerY" id="6uR-ri-vVb"/>
@@ -106,7 +106,7 @@
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" red="0.90883507372177752" green="0.90883507372177752" blue="0.90883507372177752" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="SHw-Dq-Z2K" secondAttribute="bottom" id="03r-yH-ugs"/>
                 <constraint firstItem="4ez-E9-nIS" firstAttribute="width" secondItem="1cs-6J-JER" secondAttribute="width" id="6n8-Aq-afY"/>
