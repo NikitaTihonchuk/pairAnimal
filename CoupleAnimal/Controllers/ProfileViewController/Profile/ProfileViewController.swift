@@ -15,20 +15,9 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        showFloatingPanel()
     }
 
 
 
 
-}
-
-extension ProfileViewController: FloatingPanelControllerDelegate {
-    func showFloatingPanel() {
-        let fpc = FloatingPanelController()
-        fpc.delegate = self
-        let userInfoVC = AdditionalInfoViewController()
-        fpc.set(contentViewController: userInfoVC)
-        fpc.addPanel(toParent: self)
-    }
 }
