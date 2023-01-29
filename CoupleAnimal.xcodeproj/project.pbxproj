@@ -18,6 +18,17 @@
 		1194D69629780C9D001E51BC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1194D69429780C9D001E51BC /* ProfileViewController.swift */; };
 		1194D69729780C9D001E51BC /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1194D69529780C9D001E51BC /* ProfileViewController.xib */; };
 		1194D69A29780E50001E51BC /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1194D69929780E50001E51BC /* TabBar.swift */; };
+		11A09ABA2985C7710006767B /* ProfileInfoEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A09AB92985C7710006767B /* ProfileInfoEnum.swift */; };
+		11A09AC22985C8CD0006767B /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A09AC02985C8CD0006767B /* LocationTableViewCell.swift */; };
+		11A09AC32985C8CD0006767B /* LocationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11A09AC12985C8CD0006767B /* LocationTableViewCell.xib */; };
+		11A09AC62985C8E90006767B /* AchievementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A09AC42985C8E90006767B /* AchievementTableViewCell.swift */; };
+		11A09AC72985C8E90006767B /* AchievementTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11A09AC52985C8E90006767B /* AchievementTableViewCell.xib */; };
+		11A09ACA2985C9020006767B /* OwnerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A09AC82985C9020006767B /* OwnerTableViewCell.swift */; };
+		11A09ACB2985C9020006767B /* OwnerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11A09AC92985C9020006767B /* OwnerTableViewCell.xib */; };
+		11A09ACE2985C9150006767B /* InformationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A09ACC2985C9150006767B /* InformationTableViewCell.swift */; };
+		11A09ACF2985C9150006767B /* InformationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11A09ACD2985C9150006767B /* InformationTableViewCell.xib */; };
+		11BDAD262985E03400ACC21D /* AchievementCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BDAD242985E03400ACC21D /* AchievementCollectionViewCell.swift */; };
+		11BDAD272985E03400ACC21D /* AchievementCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11BDAD252985E03400ACC21D /* AchievementCollectionViewCell.xib */; };
 		BB591EA178E38A52DA5BD5FE /* Pods_CoupleAnimal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A696402DD3F96298B32CFAA6 /* Pods_CoupleAnimal.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +46,17 @@
 		1194D69429780C9D001E51BC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		1194D69529780C9D001E51BC /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		1194D69929780E50001E51BC /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		11A09AB92985C7710006767B /* ProfileInfoEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoEnum.swift; sourceTree = "<group>"; };
+		11A09AC02985C8CD0006767B /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
+		11A09AC12985C8CD0006767B /* LocationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationTableViewCell.xib; sourceTree = "<group>"; };
+		11A09AC42985C8E90006767B /* AchievementTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementTableViewCell.swift; sourceTree = "<group>"; };
+		11A09AC52985C8E90006767B /* AchievementTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AchievementTableViewCell.xib; sourceTree = "<group>"; };
+		11A09AC82985C9020006767B /* OwnerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerTableViewCell.swift; sourceTree = "<group>"; };
+		11A09AC92985C9020006767B /* OwnerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OwnerTableViewCell.xib; sourceTree = "<group>"; };
+		11A09ACC2985C9150006767B /* InformationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationTableViewCell.swift; sourceTree = "<group>"; };
+		11A09ACD2985C9150006767B /* InformationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InformationTableViewCell.xib; sourceTree = "<group>"; };
+		11BDAD242985E03400ACC21D /* AchievementCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementCollectionViewCell.swift; sourceTree = "<group>"; };
+		11BDAD252985E03400ACC21D /* AchievementCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AchievementCollectionViewCell.xib; sourceTree = "<group>"; };
 		8C49145377A8B626719ADD2B /* Pods-CoupleAnimal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoupleAnimal.debug.xcconfig"; path = "Target Support Files/Pods-CoupleAnimal/Pods-CoupleAnimal.debug.xcconfig"; sourceTree = "<group>"; };
 		9851C5B576BE1E7512D8E621 /* Pods-CoupleAnimal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoupleAnimal.release.xcconfig"; path = "Target Support Files/Pods-CoupleAnimal/Pods-CoupleAnimal.release.xcconfig"; sourceTree = "<group>"; };
 		A696402DD3F96298B32CFAA6 /* Pods_CoupleAnimal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoupleAnimal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,6 +104,7 @@
 		1194D669297808C0001E51BC /* CoupleAnimal */ = {
 			isa = PBXGroup;
 			children = (
+				11A09AB72985C71F0006767B /* Enums */,
 				1194D69829780E37001E51BC /* TabBarController */,
 				1194D68729780C3E001E51BC /* Controllers */,
 				1194D66A297808C0001E51BC /* AppDelegate.swift */,
@@ -96,6 +119,7 @@
 		1194D67E29780B4E001E51BC /* ProfileViewController */ = {
 			isa = PBXGroup;
 			children = (
+				11A09ABB2985C8270006767B /* Cells */,
 				11782B93297D2E3100A89433 /* Profile */,
 			);
 			path = ProfileViewController;
@@ -135,6 +159,79 @@
 				1194D69929780E50001E51BC /* TabBar.swift */,
 			);
 			path = TabBarController;
+			sourceTree = "<group>";
+		};
+		11A09AB72985C71F0006767B /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				11A09AB82985C7470006767B /* ProfileInfoEnum */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		11A09AB82985C7470006767B /* ProfileInfoEnum */ = {
+			isa = PBXGroup;
+			children = (
+				11A09AB92985C7710006767B /* ProfileInfoEnum.swift */,
+			);
+			path = ProfileInfoEnum;
+			sourceTree = "<group>";
+		};
+		11A09ABB2985C8270006767B /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				11BDAD232985E00100ACC21D /* AchievementCollectionViewCell */,
+				11A09ABF2985C89D0006767B /* InformationCell */,
+				11A09ABE2985C88D0006767B /* OwnerCell */,
+				11A09ABD2985C8640006767B /* AchievementCell */,
+				11A09ABC2985C8340006767B /* LocationCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		11A09ABC2985C8340006767B /* LocationCell */ = {
+			isa = PBXGroup;
+			children = (
+				11A09AC02985C8CD0006767B /* LocationTableViewCell.swift */,
+				11A09AC12985C8CD0006767B /* LocationTableViewCell.xib */,
+			);
+			path = LocationCell;
+			sourceTree = "<group>";
+		};
+		11A09ABD2985C8640006767B /* AchievementCell */ = {
+			isa = PBXGroup;
+			children = (
+				11A09AC42985C8E90006767B /* AchievementTableViewCell.swift */,
+				11A09AC52985C8E90006767B /* AchievementTableViewCell.xib */,
+			);
+			path = AchievementCell;
+			sourceTree = "<group>";
+		};
+		11A09ABE2985C88D0006767B /* OwnerCell */ = {
+			isa = PBXGroup;
+			children = (
+				11A09AC82985C9020006767B /* OwnerTableViewCell.swift */,
+				11A09AC92985C9020006767B /* OwnerTableViewCell.xib */,
+			);
+			path = OwnerCell;
+			sourceTree = "<group>";
+		};
+		11A09ABF2985C89D0006767B /* InformationCell */ = {
+			isa = PBXGroup;
+			children = (
+				11A09ACC2985C9150006767B /* InformationTableViewCell.swift */,
+				11A09ACD2985C9150006767B /* InformationTableViewCell.xib */,
+			);
+			path = InformationCell;
+			sourceTree = "<group>";
+		};
+		11BDAD232985E00100ACC21D /* AchievementCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				11BDAD242985E03400ACC21D /* AchievementCollectionViewCell.swift */,
+				11BDAD252985E03400ACC21D /* AchievementCollectionViewCell.xib */,
+			);
+			path = AchievementCollectionViewCell;
 			sourceTree = "<group>";
 		};
 		B22B1D052A603CE630A0CA29 /* Frameworks */ = {
@@ -214,9 +311,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11A09AC72985C8E90006767B /* AchievementTableViewCell.xib in Resources */,
 				1194D69729780C9D001E51BC /* ProfileViewController.xib in Resources */,
+				11BDAD272985E03400ACC21D /* AchievementCollectionViewCell.xib in Resources */,
+				11A09ACF2985C9150006767B /* InformationTableViewCell.xib in Resources */,
 				1194D677297808C3001E51BC /* LaunchScreen.storyboard in Resources */,
+				11A09AC32985C8CD0006767B /* LocationTableViewCell.xib in Resources */,
 				1194D68629780C0C001E51BC /* MainViewController.xib in Resources */,
+				11A09ACB2985C9020006767B /* OwnerTableViewCell.xib in Resources */,
 				1194D68B29780C5B001E51BC /* ChatViewController.xib in Resources */,
 				1194D674297808C3001E51BC /* Assets.xcassets in Resources */,
 			);
@@ -271,11 +373,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11A09ABA2985C7710006767B /* ProfileInfoEnum.swift in Sources */,
+				11A09ACE2985C9150006767B /* InformationTableViewCell.swift in Sources */,
 				1194D68529780C0C001E51BC /* MainViewController.swift in Sources */,
+				11A09AC22985C8CD0006767B /* LocationTableViewCell.swift in Sources */,
 				1194D66B297808C0001E51BC /* AppDelegate.swift in Sources */,
 				1194D69A29780E50001E51BC /* TabBar.swift in Sources */,
+				11A09ACA2985C9020006767B /* OwnerTableViewCell.swift in Sources */,
 				1194D68A29780C5B001E51BC /* ChatViewController.swift in Sources */,
 				1194D69629780C9D001E51BC /* ProfileViewController.swift in Sources */,
+				11A09AC62985C8E90006767B /* AchievementTableViewCell.swift in Sources */,
+				11BDAD262985E03400ACC21D /* AchievementCollectionViewCell.swift in Sources */,
 				1194D66D297808C0001E51BC /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
