@@ -29,6 +29,11 @@
 		11A09ACF2985C9150006767B /* InformationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11A09ACD2985C9150006767B /* InformationTableViewCell.xib */; };
 		11BDAD262985E03400ACC21D /* AchievementCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BDAD242985E03400ACC21D /* AchievementCollectionViewCell.swift */; };
 		11BDAD272985E03400ACC21D /* AchievementCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11BDAD252985E03400ACC21D /* AchievementCollectionViewCell.xib */; };
+		11E99CAA2989B9C40072D357 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E99CA82989B9C40072D357 /* LoginViewController.swift */; };
+		11E99CAB2989B9C40072D357 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11E99CA92989B9C40072D357 /* LoginViewController.xib */; };
+		11E99CB1298AD3610072D357 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11E99CB0298AD3610072D357 /* GoogleService-Info.plist */; };
+		11E99CB5298AD9680072D357 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E99CB3298AD9680072D357 /* RegistrationViewController.swift */; };
+		11E99CB6298AD9680072D357 /* RegistrationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11E99CB4298AD9680072D357 /* RegistrationViewController.xib */; };
 		BB591EA178E38A52DA5BD5FE /* Pods_CoupleAnimal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A696402DD3F96298B32CFAA6 /* Pods_CoupleAnimal.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +62,11 @@
 		11A09ACD2985C9150006767B /* InformationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InformationTableViewCell.xib; sourceTree = "<group>"; };
 		11BDAD242985E03400ACC21D /* AchievementCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementCollectionViewCell.swift; sourceTree = "<group>"; };
 		11BDAD252985E03400ACC21D /* AchievementCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AchievementCollectionViewCell.xib; sourceTree = "<group>"; };
+		11E99CA82989B9C40072D357 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		11E99CA92989B9C40072D357 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		11E99CB0298AD3610072D357 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		11E99CB3298AD9680072D357 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		11E99CB4298AD9680072D357 /* RegistrationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistrationViewController.xib; sourceTree = "<group>"; };
 		8C49145377A8B626719ADD2B /* Pods-CoupleAnimal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoupleAnimal.debug.xcconfig"; path = "Target Support Files/Pods-CoupleAnimal/Pods-CoupleAnimal.debug.xcconfig"; sourceTree = "<group>"; };
 		9851C5B576BE1E7512D8E621 /* Pods-CoupleAnimal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoupleAnimal.release.xcconfig"; path = "Target Support Files/Pods-CoupleAnimal/Pods-CoupleAnimal.release.xcconfig"; sourceTree = "<group>"; };
 		A696402DD3F96298B32CFAA6 /* Pods_CoupleAnimal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoupleAnimal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,6 +119,7 @@
 				1194D68729780C3E001E51BC /* Controllers */,
 				1194D66A297808C0001E51BC /* AppDelegate.swift */,
 				1194D66C297808C0001E51BC /* SceneDelegate.swift */,
+				11E99CB0298AD3610072D357 /* GoogleService-Info.plist */,
 				1194D673297808C3001E51BC /* Assets.xcassets */,
 				1194D675297808C3001E51BC /* LaunchScreen.storyboard */,
 				1194D678297808C3001E51BC /* Info.plist */,
@@ -146,6 +157,8 @@
 		1194D68729780C3E001E51BC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				11E99CB2298AD9450072D357 /* RegistrationViewController */,
+				11E99CA72989B9A30072D357 /* LoginViewController */,
 				1194D67E29780B4E001E51BC /* ProfileViewController */,
 				1194D68129780BA8001E51BC /* ChatViewController */,
 				1194D68229780BB9001E51BC /* MainViewController */,
@@ -234,6 +247,24 @@
 			path = AchievementCollectionViewCell;
 			sourceTree = "<group>";
 		};
+		11E99CA72989B9A30072D357 /* LoginViewController */ = {
+			isa = PBXGroup;
+			children = (
+				11E99CA82989B9C40072D357 /* LoginViewController.swift */,
+				11E99CA92989B9C40072D357 /* LoginViewController.xib */,
+			);
+			path = LoginViewController;
+			sourceTree = "<group>";
+		};
+		11E99CB2298AD9450072D357 /* RegistrationViewController */ = {
+			isa = PBXGroup;
+			children = (
+				11E99CB3298AD9680072D357 /* RegistrationViewController.swift */,
+				11E99CB4298AD9680072D357 /* RegistrationViewController.xib */,
+			);
+			path = RegistrationViewController;
+			sourceTree = "<group>";
+		};
 		B22B1D052A603CE630A0CA29 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -316,9 +347,12 @@
 				11BDAD272985E03400ACC21D /* AchievementCollectionViewCell.xib in Resources */,
 				11A09ACF2985C9150006767B /* InformationTableViewCell.xib in Resources */,
 				1194D677297808C3001E51BC /* LaunchScreen.storyboard in Resources */,
+				11E99CB1298AD3610072D357 /* GoogleService-Info.plist in Resources */,
 				11A09AC32985C8CD0006767B /* LocationTableViewCell.xib in Resources */,
 				1194D68629780C0C001E51BC /* MainViewController.xib in Resources */,
+				11E99CAB2989B9C40072D357 /* LoginViewController.xib in Resources */,
 				11A09ACB2985C9020006767B /* OwnerTableViewCell.xib in Resources */,
+				11E99CB6298AD9680072D357 /* RegistrationViewController.xib in Resources */,
 				1194D68B29780C5B001E51BC /* ChatViewController.xib in Resources */,
 				1194D674297808C3001E51BC /* Assets.xcassets in Resources */,
 			);
@@ -377,6 +411,7 @@
 				11A09ACE2985C9150006767B /* InformationTableViewCell.swift in Sources */,
 				1194D68529780C0C001E51BC /* MainViewController.swift in Sources */,
 				11A09AC22985C8CD0006767B /* LocationTableViewCell.swift in Sources */,
+				11E99CB5298AD9680072D357 /* RegistrationViewController.swift in Sources */,
 				1194D66B297808C0001E51BC /* AppDelegate.swift in Sources */,
 				1194D69A29780E50001E51BC /* TabBar.swift in Sources */,
 				11A09ACA2985C9020006767B /* OwnerTableViewCell.swift in Sources */,
@@ -384,6 +419,7 @@
 				1194D69629780C9D001E51BC /* ProfileViewController.swift in Sources */,
 				11A09AC62985C8E90006767B /* AchievementTableViewCell.swift in Sources */,
 				11BDAD262985E03400ACC21D /* AchievementCollectionViewCell.swift in Sources */,
+				11E99CAA2989B9C40072D357 /* LoginViewController.swift in Sources */,
 				1194D66D297808C0001E51BC /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

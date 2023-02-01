@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import FloatingPanel
 
 class ProfileViewController: UIViewController {
 
