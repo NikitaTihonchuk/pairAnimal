@@ -18,6 +18,19 @@ class RegistrationViewController: UIViewController {
         super.viewDidLoad()
         title = "Registration"
     }
+    
+    private func showAlert(title: String, message: String, bool: Bool) {
+        let alert = UIAlertController(title: title,
+                                      message: message,
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
+            if bool {
+                let vc = LoginViewController(nibName: LoginViewController.id, bundle: nil)
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        }))
+        present(alert, animated: true)
+    }
 
 
     @IBAction func registerButtonDidTap(_ sender: UIButton) {
@@ -26,10 +39,11 @@ class RegistrationViewController: UIViewController {
         guard let password = passwordTextField.text else { return }
         FirebaseAuth.Auth.auth().createUser(withEmail: email, password: password) { result, error in
             guard error == nil else {
-                
-              return
+                self.showAlert(title: "Error", message: "please enter correct email or password", bool: false)
+
+                return
             }
-          
+            self.showAlert(title: "Success", message: "Now you can sign in", bool: true)
         }
     }
     
