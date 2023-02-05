@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		115815892990145C0043442F /* WelcomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115815872990145C0043442F /* WelcomePageViewController.swift */; };
+		1158158A2990145C0043442F /* WelcomePageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 115815882990145C0043442F /* WelcomePageViewController.xib */; };
 		1194D66B297808C0001E51BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1194D66A297808C0001E51BC /* AppDelegate.swift */; };
 		1194D66D297808C0001E51BC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1194D66C297808C0001E51BC /* SceneDelegate.swift */; };
 		1194D674297808C3001E51BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1194D673297808C3001E51BC /* Assets.xcassets */; };
@@ -38,6 +40,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		115815872990145C0043442F /* WelcomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePageViewController.swift; sourceTree = "<group>"; };
+		115815882990145C0043442F /* WelcomePageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomePageViewController.xib; sourceTree = "<group>"; };
 		1194D667297808C0001E51BC /* CoupleAnimal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoupleAnimal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1194D66A297808C0001E51BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1194D66C297808C0001E51BC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +88,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		115815862990143E0043442F /* WelcomePageViewController */ = {
+			isa = PBXGroup;
+			children = (
+				115815872990145C0043442F /* WelcomePageViewController.swift */,
+				115815882990145C0043442F /* WelcomePageViewController.xib */,
+			);
+			path = WelcomePageViewController;
+			sourceTree = "<group>";
+		};
 		11782B93297D2E3100A89433 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +170,7 @@
 		1194D68729780C3E001E51BC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				115815862990143E0043442F /* WelcomePageViewController */,
 				11E99CB2298AD9450072D357 /* RegistrationViewController */,
 				11E99CA72989B9A30072D357 /* LoginViewController */,
 				1194D67E29780B4E001E51BC /* ProfileViewController */,
@@ -344,6 +358,7 @@
 			files = (
 				11A09AC72985C8E90006767B /* AchievementTableViewCell.xib in Resources */,
 				1194D69729780C9D001E51BC /* ProfileViewController.xib in Resources */,
+				1158158A2990145C0043442F /* WelcomePageViewController.xib in Resources */,
 				11BDAD272985E03400ACC21D /* AchievementCollectionViewCell.xib in Resources */,
 				11A09ACF2985C9150006767B /* InformationTableViewCell.xib in Resources */,
 				1194D677297808C3001E51BC /* LaunchScreen.storyboard in Resources */,
@@ -411,6 +426,7 @@
 				11A09ACE2985C9150006767B /* InformationTableViewCell.swift in Sources */,
 				1194D68529780C0C001E51BC /* MainViewController.swift in Sources */,
 				11A09AC22985C8CD0006767B /* LocationTableViewCell.swift in Sources */,
+				115815892990145C0043442F /* WelcomePageViewController.swift in Sources */,
 				11E99CB5298AD9680072D357 /* RegistrationViewController.swift in Sources */,
 				1194D66B297808C0001E51BC /* AppDelegate.swift in Sources */,
 				1194D69A29780E50001E51BC /* TabBar.swift in Sources */,

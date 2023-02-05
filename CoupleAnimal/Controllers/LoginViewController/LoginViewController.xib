@@ -40,22 +40,6 @@
                         <action selector="loginButtonDidTap:" destination="-1" eventType="touchUpInside" id="tdi-Y8-fka"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sp1-t4-6xl">
-                    <rect key="frame" x="246" y="124" width="127" height="35"/>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="filled" title="Sign as guest"/>
-                    <connections>
-                        <action selector="signAsGuestButtonDidTap:" destination="-1" eventType="touchUpInside" id="gZX-N1-bYa"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XKr-3m-bC4">
-                    <rect key="frame" x="257" y="79" width="116" height="35"/>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="filled" title="Registration"/>
-                    <connections>
-                        <action selector="registrationButtonDidTap:" destination="-1" eventType="touchUpInside" id="f2y-Gi-tzA"/>
-                    </connections>
-                </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gtv-lD-0Hx">
                     <rect key="frame" x="158.33333333333334" y="159" width="76.666666666666657" height="38.333333333333343"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -68,18 +52,14 @@
             <color key="backgroundColor" systemColor="systemGray3Color"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="WYY-Ur-anZ" secondAttribute="trailing" constant="50" id="0Md-3u-bb4"/>
-                <constraint firstItem="XKr-3m-bC4" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" constant="-20" id="48C-bM-IqQ"/>
                 <constraint firstItem="WYY-Ur-anZ" firstAttribute="top" secondItem="mnf-qm-Luj" secondAttribute="bottom" constant="100" id="4xN-Gn-y8r"/>
                 <constraint firstItem="MBh-c8-WAr" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="N1p-Qn-tca"/>
-                <constraint firstItem="XKr-3m-bC4" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="Xbz-We-eZy"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="MBh-c8-WAr" secondAttribute="trailing" constant="16" id="YuV-wH-BwA"/>
                 <constraint firstItem="mnf-qm-Luj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="es3-Fn-zJA"/>
                 <constraint firstItem="Gtv-lD-0Hx" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="gXN-L1-Nlo"/>
                 <constraint firstItem="WYY-Ur-anZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="50" id="jGM-fD-NdI"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="mnf-qm-Luj" secondAttribute="trailing" constant="16" id="kPF-Qx-DVQ"/>
-                <constraint firstItem="Sp1-t4-6xl" firstAttribute="top" secondItem="XKr-3m-bC4" secondAttribute="bottom" constant="10" id="lCX-hI-VKa"/>
                 <constraint firstItem="mnf-qm-Luj" firstAttribute="top" secondItem="MBh-c8-WAr" secondAttribute="bottom" constant="10" id="n6H-L4-wFn"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Sp1-t4-6xl" secondAttribute="trailing" constant="20" id="qIW-gJ-I5J"/>
                 <constraint firstItem="Gtv-lD-0Hx" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="100" id="yfq-KC-2Uv"/>
                 <constraint firstItem="MBh-c8-WAr" firstAttribute="top" secondItem="Gtv-lD-0Hx" secondAttribute="bottom" constant="25" id="z5b-Hq-y6o"/>
             </constraints>

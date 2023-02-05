@@ -39,8 +39,8 @@ class RegistrationViewController: UIViewController {
         guard let password = passwordTextField.text else { return }
         FirebaseAuth.Auth.auth().createUser(withEmail: email, password: password) { result, error in
             guard error == nil else {
+                
                 self.showAlert(title: "Error", message: "please enter correct email or password", bool: false)
-
                 return
             }
             self.showAlert(title: "Success", message: "Now you can sign in", bool: true)

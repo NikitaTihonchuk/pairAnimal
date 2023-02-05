@@ -20,7 +20,21 @@ class LoginViewController: UIViewController {
         title = "Login"
     }
     
-    
+    private func showMyViewControllerInACustomizedSheet() {
+        let viewControllerToPresent = RegistrationViewController()
+        if let sheet = viewControllerToPresent.sheetPresentationController {
+            sheet.detents = [ .large()]
+            sheet.preferredCornerRadius = 12
+            sheet.largestUndimmedDetentIdentifier = .large
+            sheet.prefersScrollingExpandsWhenScrolledToEdge = false
+            sheet.prefersEdgeAttachedInCompactHeight = true
+            sheet.widthFollowsPreferredContentSizeWhenEdgeAttached = true
+        }
+        
+        viewControllerToPresent.isModalInPresentation = true
+        present(viewControllerToPresent, animated: true) 
+
+    }
 
 
     @IBAction func loginButtonDidTap(_ sender: UIButton) {
@@ -38,14 +52,14 @@ class LoginViewController: UIViewController {
     
     
     @IBAction func registrationButtonDidTap(_ sender: UIButton) {
-        let vc = RegistrationViewController(nibName: "RegistrationViewController", bundle: nil)
-        print(vc)
-        navigationController?.pushViewController(vc, animated: true)
+       // let vc = RegistrationViewController(nibName: "RegistrationViewController", bundle: nil)
+// print(vc)
+       // navigationController?.pushViewController(vc, animated: true)
+        showMyViewControllerInACustomizedSheet()
     }
     
     
     
-    @IBAction func signAsGuestButtonDidTap(_ sender: UIButton) {
-    }
+   
     
 }
