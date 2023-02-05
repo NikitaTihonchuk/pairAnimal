@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		115035942990339D001F84D5 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115035932990339D001F84D5 /* UserModel.swift */; };
 		115815892990145C0043442F /* WelcomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115815872990145C0043442F /* WelcomePageViewController.swift */; };
 		1158158A2990145C0043442F /* WelcomePageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 115815882990145C0043442F /* WelcomePageViewController.xib */; };
 		1194D66B297808C0001E51BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1194D66A297808C0001E51BC /* AppDelegate.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		115035932990339D001F84D5 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		115815872990145C0043442F /* WelcomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePageViewController.swift; sourceTree = "<group>"; };
 		115815882990145C0043442F /* WelcomePageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomePageViewController.xib; sourceTree = "<group>"; };
 		1194D667297808C0001E51BC /* CoupleAnimal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoupleAnimal.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,6 +90,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		115035922990338A001F84D5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				115035932990339D001F84D5 /* UserModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		115815862990143E0043442F /* WelcomePageViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +137,7 @@
 		1194D669297808C0001E51BC /* CoupleAnimal */ = {
 			isa = PBXGroup;
 			children = (
+				115035922990338A001F84D5 /* Models */,
 				11A09AB72985C71F0006767B /* Enums */,
 				1194D69829780E37001E51BC /* TabBarController */,
 				1194D68729780C3E001E51BC /* Controllers */,
@@ -432,6 +443,7 @@
 				1194D69A29780E50001E51BC /* TabBar.swift in Sources */,
 				11A09ACA2985C9020006767B /* OwnerTableViewCell.swift in Sources */,
 				1194D68A29780C5B001E51BC /* ChatViewController.swift in Sources */,
+				115035942990339D001F84D5 /* UserModel.swift in Sources */,
 				1194D69629780C9D001E51BC /* ProfileViewController.swift in Sources */,
 				11A09AC62985C8E90006767B /* AchievementTableViewCell.swift in Sources */,
 				11BDAD262985E03400ACC21D /* AchievementCollectionViewCell.swift in Sources */,

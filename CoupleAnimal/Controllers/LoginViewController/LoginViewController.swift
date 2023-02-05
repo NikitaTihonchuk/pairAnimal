@@ -44,9 +44,11 @@ class LoginViewController: UIViewController {
             guard error == nil else {
                 return
             }
+            self.dismiss(animated: true) {
+                let vc = TabBarController()
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
             
-            let vc = TabBarController()
-            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
     
