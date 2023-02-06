@@ -10,5 +10,6 @@ target 'CoupleAnimal' do
   pod 'FirebaseStorage'
   pod 'MessageKit'
   pod 'Firebase/Core'
+  pod 'Firebase/Database'
 
 end

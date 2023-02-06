@@ -18,5 +18,15 @@ class DefaultsManager {
             defaults.set(newValue, forKey: #function)
         }
     }
+    
+    static var userID: String? {
+        get {
+            defaults.value(forKey: #function) as? String
+        }
+        set {
+            defaults.set(newValue, forKey: #function)
+
+        }
+    }
 }
 

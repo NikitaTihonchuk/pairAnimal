@@ -46,6 +46,7 @@ class LoginViewController: UIViewController {
             }
             self.dismiss(animated: true) {
                 DefaultsManager.rememberMe = true
+                DefaultsManager.userID = result?.user.uid
                 let vc = TabBarController()
                 self.navigationController?.pushViewController(vc, animated: true)
             }

@@ -33,6 +33,7 @@
 		11A09ACF2985C9150006767B /* InformationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11A09ACD2985C9150006767B /* InformationTableViewCell.xib */; };
 		11BDAD262985E03400ACC21D /* AchievementCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BDAD242985E03400ACC21D /* AchievementCollectionViewCell.swift */; };
 		11BDAD272985E03400ACC21D /* AchievementCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11BDAD252985E03400ACC21D /* AchievementCollectionViewCell.xib */; };
+		11E58952299194A200BAFF53 /* DogGenderEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E58951299194A100BAFF53 /* DogGenderEnum.swift */; };
 		11E99CAA2989B9C40072D357 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E99CA82989B9C40072D357 /* LoginViewController.swift */; };
 		11E99CAB2989B9C40072D357 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11E99CA92989B9C40072D357 /* LoginViewController.xib */; };
 		11E99CB1298AD3610072D357 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11E99CB0298AD3610072D357 /* GoogleService-Info.plist */; };
@@ -70,6 +71,7 @@
 		11A09ACD2985C9150006767B /* InformationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InformationTableViewCell.xib; sourceTree = "<group>"; };
 		11BDAD242985E03400ACC21D /* AchievementCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementCollectionViewCell.swift; sourceTree = "<group>"; };
 		11BDAD252985E03400ACC21D /* AchievementCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AchievementCollectionViewCell.xib; sourceTree = "<group>"; };
+		11E58951299194A100BAFF53 /* DogGenderEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogGenderEnum.swift; sourceTree = "<group>"; };
 		11E99CA82989B9C40072D357 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		11E99CA92989B9C40072D357 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		11E99CB0298AD3610072D357 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 		11A09AB72985C71F0006767B /* Enums */ = {
 			isa = PBXGroup;
 			children = (
+				11E589502991946500BAFF53 /* DogGenderEnum */,
 				11A09AB82985C7470006767B /* ProfileInfoEnum */,
 			);
 			path = Enums;
@@ -281,6 +284,14 @@
 				11BDAD252985E03400ACC21D /* AchievementCollectionViewCell.xib */,
 			);
 			path = AchievementCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		11E589502991946500BAFF53 /* DogGenderEnum */ = {
+			isa = PBXGroup;
+			children = (
+				11E58951299194A100BAFF53 /* DogGenderEnum.swift */,
+			);
+			path = DogGenderEnum;
 			sourceTree = "<group>";
 		};
 		11E99CA72989B9A30072D357 /* LoginViewController */ = {
@@ -460,6 +471,7 @@
 				11A09AC62985C8E90006767B /* AchievementTableViewCell.swift in Sources */,
 				11BDAD262985E03400ACC21D /* AchievementCollectionViewCell.swift in Sources */,
 				11E99CAA2989B9C40072D357 /* LoginViewController.swift in Sources */,
+				11E58952299194A200BAFF53 /* DogGenderEnum.swift in Sources */,
 				1194D66D297808C0001E51BC /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

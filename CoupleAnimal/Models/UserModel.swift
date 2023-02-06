@@ -10,21 +10,29 @@ import UIKit
 
 class UserModel {
     var nickname: String?
+    var species: String?
+    var age: Int?
+    var weight: Double?
     var location: String?
     var name: String?
+    var height: Double?
     var additionalInfo: String?
-    var id = ""
+    var id: String?
+    var gender: DogGenderEnum?
     
-    var features = [String]()
     
     
-    convenience init(nickname: String, location: String, name: String, additionalInfo: String) {
+    convenience init(nickname: String, location: String, name: String, additionalInfo: String, id: String, species: String, age: Int, weight: Double, height: Double, gender: DogGenderEnum) {
         self.init()
         self.nickname = nickname
         self.location = location
         self.name = name
         self.additionalInfo = additionalInfo
-        self.id = UUID().uuidString
-        self.features = features
+        self.id = id
+        self.species = species
+        self.age = age
+        self.weight = weight
+        self.height = height
+        self.gender = gender
     }
 }

@@ -21,33 +21,44 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="98a-lC-CUe">
-                    <rect key="frame" x="16" y="75" width="361" height="34"/>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="98a-lC-CUe">
+                    <rect key="frame" x="16" y="209" width="361" height="34"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Aa-Ly-nXd">
-                    <rect key="frame" x="16" y="114" width="361" height="34"/>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Aa-Ly-nXd">
+                    <rect key="frame" x="16" y="248" width="361" height="34"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bxT-dd-fmm">
-                    <rect key="frame" x="50" y="290" width="293" height="35"/>
+                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bxT-dd-fmm">
+                    <rect key="frame" x="50" y="314" width="293" height="35"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="filled" title="Register"/>
                     <connections>
                         <action selector="registerButtonDidTap:" destination="-1" eventType="touchUpInside" id="L8h-X0-ttQ"/>
                     </connections>
                 </button>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gfR-qJ-d63">
+                    <rect key="frame" x="123" y="167" width="97" height="34"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gi5-eh-19v">
+                    <rect key="frame" x="123" y="125" width="97" height="34"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemGrayColor"/>
             <constraints>
-                <constraint firstItem="bxT-dd-fmm" firstAttribute="top" secondItem="7Aa-Ly-nXd" secondAttribute="bottom" constant="142" id="4Xf-dG-0fM"/>
+                <constraint firstItem="bxT-dd-fmm" firstAttribute="top" secondItem="7Aa-Ly-nXd" secondAttribute="bottom" constant="32" id="4Xf-dG-0fM"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="98a-lC-CUe" secondAttribute="trailing" constant="16" id="5Na-dH-jd7"/>
                 <constraint firstItem="bxT-dd-fmm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="50" id="8P6-ef-svA"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="bxT-dd-fmm" secondAttribute="trailing" constant="50" id="8uw-HZ-syG"/>
-                <constraint firstItem="98a-lC-CUe" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="FDL-Sa-mXs"/>
                 <constraint firstItem="7Aa-Ly-nXd" firstAttribute="top" secondItem="98a-lC-CUe" secondAttribute="bottom" constant="5" id="KYE-rt-Cwg"/>
                 <constraint firstItem="7Aa-Ly-nXd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="KZn-Xc-gl8"/>
                 <constraint firstItem="98a-lC-CUe" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="UPS-uE-hbQ"/>
