@@ -15,7 +15,10 @@ class WelcomePageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        if DefaultsManager.rememberMe {
+            let vc = TabBarController()
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
         loginButton.layer.cornerRadius = 12
         signUpButton.layer.cornerRadius = 12
 

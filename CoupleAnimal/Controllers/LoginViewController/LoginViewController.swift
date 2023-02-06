@@ -45,6 +45,7 @@ class LoginViewController: UIViewController {
                 return
             }
             self.dismiss(animated: true) {
+                DefaultsManager.rememberMe = true
                 let vc = TabBarController()
                 self.navigationController?.pushViewController(vc, animated: true)
             }
@@ -55,7 +56,7 @@ class LoginViewController: UIViewController {
     
     @IBAction func registrationButtonDidTap(_ sender: UIButton) {
        // let vc = RegistrationViewController(nibName: "RegistrationViewController", bundle: nil)
-// print(vc)
+        // print(vc)
        // navigationController?.pushViewController(vc, animated: true)
         showMyViewControllerInACustomizedSheet()
     }

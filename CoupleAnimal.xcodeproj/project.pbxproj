@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		115035942990339D001F84D5 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115035932990339D001F84D5 /* UserModel.swift */; };
+		1150359729911F28001F84D5 /* DefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1150359629911F28001F84D5 /* DefaultsManager.swift */; };
 		115815892990145C0043442F /* WelcomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115815872990145C0043442F /* WelcomePageViewController.swift */; };
 		1158158A2990145C0043442F /* WelcomePageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 115815882990145C0043442F /* WelcomePageViewController.xib */; };
 		1194D66B297808C0001E51BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1194D66A297808C0001E51BC /* AppDelegate.swift */; };
@@ -42,6 +43,7 @@
 
 /* Begin PBXFileReference section */
 		115035932990339D001F84D5 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		1150359629911F28001F84D5 /* DefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsManager.swift; sourceTree = "<group>"; };
 		115815872990145C0043442F /* WelcomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePageViewController.swift; sourceTree = "<group>"; };
 		115815882990145C0043442F /* WelcomePageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomePageViewController.xib; sourceTree = "<group>"; };
 		1194D667297808C0001E51BC /* CoupleAnimal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoupleAnimal.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,6 +100,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		1150359529911F0D001F84D5 /* DefaultsManager */ = {
+			isa = PBXGroup;
+			children = (
+				1150359629911F28001F84D5 /* DefaultsManager.swift */,
+			);
+			path = DefaultsManager;
+			sourceTree = "<group>";
+		};
 		115815862990143E0043442F /* WelcomePageViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +147,7 @@
 		1194D669297808C0001E51BC /* CoupleAnimal */ = {
 			isa = PBXGroup;
 			children = (
+				1150359529911F0D001F84D5 /* DefaultsManager */,
 				115035922990338A001F84D5 /* Models */,
 				11A09AB72985C71F0006767B /* Enums */,
 				1194D69829780E37001E51BC /* TabBarController */,
@@ -434,6 +445,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				11A09ABA2985C7710006767B /* ProfileInfoEnum.swift in Sources */,
+				1150359729911F28001F84D5 /* DefaultsManager.swift in Sources */,
 				11A09ACE2985C9150006767B /* InformationTableViewCell.swift in Sources */,
 				1194D68529780C0C001E51BC /* MainViewController.swift in Sources */,
 				11A09AC22985C8CD0006767B /* LocationTableViewCell.swift in Sources */,
