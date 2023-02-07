@@ -22,6 +22,7 @@ class UserModel {
     
     
     
+    
     convenience init(nickname: String, location: String, name: String, additionalInfo: String, id: String, species: String, age: Int, weight: Double, height: Double, gender: DogGenderEnum) {
         self.init()
         self.nickname = nickname

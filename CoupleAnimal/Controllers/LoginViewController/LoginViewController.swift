@@ -40,17 +40,16 @@ class LoginViewController: UIViewController {
     @IBAction func loginButtonDidTap(_ sender: UIButton) {
         guard let email = emailTextField.text else { return }
         guard let password = passwordTextField.text else { return }
-        FirebaseAuth.Auth.auth().signIn(withEmail: email, password: password) { result, error in
-            guard error == nil else {
+        FirebaseAuth.Auth.auth().signIn(withEmail: email, password: password) { loginResult, error in
+            guard let result = loginResult, error == nil else {
                 return
             }
             self.dismiss(animated: true) {
                 DefaultsManager.rememberMe = true
-                DefaultsManager.userID = result?.user.uid
+                DefaultsManager.userID = result.user.uid
                 let vc = TabBarController()
                 self.navigationController?.pushViewController(vc, animated: true)
-            }
-            
+            } 
         }
     }
     

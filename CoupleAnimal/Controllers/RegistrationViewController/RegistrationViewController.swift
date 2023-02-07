@@ -18,7 +18,7 @@ class RegistrationViewController: UIViewController {
         super.viewDidLoad()
         title = "Registration"
     }
-    
+
     private func showAlert(title: String, message: String, bool: Bool) {
         let alert = UIAlertController(title: title,
                                       message: message,
@@ -37,13 +37,18 @@ class RegistrationViewController: UIViewController {
         
         guard let email = emailTextField.text else { return }
         guard let password = passwordTextField.text else { return }
-        FirebaseAuth.Auth.auth().createUser(withEmail: email, password: password) { result, error in
-            guard error == nil else {
+        FirebaseAuth.Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+            guard let result = authResult, error == nil else {
                 
                 self.showAlert(title: "Error", message: "please enter correct email or password", bool: false)
                 return
             }
-            self.showAlert(title: "Success", message: "Now you can sign in", bool: true)
+            let user = result.user
+            print("Your user: \(user)")
+            self.dismiss(animated: true) {
+                self.showAlert(title: "Success", message: "Now you can sign in", bool: true)
+
+            }
         }
     }
     

@@ -23,11 +23,25 @@ class WelcomePageViewController: UIViewController {
         signUpButton.layer.cornerRadius = 12
 
     }
-    
+    private func showMyViewControllerInACustomizedSheet() {
+        let viewControllerToPresent = RegistrationViewController(nibName: RegistrationViewController.id, bundle: nil)
+        if let sheet = viewControllerToPresent.sheetPresentationController {
+            sheet.detents = [ .large()]
+            sheet.preferredCornerRadius = 30
+            sheet.largestUndimmedDetentIdentifier = .large
+            sheet.prefersScrollingExpandsWhenScrolledToEdge = true
+            sheet.prefersEdgeAttachedInCompactHeight = true
+            sheet.widthFollowsPreferredContentSizeWhenEdgeAttached = true
+        }
+        
+        //viewControllerToPresent.isModalInPresentation = true
+        present(viewControllerToPresent, animated: true)
+
+    }
     
     @IBAction func signUpButton(_ sender: UIButton) {
-        let registrationVC = RegistrationViewController(nibName: RegistrationViewController.id, bundle: nil)
-        navigationController?.pushViewController(registrationVC, animated: true)
+       
+       showMyViewControllerInACustomizedSheet()
     }
     
     @IBAction func loginButton(_ sender: UIButton) {
