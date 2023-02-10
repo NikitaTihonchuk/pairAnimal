@@ -33,6 +33,9 @@
 		11A09ACF2985C9150006767B /* InformationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11A09ACD2985C9150006767B /* InformationTableViewCell.xib */; };
 		11BDAD262985E03400ACC21D /* AchievementCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BDAD242985E03400ACC21D /* AchievementCollectionViewCell.swift */; };
 		11BDAD272985E03400ACC21D /* AchievementCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11BDAD252985E03400ACC21D /* AchievementCollectionViewCell.xib */; };
+		11BDFB8329926C3C00B7CFE3 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BDFB8229926C3C00B7CFE3 /* DatabaseManager.swift */; };
+		11BDFBCD2993DABA00B7CFE3 /* FillingDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BDFBCB2993DABA00B7CFE3 /* FillingDataViewController.swift */; };
+		11BDFBCE2993DABA00B7CFE3 /* FillingDataViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11BDFBCC2993DABA00B7CFE3 /* FillingDataViewController.xib */; };
 		11E58952299194A200BAFF53 /* DogGenderEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E58951299194A100BAFF53 /* DogGenderEnum.swift */; };
 		11E99CAA2989B9C40072D357 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E99CA82989B9C40072D357 /* LoginViewController.swift */; };
 		11E99CAB2989B9C40072D357 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11E99CA92989B9C40072D357 /* LoginViewController.xib */; };
@@ -71,6 +74,9 @@
 		11A09ACD2985C9150006767B /* InformationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InformationTableViewCell.xib; sourceTree = "<group>"; };
 		11BDAD242985E03400ACC21D /* AchievementCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementCollectionViewCell.swift; sourceTree = "<group>"; };
 		11BDAD252985E03400ACC21D /* AchievementCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AchievementCollectionViewCell.xib; sourceTree = "<group>"; };
+		11BDFB8229926C3C00B7CFE3 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		11BDFBCB2993DABA00B7CFE3 /* FillingDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillingDataViewController.swift; sourceTree = "<group>"; };
+		11BDFBCC2993DABA00B7CFE3 /* FillingDataViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FillingDataViewController.xib; sourceTree = "<group>"; };
 		11E58951299194A100BAFF53 /* DogGenderEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogGenderEnum.swift; sourceTree = "<group>"; };
 		11E99CA82989B9C40072D357 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		11E99CA92989B9C40072D357 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
@@ -149,13 +155,12 @@
 		1194D669297808C0001E51BC /* CoupleAnimal */ = {
 			isa = PBXGroup;
 			children = (
+				11BDFB8129926C0F00B7CFE3 /* Resources */,
 				1150359529911F0D001F84D5 /* DefaultsManager */,
 				115035922990338A001F84D5 /* Models */,
 				11A09AB72985C71F0006767B /* Enums */,
 				1194D69829780E37001E51BC /* TabBarController */,
 				1194D68729780C3E001E51BC /* Controllers */,
-				1194D66A297808C0001E51BC /* AppDelegate.swift */,
-				1194D66C297808C0001E51BC /* SceneDelegate.swift */,
 				11E99CB0298AD3610072D357 /* GoogleService-Info.plist */,
 				1194D673297808C3001E51BC /* Assets.xcassets */,
 				1194D675297808C3001E51BC /* LaunchScreen.storyboard */,
@@ -194,6 +199,7 @@
 		1194D68729780C3E001E51BC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				11BDFBCA2993DAA800B7CFE3 /* FillingDataViewController */,
 				115815862990143E0043442F /* WelcomePageViewController */,
 				11E99CB2298AD9450072D357 /* RegistrationViewController */,
 				11E99CA72989B9A30072D357 /* LoginViewController */,
@@ -284,6 +290,25 @@
 				11BDAD252985E03400ACC21D /* AchievementCollectionViewCell.xib */,
 			);
 			path = AchievementCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		11BDFB8129926C0F00B7CFE3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1194D66C297808C0001E51BC /* SceneDelegate.swift */,
+				1194D66A297808C0001E51BC /* AppDelegate.swift */,
+				11BDFB8229926C3C00B7CFE3 /* DatabaseManager.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		11BDFBCA2993DAA800B7CFE3 /* FillingDataViewController */ = {
+			isa = PBXGroup;
+			children = (
+				11BDFBCB2993DABA00B7CFE3 /* FillingDataViewController.swift */,
+				11BDFBCC2993DABA00B7CFE3 /* FillingDataViewController.xib */,
+			);
+			path = FillingDataViewController;
 			sourceTree = "<group>";
 		};
 		11E589502991946500BAFF53 /* DogGenderEnum */ = {
@@ -403,6 +428,7 @@
 				11E99CB6298AD9680072D357 /* RegistrationViewController.xib in Resources */,
 				1194D68B29780C5B001E51BC /* ChatViewController.xib in Resources */,
 				1194D674297808C3001E51BC /* Assets.xcassets in Resources */,
+				11BDFBCE2993DABA00B7CFE3 /* FillingDataViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,8 +493,10 @@
 				11A09ACA2985C9020006767B /* OwnerTableViewCell.swift in Sources */,
 				1194D68A29780C5B001E51BC /* ChatViewController.swift in Sources */,
 				115035942990339D001F84D5 /* UserModel.swift in Sources */,
+				11BDFBCD2993DABA00B7CFE3 /* FillingDataViewController.swift in Sources */,
 				1194D69629780C9D001E51BC /* ProfileViewController.swift in Sources */,
 				11A09AC62985C8E90006767B /* AchievementTableViewCell.swift in Sources */,
+				11BDFB8329926C3C00B7CFE3 /* DatabaseManager.swift in Sources */,
 				11BDAD262985E03400ACC21D /* AchievementCollectionViewCell.swift in Sources */,
 				11E99CAA2989B9C40072D357 /* LoginViewController.swift in Sources */,
 				11E58952299194A200BAFF53 /* DogGenderEnum.swift in Sources */,

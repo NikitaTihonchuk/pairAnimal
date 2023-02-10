@@ -13,6 +13,7 @@ class RegistrationViewController: UIViewController {
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var nameTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,10 +24,11 @@ class RegistrationViewController: UIViewController {
         let alert = UIAlertController(title: title,
                                       message: message,
                                       preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
-            if bool {
-                let vc = LoginViewController(nibName: LoginViewController.id, bundle: nil)
-                self.navigationController?.pushViewController(vc, animated: true)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
+            if alert.title == "Success" {
+                if action.isEnabled {
+                    self.dismiss(animated: true)
+                }
             }
         }))
         present(alert, animated: true)
@@ -37,19 +39,27 @@ class RegistrationViewController: UIViewController {
         
         guard let email = emailTextField.text else { return }
         guard let password = passwordTextField.text else { return }
-        FirebaseAuth.Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
-            guard let result = authResult, error == nil else {
-                
-                self.showAlert(title: "Error", message: "please enter correct email or password", bool: false)
+        guard let name = nameTextField.text else { return }
+        
+        DatabaseManager.shared.isUserExists(email: email) { [weak self] exists in
+            guard let strongSelf = self else { return }
+            
+            guard !exists else {
+                strongSelf.showAlert(title: "Sorry", message: "User already exists", bool: false)
                 return
             }
-            let user = result.user
-            print("Your user: \(user)")
-            self.dismiss(animated: true) {
-                self.showAlert(title: "Success", message: "Now you can sign in", bool: true)
-
+                FirebaseAuth.Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+                    guard let result = authResult, error == nil else {
+                        strongSelf.showAlert(title: "Error", message: "Please enter correct email or password", bool: false)
+                        return
+                    }
+                    DatabaseManager.shared.inserUser(user: UserModel(name: name, id: result.user.uid, emailAddress: email))
+                        strongSelf.showAlert(title: "Success", message: "Now you can sign in", bool: true)
+                    }
+                    
             }
         }
+      
     }
     
-}
+
