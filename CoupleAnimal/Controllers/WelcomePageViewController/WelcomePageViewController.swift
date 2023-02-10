@@ -34,7 +34,6 @@ class WelcomePageViewController: UIViewController {
             sheet.widthFollowsPreferredContentSizeWhenEdgeAttached = true
         }
         
-        //viewControllerToPresent.isModalInPresentation = true
         present(viewControllerToPresent, animated: true)
 
     }

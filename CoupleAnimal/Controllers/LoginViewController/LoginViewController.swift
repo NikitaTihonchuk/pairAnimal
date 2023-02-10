@@ -13,56 +13,35 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Login"
     }
-    
-    private func showMyViewControllerInACustomizedSheet() {
-        let viewControllerToPresent = RegistrationViewController()
-        if let sheet = viewControllerToPresent.sheetPresentationController {
-            sheet.detents = [ .large()]
-            sheet.preferredCornerRadius = 12
-            sheet.largestUndimmedDetentIdentifier = .large
-            sheet.prefersScrollingExpandsWhenScrolledToEdge = false
-            sheet.prefersEdgeAttachedInCompactHeight = true
-            sheet.widthFollowsPreferredContentSizeWhenEdgeAttached = true
-        }
-        
-        viewControllerToPresent.isModalInPresentation = true
-        present(viewControllerToPresent, animated: true) 
-
-    }
-
 
     @IBAction func loginButtonDidTap(_ sender: UIButton) {
         guard let email = emailTextField.text else { return }
         guard let password = passwordTextField.text else { return }
         FirebaseAuth.Auth.auth().signIn(withEmail: email, password: password) { loginResult, error in
-            guard let result = loginResult, error == nil else {
-                return
+            guard let result = loginResult, error == nil else { return }
+        
+            DatabaseManager.shared.readUser(email: email) { [weak self] userInfo in
+                guard let strongSelf = self else { return }
+                if userInfo.isEmpty {
+                    return
+                } else {
+                    guard let isFullRegister = userInfo["fullRegister"] as? Bool else { return }
+                    if isFullRegister {
+                        let vc = TabBarController(nibName: "TabBarController", bundle: nil)
+                        DefaultsManager.rememberMe = true
+                        strongSelf.navigationController?.pushViewController(vc, animated: true)
+                    } else {
+                        strongSelf.dismiss(animated: true)
+                        let vc = FillingDataViewController(nibName: FillingDataViewController.id, bundle: nil)
+                        vc.email = email
+                        strongSelf.navigationController?.pushViewController(vc, animated: true)
+                    }
+                    
+                }
             }
-            self.dismiss(animated: true) {
-                DefaultsManager.rememberMe = true
-                DefaultsManager.userID = result.user.uid
-                let vc = TabBarController()
-                self.navigationController?.pushViewController(vc, animated: true)
-            } 
         }
     }
-    
-    
-    @IBAction func registrationButtonDidTap(_ sender: UIButton) {
-       // let vc = RegistrationViewController(nibName: "RegistrationViewController", bundle: nil)
-        // print(vc)
-       // navigationController?.pushViewController(vc, animated: true)
-        showMyViewControllerInACustomizedSheet()
-    }
-    
-    
-    
-   
-    
 }

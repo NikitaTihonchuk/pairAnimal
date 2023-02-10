@@ -28,5 +28,16 @@ class DefaultsManager {
 
         }
     }
+    
+    static var safeEmail: String? {
+        get {
+            defaults.value(forKey: #function) as? String
+        }
+        set {
+            defaults.set(newValue, forKey: #function)
+
+        }
+    }
+    
 }
 
