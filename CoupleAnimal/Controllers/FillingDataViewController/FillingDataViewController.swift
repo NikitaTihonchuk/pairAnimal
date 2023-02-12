@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import FirebaseStorage
 class FillingDataViewController: UIViewController {
     static let id = String(describing: FillingDataViewController.self)
     
@@ -27,6 +27,7 @@ class FillingDataViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         petImage.isUserInteractionEnabled = true
         petImage.layer.cornerRadius = 25
         warningLabel.isHidden = true
@@ -58,13 +59,13 @@ class FillingDataViewController: UIViewController {
     
     @IBAction func buttonDidTap(_ sender: UIButton!) {
     
-        guard let image = petImage.image,
-              let nickname = petNicknameTextField.text,
+        guard let nickname = petNicknameTextField.text,
               let breed = petBreedTextField.text,
               let location = locationTextField.text,
               let weight = Int(weightTextField.text!),
               let height = Int(heightTextField.text!),
               let info = infoTextField.text else { return warningLabel.isHidden = false }
+        
         
         DatabaseManager.shared.readUser(email: email) { [weak self] userData in
             guard let strongSelf = self else { return }
@@ -78,10 +79,26 @@ class FillingDataViewController: UIViewController {
             user.height = Double(height)
             user.additionalInfo = info
             user.isFillingTheData = true
-            DatabaseManager.shared.addAditionalInfo(user: user) {
-                DefaultsManager.rememberMe = true
-                let tabBarVC = TabBarController(nibName: "TabBarController", bundle: nil)
-                strongSelf.navigationController?.pushViewController(tabBarVC, animated: true)
+            DatabaseManager.shared.addAditionalInfo(user: user) { success in
+                if success {
+                    guard let image = strongSelf.petImage.image,
+                            let data = image.pngData() else {
+                        return
+                    }
+                    let fileName = user.profileImageLink
+                    StorageManager.shared.uploadProfilePicture(data: data, fileName: fileName) { result in
+                        switch result {
+                        case .success(let downlandUrl):
+                            DefaultsManager.profileURL = downlandUrl
+                            DefaultsManager.rememberMe = true
+                            print(downlandUrl)
+                            let vc = TabBarController(nibName: "TabBarController", bundle: nil)
+                            strongSelf.navigationController?.pushViewController(vc, animated: true)
+                        case .failure(let error):
+                            print("Storage error \(error)")
+                        }
+                    }
+                }
             }
         }
     }
@@ -131,6 +148,7 @@ extension FillingDataViewController: UIImagePickerControllerDelegate, UINavigati
         picker.dismiss(animated: true)
         guard let selectedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else { return }
         self.petImage.image = selectedImage
+        
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {

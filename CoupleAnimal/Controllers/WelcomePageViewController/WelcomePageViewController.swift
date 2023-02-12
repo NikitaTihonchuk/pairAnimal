@@ -23,6 +23,7 @@ class WelcomePageViewController: UIViewController {
         signUpButton.layer.cornerRadius = 12
 
     }
+    
     private func showMyViewControllerInACustomizedSheet() {
         let viewControllerToPresent = RegistrationViewController(nibName: RegistrationViewController.id, bundle: nil)
         if let sheet = viewControllerToPresent.sheetPresentationController {

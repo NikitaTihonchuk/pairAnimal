@@ -18,7 +18,7 @@ final class DatabaseManager {
 extension DatabaseManager {
     
     public func updateUser(user: UserModel) {
-        database.child(user.safeEmail).updateChildValues([
+        database.child("users").child(user.safeEmail).updateChildValues([
             "nickname" : user.nickname,
             "breed" : user.species,
             "location" : user.location,
@@ -30,8 +30,8 @@ extension DatabaseManager {
     public func readUser(email: String, complition: @escaping(([String : Any]) -> Void)) {
             var safeEmail = email.replacingOccurrences(of: ".", with: "-")
             safeEmail = safeEmail.replacingOccurrences(of: "@", with: "-")
-        
-        database.child(safeEmail).observeSingleEvent(of: .value) { snapshot in
+        DefaultsManager.safeEmail = safeEmail
+        database.child("users").child(safeEmail).observeSingleEvent(of: .value) { snapshot in
              guard (snapshot.value != nil) else { return }
             if let info = snapshot.value as? [String:Any] {
                 complition(info)
@@ -44,7 +44,7 @@ extension DatabaseManager {
         var safeEmail = email.replacingOccurrences(of: ".", with: "-")
         safeEmail = safeEmail.replacingOccurrences(of: "@", with: "-")
 
-        database.child(safeEmail).observeSingleEvent(of: .value) { snapshot in
+        database.child("users").child(safeEmail).observeSingleEvent(of: .value) { snapshot in
             guard snapshot.value as? String != nil else {
                 complition(false)
                 return
@@ -55,17 +55,19 @@ extension DatabaseManager {
     
     ///  Inserts new user to the database
     public func inserUser(user: UserModel) {
-        database.child(user.safeEmail).setValue([
+        database.child("users").child(user.safeEmail).setValue([
             "name" : user.name,
             "id" : user.id,
             "fullRegister" : user.isFillingTheData
         ])
-        DefaultsManager.userID = user.id
+        //DefaultsManager.userID = user.id
         DefaultsManager.safeEmail = user.safeEmail
     }
     /// update user
-    public func addAditionalInfo(user: UserModel, complition: () -> Void) {
-        database.child(user.safeEmail).updateChildValues([
+    public func addAditionalInfo(user: UserModel, complition: @escaping(Bool) -> Void) {
+        
+        
+        database.child("users").child(user.safeEmail).updateChildValues([
             "nickname" : user.nickname,
             "breed" : user.species,
             "location" : user.location,
@@ -73,8 +75,14 @@ extension DatabaseManager {
             "height" : user.height,
             "info" : user.additionalInfo,
             "fullRegister" : user.isFillingTheData
-        ])
-        complition()
+        ], withCompletionBlock: { error, _ in
+            guard  error == nil else {
+                complition(false)
+                return
+            }
+            DefaultsManager.safeEmail = user.safeEmail
+            complition(true)
+        })
     }
 
 }

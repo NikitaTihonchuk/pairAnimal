@@ -10,11 +10,18 @@ import UIKit
 class InformationTableViewCell: UITableViewCell {
     static let id = String(describing: InformationTableViewCell.self)
 
+    @IBOutlet weak var additionalInfoLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
     }
 
-   
+    func set(userInfo: [String: Any]) {
+        guard let additionalInfo = userInfo["info"] as? String else { return }
+       
+        additionalInfoLabel.text = additionalInfo
+        
+    }
     
 }
