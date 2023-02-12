@@ -64,6 +64,8 @@
             <connections>
                 <outlet property="backgroundImage" destination="3C3-ym-B3d" id="pSX-Gw-CgK"/>
                 <outlet property="collectionBackgroundView" destination="j4F-KI-WXf" id="xOU-br-ozR"/>
+                <outlet property="typeLabel" destination="PnE-AK-t2c" id="voc-z6-tOG"/>
+                <outlet property="valueLabel" destination="HG7-x9-ajv" id="stC-KU-6uc"/>
             </connections>
             <point key="canvasLocation" x="96.18320610687023" y="30.985915492957748"/>
         </collectionViewCell>

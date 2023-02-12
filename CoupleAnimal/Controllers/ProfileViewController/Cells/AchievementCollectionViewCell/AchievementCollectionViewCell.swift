@@ -10,6 +10,10 @@ import UIKit
 class AchievementCollectionViewCell: UICollectionViewCell {
     static let id = String(describing: AchievementCollectionViewCell.self)
     
+    
+    @IBOutlet weak var typeLabel: UILabel!
+    @IBOutlet weak var valueLabel: UILabel!
+    
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var collectionBackgroundView: UIView!
     
@@ -19,5 +23,10 @@ class AchievementCollectionViewCell: UICollectionViewCell {
         collectionBackgroundView.layer.cornerRadius = 25
         
     }
+    
+    
+   
+    
+    
 
 }

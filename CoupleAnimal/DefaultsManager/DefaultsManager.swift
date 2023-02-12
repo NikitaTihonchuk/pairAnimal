@@ -39,5 +39,15 @@ class DefaultsManager {
         }
     }
     
+    static var profileURL: String? {
+        get {
+            defaults.value(forKey: #function) as? String
+        }
+        set {
+            defaults.set(newValue, forKey: #function)
+
+        }
+    }
+    
 }
 

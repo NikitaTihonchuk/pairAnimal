@@ -27,6 +27,11 @@ class UserModel {
         return safemail
     }
     
+    var profileImageLink: String {
+        return "\(safeEmail)_profile_picture.png"
+         
+    }
+    
     var isFillingTheData = false
     
    /* convenience init(nickname: String, location: String, name: String, additionalInfo: String, id: String, species: String, age: Int, weight: Double, height: Double, gender: DogGenderEnum,         emailAddress: String) {
