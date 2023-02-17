@@ -106,9 +106,7 @@ class FillingDataViewController: UIViewController {
                         case .success(let downlandUrl):
                             DefaultsManager.profileURL = downlandUrl
                             DefaultsManager.rememberMe = true
-                            print(downlandUrl)
-                            let vc = TabBarController(nibName: "TabBarController", bundle: nil)
-                            strongSelf.navigationController?.pushViewController(vc, animated: true)
+                            SetupSceneDelegate.sceneDelegate?.setTabbarAsInitial()
                         case .failure(let error):
                             print("Storage error \(error)")
                         }

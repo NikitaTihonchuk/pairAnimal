@@ -21,12 +21,7 @@ class AchievementCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         collectionBackgroundView.layer.masksToBounds = true
         collectionBackgroundView.layer.cornerRadius = 25
-        
     }
     
     
-   
-    
-    
-
 }

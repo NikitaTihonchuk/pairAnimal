@@ -12,7 +12,9 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var doggyImage: UIImageView!
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var profileTableView: UITableView!
+    @IBOutlet weak var settingsButtonOutlet: UIButton!
     
+    @IBOutlet weak var signOutButton: UIButton!
     
     var personInfo = [String: Any]() {
         didSet {
@@ -25,7 +27,7 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         getImage(email: DefaultsManager.safeEmail)
         getData()
-        
+
         let gesture = UITapGestureRecognizer(target: self,
                                              action: #selector(didTapChangeProfilePic))
         backgroundView.layer.masksToBounds = true
@@ -34,10 +36,43 @@ class ProfileViewController: UIViewController {
         doggyImage.addGestureRecognizer(gesture)
         registerCell()
         
+        addBarButton()
+        
+    }
+    
+    
+    
+    @objc func addTapped() {
+        let vc = SettingsViewController(nibName: SettingsViewController.id, bundle: nil)
+        present(vc, animated: true)
     }
     
     @objc func didTapChangeProfilePic() {
         presentPhotoActionSheet()
+    }
+    
+    private func addBarButton() {
+        let rightBarSettingsButton = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+        let settingsImage = UIImage(systemName: "gear")
+        rightBarSettingsButton.setImage(settingsImage, for: .normal)
+        rightBarSettingsButton.tintColor = .red
+        rightBarSettingsButton.layer.cornerRadius = 15
+        rightBarSettingsButton.backgroundColor = UIColor.white
+        rightBarSettingsButton.addTarget(self, action: #selector(addTapped), for: .touchUpInside)
+        let rightBarButton = UIBarButtonItem(customView: rightBarSettingsButton)
+        navigationItem.rightBarButtonItem = rightBarButton
+        
+        let leftBarCancelButton = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+                let cancelImage = UIImage(systemName: "list.dash")
+        leftBarCancelButton.setImage(cancelImage, for: .normal)
+        leftBarCancelButton.tintColor = .red
+        leftBarCancelButton.layer.cornerRadius = 15
+        leftBarCancelButton.backgroundColor = UIColor.white
+      //  leftBarCancelButton.addTarget(self, action: #selector(addTapped), for: .touchUpInside)
+        let leftBarButton = UIBarButtonItem(customView: leftBarCancelButton)
+        navigationItem.leftBarButtonItem = leftBarButton
+        
+        
     }
     
     private func getImage(email: String?) {
@@ -60,7 +95,6 @@ class ProfileViewController: UIViewController {
             guard let data = data, error == nil else { return }
             
             DispatchQueue.main.async {
-                
                 let image = UIImage(data: data)
                 imageView.image = image
             }
@@ -91,7 +125,18 @@ class ProfileViewController: UIViewController {
         let nib4 = UINib(nibName: InformationTableViewCell.id , bundle: nil)
         profileTableView.register(nib4, forCellReuseIdentifier: InformationTableViewCell.id)
     }
-
+    
+    
+    @IBAction func signOutButton(_ sender: UIButton) {
+        DefaultsManager.rememberMe = false
+        let vc = WelcomePageViewController(nibName: WelcomePageViewController.id, bundle: nil)
+        tabBarController?.tabBar.isHidden = true
+        navigationController?.pushViewController(vc, animated: true)
+        
+    }
+    
+ 
+    
 }
 
 extension ProfileViewController: UITableViewDelegate {
@@ -104,6 +149,7 @@ extension ProfileViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let typeCell = settingPoints[indexPath.row]
         
         switch typeCell {
@@ -180,6 +226,7 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
             return
         }
         let fileName = "\(name)_profile_picture.png"
+        
         StorageManager.shared.uploadProfilePicture(data: data, fileName: fileName) { [weak self] result in
             guard let strongSelf = self else { return }
             switch result {

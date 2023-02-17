@@ -51,11 +51,13 @@
                 <constraint firstItem="Z1M-Rm-AOS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="6g9-Se-Cc6"/>
                 <constraint firstAttribute="bottom" secondItem="IPo-If-VbW" secondAttribute="bottom" id="7ar-Sh-oCL"/>
                 <constraint firstItem="IPo-If-VbW" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Mqs-SG-p3m"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Z1M-Rm-AOS" secondAttribute="trailing" id="NL4-HQ-vyE"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="IPo-If-VbW" secondAttribute="trailing" id="Xqm-ZC-Xk1"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Z1M-Rm-AOS" secondAttribute="trailing" id="Y5e-84-Y4O"/>
                 <constraint firstItem="IPo-If-VbW" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.6" id="hrd-rd-YQc"/>
                 <constraint firstItem="Z1M-Rm-AOS" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.5" id="nlZ-9d-Srg"/>
             </constraints>
+            <nil key="simulatedTopBarMetrics"/>
             <point key="canvasLocation" x="136.64122137404578" y="19.718309859154932"/>
         </view>
     </objects>

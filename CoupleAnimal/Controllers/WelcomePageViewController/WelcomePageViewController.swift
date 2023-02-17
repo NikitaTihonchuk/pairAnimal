@@ -15,9 +15,9 @@ class WelcomePageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.setHidesBackButton(true, animated: true)
         if DefaultsManager.rememberMe {
-            let vc = TabBarController()
-            self.navigationController?.pushViewController(vc, animated: true)
+            SetupSceneDelegate.sceneDelegate?.setTabbarAsInitial()
         }
         loginButton.layer.cornerRadius = 12
         signUpButton.layer.cornerRadius = 12
@@ -46,7 +46,15 @@ class WelcomePageViewController: UIViewController {
     
     @IBAction func loginButton(_ sender: UIButton) {
         let loginVC = LoginViewController(nibName: LoginViewController.id, bundle: nil)
-        navigationController?.pushViewController(loginVC, animated: true)
+        if let sheet = loginVC.sheetPresentationController {
+            sheet.detents = [ .large()]
+            sheet.preferredCornerRadius = 30
+            sheet.largestUndimmedDetentIdentifier = .large
+            sheet.prefersScrollingExpandsWhenScrolledToEdge = true
+            sheet.prefersEdgeAttachedInCompactHeight = true
+            sheet.widthFollowsPreferredContentSizeWhenEdgeAttached = true
+        }
+        present(loginVC, animated: true)
     }
     
     

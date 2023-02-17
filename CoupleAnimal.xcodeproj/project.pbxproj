@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1109D6F5299E041C000CEC3F /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1109D6F3299E041C000CEC3F /* ChatViewController.swift */; };
+		1109D6F6299E041C000CEC3F /* ChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1109D6F4299E041C000CEC3F /* ChatViewController.xib */; };
+		1109D6FA299E7A8A000CEC3F /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1109D6F8299E7A8A000CEC3F /* ChatTableViewCell.swift */; };
+		1109D6FB299E7A8A000CEC3F /* ChatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1109D6F9299E7A8A000CEC3F /* ChatTableViewCell.xib */; };
 		115035942990339D001F84D5 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115035932990339D001F84D5 /* UserModel.swift */; };
 		1150359729911F28001F84D5 /* DefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1150359629911F28001F84D5 /* DefaultsManager.swift */; };
 		115815892990145C0043442F /* WelcomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115815872990145C0043442F /* WelcomePageViewController.swift */; };
@@ -17,8 +21,6 @@
 		1194D677297808C3001E51BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1194D675297808C3001E51BC /* LaunchScreen.storyboard */; };
 		1194D68529780C0C001E51BC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1194D68329780C0C001E51BC /* MainViewController.swift */; };
 		1194D68629780C0C001E51BC /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1194D68429780C0C001E51BC /* MainViewController.xib */; };
-		1194D68A29780C5B001E51BC /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1194D68829780C5B001E51BC /* ChatViewController.swift */; };
-		1194D68B29780C5B001E51BC /* ChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1194D68929780C5B001E51BC /* ChatViewController.xib */; };
 		1194D69629780C9D001E51BC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1194D69429780C9D001E51BC /* ProfileViewController.swift */; };
 		1194D69729780C9D001E51BC /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1194D69529780C9D001E51BC /* ProfileViewController.xib */; };
 		1194D69A29780E50001E51BC /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1194D69929780E50001E51BC /* TabBar.swift */; };
@@ -31,6 +33,9 @@
 		11A09ACB2985C9020006767B /* OwnerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11A09AC92985C9020006767B /* OwnerTableViewCell.xib */; };
 		11A09ACE2985C9150006767B /* InformationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A09ACC2985C9150006767B /* InformationTableViewCell.swift */; };
 		11A09ACF2985C9150006767B /* InformationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11A09ACD2985C9150006767B /* InformationTableViewCell.xib */; };
+		11B4B88F299B649D0036BA52 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B4B88D299B649D0036BA52 /* SettingsViewController.swift */; };
+		11B4B890299B649D0036BA52 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11B4B88E299B649D0036BA52 /* SettingsViewController.xib */; };
+		11B4B8C1299C1ED00036BA52 /* SetupSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B4B8C0299C1ED00036BA52 /* SetupSceneDelegate.swift */; };
 		11BDAD262985E03400ACC21D /* AchievementCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BDAD242985E03400ACC21D /* AchievementCollectionViewCell.swift */; };
 		11BDAD272985E03400ACC21D /* AchievementCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11BDAD252985E03400ACC21D /* AchievementCollectionViewCell.xib */; };
 		11BDFB8329926C3C00B7CFE3 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BDFB8229926C3C00B7CFE3 /* DatabaseManager.swift */; };
@@ -47,6 +52,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1109D6F3299E041C000CEC3F /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		1109D6F4299E041C000CEC3F /* ChatViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatViewController.xib; sourceTree = "<group>"; };
+		1109D6F8299E7A8A000CEC3F /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
+		1109D6F9299E7A8A000CEC3F /* ChatTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatTableViewCell.xib; sourceTree = "<group>"; };
 		115035932990339D001F84D5 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		1150359629911F28001F84D5 /* DefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsManager.swift; sourceTree = "<group>"; };
 		115815872990145C0043442F /* WelcomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePageViewController.swift; sourceTree = "<group>"; };
@@ -59,8 +68,6 @@
 		1194D678297808C3001E51BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1194D68329780C0C001E51BC /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		1194D68429780C0C001E51BC /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
-		1194D68829780C5B001E51BC /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
-		1194D68929780C5B001E51BC /* ChatViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatViewController.xib; sourceTree = "<group>"; };
 		1194D69429780C9D001E51BC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		1194D69529780C9D001E51BC /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		1194D69929780E50001E51BC /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
@@ -73,6 +80,9 @@
 		11A09AC92985C9020006767B /* OwnerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OwnerTableViewCell.xib; sourceTree = "<group>"; };
 		11A09ACC2985C9150006767B /* InformationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationTableViewCell.swift; sourceTree = "<group>"; };
 		11A09ACD2985C9150006767B /* InformationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InformationTableViewCell.xib; sourceTree = "<group>"; };
+		11B4B88D299B649D0036BA52 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		11B4B88E299B649D0036BA52 /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
+		11B4B8C0299C1ED00036BA52 /* SetupSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupSceneDelegate.swift; sourceTree = "<group>"; };
 		11BDAD242985E03400ACC21D /* AchievementCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementCollectionViewCell.swift; sourceTree = "<group>"; };
 		11BDAD252985E03400ACC21D /* AchievementCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AchievementCollectionViewCell.xib; sourceTree = "<group>"; };
 		11BDFB8229926C3C00B7CFE3 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
@@ -102,6 +112,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1109D6F7299E7A72000CEC3F /* ChatCell */ = {
+			isa = PBXGroup;
+			children = (
+				1109D6F8299E7A8A000CEC3F /* ChatTableViewCell.swift */,
+				1109D6F9299E7A8A000CEC3F /* ChatTableViewCell.xib */,
+			);
+			path = ChatCell;
+			sourceTree = "<group>";
+		};
 		115035922990338A001F84D5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -183,8 +202,8 @@
 		1194D68129780BA8001E51BC /* ChatViewController */ = {
 			isa = PBXGroup;
 			children = (
-				1194D68829780C5B001E51BC /* ChatViewController.swift */,
-				1194D68929780C5B001E51BC /* ChatViewController.xib */,
+				1109D6F3299E041C000CEC3F /* ChatViewController.swift */,
+				1109D6F4299E041C000CEC3F /* ChatViewController.xib */,
 			);
 			path = ChatViewController;
 			sourceTree = "<group>";
@@ -201,6 +220,7 @@
 		1194D68729780C3E001E51BC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				11B4B88C299B646D0036BA52 /* SettingsViewController */,
 				11BDFBCA2993DAA800B7CFE3 /* FillingDataViewController */,
 				115815862990143E0043442F /* WelcomePageViewController */,
 				11E99CB2298AD9450072D357 /* RegistrationViewController */,
@@ -240,6 +260,7 @@
 		11A09ABB2985C8270006767B /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				1109D6F7299E7A72000CEC3F /* ChatCell */,
 				11A09ABF2985C89D0006767B /* InformationCell */,
 				11A09ABD2985C8640006767B /* AchievementCell */,
 				11BDAD232985E00100ACC21D /* AchievementCollectionViewCell */,
@@ -285,6 +306,23 @@
 			path = InformationCell;
 			sourceTree = "<group>";
 		};
+		11B4B88C299B646D0036BA52 /* SettingsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				11B4B88D299B649D0036BA52 /* SettingsViewController.swift */,
+				11B4B88E299B649D0036BA52 /* SettingsViewController.xib */,
+			);
+			path = SettingsViewController;
+			sourceTree = "<group>";
+		};
+		11B4B8BF299C1EA90036BA52 /* SetupSceneDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				11B4B8C0299C1ED00036BA52 /* SetupSceneDelegate.swift */,
+			);
+			path = SetupSceneDelegate;
+			sourceTree = "<group>";
+		};
 		11BDAD232985E00100ACC21D /* AchievementCollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -297,6 +335,7 @@
 		11BDFB8129926C0F00B7CFE3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				11B4B8BF299C1EA90036BA52 /* SetupSceneDelegate */,
 				1194D66C297808C0001E51BC /* SceneDelegate.swift */,
 				1194D66A297808C0001E51BC /* AppDelegate.swift */,
 				11BDFB8229926C3C00B7CFE3 /* DatabaseManager.swift */,
@@ -423,13 +462,15 @@
 				11BDAD272985E03400ACC21D /* AchievementCollectionViewCell.xib in Resources */,
 				11A09ACF2985C9150006767B /* InformationTableViewCell.xib in Resources */,
 				1194D677297808C3001E51BC /* LaunchScreen.storyboard in Resources */,
+				1109D6F6299E041C000CEC3F /* ChatViewController.xib in Resources */,
 				11E99CB1298AD3610072D357 /* GoogleService-Info.plist in Resources */,
 				11A09AC32985C8CD0006767B /* LocationTableViewCell.xib in Resources */,
 				1194D68629780C0C001E51BC /* MainViewController.xib in Resources */,
 				11E99CAB2989B9C40072D357 /* LoginViewController.xib in Resources */,
 				11A09ACB2985C9020006767B /* OwnerTableViewCell.xib in Resources */,
+				1109D6FB299E7A8A000CEC3F /* ChatTableViewCell.xib in Resources */,
+				11B4B890299B649D0036BA52 /* SettingsViewController.xib in Resources */,
 				11E99CB6298AD9680072D357 /* RegistrationViewController.xib in Resources */,
-				1194D68B29780C5B001E51BC /* ChatViewController.xib in Resources */,
 				1194D674297808C3001E51BC /* Assets.xcassets in Resources */,
 				11BDFBCE2993DABA00B7CFE3 /* FillingDataViewController.xib in Resources */,
 			);
@@ -495,14 +536,17 @@
 				1194D66B297808C0001E51BC /* AppDelegate.swift in Sources */,
 				1194D69A29780E50001E51BC /* TabBar.swift in Sources */,
 				11A09ACA2985C9020006767B /* OwnerTableViewCell.swift in Sources */,
-				1194D68A29780C5B001E51BC /* ChatViewController.swift in Sources */,
+				11B4B8C1299C1ED00036BA52 /* SetupSceneDelegate.swift in Sources */,
 				115035942990339D001F84D5 /* UserModel.swift in Sources */,
+				11B4B88F299B649D0036BA52 /* SettingsViewController.swift in Sources */,
 				11BDFBCD2993DABA00B7CFE3 /* FillingDataViewController.swift in Sources */,
 				1194D69629780C9D001E51BC /* ProfileViewController.swift in Sources */,
+				1109D6F5299E041C000CEC3F /* ChatViewController.swift in Sources */,
 				11A09AC62985C8E90006767B /* AchievementTableViewCell.swift in Sources */,
 				11BDFB8329926C3C00B7CFE3 /* DatabaseManager.swift in Sources */,
 				11BDAD262985E03400ACC21D /* AchievementCollectionViewCell.swift in Sources */,
 				11E99CAA2989B9C40072D357 /* LoginViewController.swift in Sources */,
+				1109D6FA299E7A8A000CEC3F /* ChatTableViewCell.swift in Sources */,
 				11E58952299194A200BAFF53 /* DogGenderEnum.swift in Sources */,
 				1194D66D297808C0001E51BC /* SceneDelegate.swift in Sources */,
 			);

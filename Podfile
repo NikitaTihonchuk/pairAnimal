@@ -11,5 +11,8 @@ target 'CoupleAnimal' do
   pod 'MessageKit'
   pod 'Firebase/Core'
   pod 'Firebase/Database'
-
+  
+  pod 'SDWebImage'
+  pod 'RealmSwift'
+  pod 'JGProgressHUD'
 end

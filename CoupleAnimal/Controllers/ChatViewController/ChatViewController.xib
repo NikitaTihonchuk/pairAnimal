@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChatViewController" customModule="CoupleAnimal" customModuleProvider="target">
             <connections>
+                <outlet property="chatTableView" destination="aHx-bA-diB" id="bKm-d1-QLP"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,9 +18,25 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="aHx-bA-diB">
+                    <rect key="frame" x="25" y="84" width="343" height="734"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="sectionIndexColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" red="0.92242817879835004" green="0.9433519705054686" blue="0.88069163318619426" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-            <point key="canvasLocation" x="-164" y="20"/>
+            <color key="backgroundColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="aHx-bA-diB" secondAttribute="trailing" constant="25" id="3dr-Vs-vYC"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="aHx-bA-diB" secondAttribute="bottom" id="Lz2-go-ac9"/>
+                <constraint firstItem="aHx-bA-diB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="WOH-UH-781"/>
+                <constraint firstItem="aHx-bA-diB" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="25" id="Wk9-f9-E1S"/>
+            </constraints>
+            <point key="canvasLocation" x="46" y="21"/>
         </view>
     </objects>
 </document>

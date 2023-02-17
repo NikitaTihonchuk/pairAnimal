@@ -32,12 +32,21 @@ class LoginViewController: UIViewController {
                     if isFullRegister {
                         let vc = TabBarController(nibName: "TabBarController", bundle: nil)
                         DefaultsManager.rememberMe = true
-                        strongSelf.navigationController?.pushViewController(vc, animated: true)
+                        strongSelf.dismiss(animated: true) {
+                            UIView.animate(withDuration: 0.3) {
+                                SetupSceneDelegate.sceneDelegate?.setAsInitial(vc: vc)
+                            }
+                        }
                     } else {
-                        strongSelf.dismiss(animated: true)
                         let vc = FillingDataViewController(nibName: FillingDataViewController.id, bundle: nil)
                         vc.email = email
-                        strongSelf.navigationController?.pushViewController(vc, animated: true)
+                        strongSelf.dismiss(animated: true) {
+                            UIView.animate(withDuration: 0.3) {
+                                SetupSceneDelegate.sceneDelegate?.setAsInitial(vc: vc)
+                            }
+                            
+                        }
+                        
                     }
                     
                 }
