@@ -39,6 +39,7 @@ class ProfileViewController: UIViewController {
                 self.getImage(email: self.email)
             }
         } else {
+            self.email = DefaultsManager.safeEmail
             guard let email = DefaultsManager.safeEmail else { return }
             DatabaseManager.shared.readUser(email: email) { data in
                 self.personInfo = data
@@ -175,6 +176,9 @@ extension ProfileViewController: UITableViewDataSource {
         case .location:
             let cell = profileTableView.dequeueReusableCell(withIdentifier: LocationTableViewCell.id, for: indexPath)
             guard let locationCell = cell as? LocationTableViewCell else { return cell }
+            if email == DefaultsManager.safeEmail {
+                locationCell.likeButton.isHidden = true
+            }
             locationCell.set(userInfo: personInfo)
             return locationCell
         case .achievement:
@@ -185,6 +189,9 @@ extension ProfileViewController: UITableViewDataSource {
         case .owner:
             let cell = profileTableView.dequeueReusableCell(withIdentifier: OwnerTableViewCell.id, for: indexPath)
             guard let ownerCell = cell as? OwnerTableViewCell else { return cell }
+            if email == DefaultsManager.safeEmail {
+                ownerCell.messageMeButton.isHidden = true
+            }
             ownerCell.set(userInfo: personInfo)
             return ownerCell
         case .information:

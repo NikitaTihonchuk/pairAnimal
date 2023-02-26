@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,16 +19,16 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="6PV-hp-FLo">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="101"/>
+                        <rect key="frame" x="0.0" y="0.0" width="260" height="101"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Barny" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qLl-DY-XAr">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="48"/>
+                                <rect key="frame" x="0.0" y="0.0" width="260" height="48"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ryv-tz-2GR">
-                                <rect key="frame" x="0.0" y="81" width="320" height="20"/>
+                                <rect key="frame" x="0.0" y="81" width="260" height="20"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="2tv-3q-s96">
                                         <rect key="frame" x="0.0" y="0.99999999999999822" width="20" height="18.333333333333336"/>
@@ -60,17 +61,36 @@
                             <constraint firstItem="qLl-DY-XAr" firstAttribute="top" secondItem="6PV-hp-FLo" secondAttribute="top" id="CyG-kg-JJL"/>
                         </constraints>
                     </stackView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mmA-jT-70z">
+                        <rect key="frame" x="260" y="25.666666666666671" width="50" height="50"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="Cdm-Bw-T1s"/>
+                            <constraint firstAttribute="width" constant="50" id="RGi-gy-FuY"/>
+                        </constraints>
+                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="filled">
+                            <imageReference key="image" image="heart.fill" catalog="system" symbolScale="large"/>
+                        </buttonConfiguration>
+                        <connections>
+                            <action selector="likeButtonDidTap:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="CrF-mS-mhR"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="6PV-hp-FLo" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="3WV-Ex-6AR"/>
-                    <constraint firstAttribute="trailing" secondItem="6PV-hp-FLo" secondAttribute="trailing" id="3xE-eM-8Ny"/>
                     <constraint firstAttribute="bottom" secondItem="6PV-hp-FLo" secondAttribute="bottom" constant="20" id="4aC-Cb-sPo"/>
+                    <constraint firstAttribute="trailing" secondItem="mmA-jT-70z" secondAttribute="trailing" constant="10" id="Djs-mz-8gc"/>
                     <constraint firstItem="6PV-hp-FLo" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="N9I-ou-qqI"/>
+                    <constraint firstItem="mmA-jT-70z" firstAttribute="centerY" secondItem="6PV-hp-FLo" secondAttribute="centerY" id="YAq-PW-Hmz"/>
+                    <constraint firstItem="mmA-jT-70z" firstAttribute="leading" secondItem="6PV-hp-FLo" secondAttribute="trailing" id="wbU-qi-Q8J"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
+                <outlet property="likeButton" destination="mmA-jT-70z" id="bd6-a6-oPl"/>
                 <outlet property="locationLabel" destination="94n-rh-QS3" id="FLe-4k-oY1"/>
                 <outlet property="nicknameLabel" destination="qLl-DY-XAr" id="1A0-rM-vgH"/>
             </connections>
@@ -78,6 +98,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="heart.fill" catalog="system" width="128" height="107"/>
         <image name="location.fill" catalog="system" width="128" height="119"/>
     </resources>
 </document>

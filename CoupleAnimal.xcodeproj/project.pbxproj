@@ -32,8 +32,6 @@
 		1158158A2990145C0043442F /* WelcomePageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 115815882990145C0043442F /* WelcomePageViewController.xib */; };
 		1163B9B729AA04370041CE6B /* ChangeCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1163B9B529AA04370041CE6B /* ChangeCityViewController.swift */; };
 		1163B9B829AA04370041CE6B /* ChangeCityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1163B9B629AA04370041CE6B /* ChangeCityViewController.xib */; };
-		1189189C29A7E89900B001E1 /* PetProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1189189A29A7E89800B001E1 /* PetProfileViewController.swift */; };
-		1189189D29A7E89900B001E1 /* PetProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1189189B29A7E89800B001E1 /* PetProfileViewController.xib */; };
 		1194D66B297808C0001E51BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1194D66A297808C0001E51BC /* AppDelegate.swift */; };
 		1194D66D297808C0001E51BC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1194D66C297808C0001E51BC /* SceneDelegate.swift */; };
 		1194D674297808C3001E51BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1194D673297808C3001E51BC /* Assets.xcassets */; };
@@ -96,8 +94,6 @@
 		115815882990145C0043442F /* WelcomePageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomePageViewController.xib; sourceTree = "<group>"; };
 		1163B9B529AA04370041CE6B /* ChangeCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeCityViewController.swift; sourceTree = "<group>"; };
 		1163B9B629AA04370041CE6B /* ChangeCityViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangeCityViewController.xib; sourceTree = "<group>"; };
-		1189189A29A7E89800B001E1 /* PetProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetProfileViewController.swift; sourceTree = "<group>"; };
-		1189189B29A7E89800B001E1 /* PetProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PetProfileViewController.xib; sourceTree = "<group>"; };
 		1194D667297808C0001E51BC /* CoupleAnimal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoupleAnimal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1194D66A297808C0001E51BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1194D66C297808C0001E51BC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -301,15 +297,6 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
-		1189189929A7E83200B001E1 /* PetProfileController */ = {
-			isa = PBXGroup;
-			children = (
-				1189189A29A7E89800B001E1 /* PetProfileViewController.swift */,
-				1189189B29A7E89800B001E1 /* PetProfileViewController.xib */,
-			);
-			path = PetProfileController;
-			sourceTree = "<group>";
-		};
 		1194D65E297808C0001E51BC = {
 			isa = PBXGroup;
 			children = (
@@ -367,7 +354,6 @@
 		1194D68229780BB9001E51BC /* MainViewController */ = {
 			isa = PBXGroup;
 			children = (
-				1189189929A7E83200B001E1 /* PetProfileController */,
 				111F853429A64CA40025985D /* Cells */,
 				1194D68329780C0C001E51BC /* MainViewController.swift */,
 				1194D68429780C0C001E51BC /* MainViewController.xib */,
@@ -632,7 +618,6 @@
 				111F854C29A64E240025985D /* PersonalLocationTableViewCell.xib in Resources */,
 				111F855C29A680130025985D /* PetsCollectionViewCell.xib in Resources */,
 				1194D68629780C0C001E51BC /* MainViewController.xib in Resources */,
-				1189189D29A7E89900B001E1 /* PetProfileViewController.xib in Resources */,
 				11E99CAB2989B9C40072D357 /* LoginViewController.xib in Resources */,
 				11A09ACB2985C9020006767B /* OwnerTableViewCell.xib in Resources */,
 				1109D6FB299E7A8A000CEC3F /* ChatTableViewCell.xib in Resources */,
@@ -707,7 +692,6 @@
 				111F855729A666920025985D /* MainCategoryEnum.swift in Sources */,
 				11E99CB5298AD9680072D357 /* RegistrationViewController.swift in Sources */,
 				1194D66B297808C0001E51BC /* AppDelegate.swift in Sources */,
-				1189189C29A7E89900B001E1 /* PetProfileViewController.swift in Sources */,
 				1194D69A29780E50001E51BC /* TabBar.swift in Sources */,
 				11A09ACA2985C9020006767B /* OwnerTableViewCell.swift in Sources */,
 				11B4B8C1299C1ED00036BA52 /* SetupSceneDelegate.swift in Sources */,
