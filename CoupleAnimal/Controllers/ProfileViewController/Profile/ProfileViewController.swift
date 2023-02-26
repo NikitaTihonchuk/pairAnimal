@@ -15,8 +15,8 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var profileTableView: UITableView!
     @IBOutlet weak var settingsButtonOutlet: UIButton!
-    
     @IBOutlet weak var signOutButton: UIButton!
+    
     
     private let spinner = JGProgressHUD(style: .dark)
     
@@ -25,19 +25,37 @@ class ProfileViewController: UIViewController {
             profileTableView.reloadData()
         }
     }
+    var email: String?
     var settingPoints: [ProfileInfoEnum] = ProfileInfoEnum.allCases
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getData()
-        getImage(email: DefaultsManager.safeEmail)
+        
+        if let email = email {
+            DatabaseManager.shared.readUser(email: email) { data in
+                self.personInfo = data
+                self.profileTableView.delegate = self
+                self.profileTableView.dataSource = self
+                self.getImage(email: self.email)
+            }
+        } else {
+            guard let email = DefaultsManager.safeEmail else { return }
+            DatabaseManager.shared.readUser(email: email) { data in
+                self.personInfo = data
+                self.profileTableView.delegate = self
+                self.profileTableView.dataSource = self
+                self.getImage(email: email)
+                let gesture = UITapGestureRecognizer(target: self,
+                                                     action: #selector(self.didTapChangeProfilePic))
+                self.doggyImage.isUserInteractionEnabled = true
 
-        let gesture = UITapGestureRecognizer(target: self,
-                                             action: #selector(didTapChangeProfilePic))
+                self.doggyImage.addGestureRecognizer(gesture)
+            }
+        }
+       // getData()
+        
         backgroundView.layer.masksToBounds = true
         backgroundView.layer.cornerRadius = 50
-        doggyImage.isUserInteractionEnabled = true
-        doggyImage.addGestureRecognizer(gesture)
         registerCell()
         
         addBarButton()
@@ -99,15 +117,6 @@ class ProfileViewController: UIViewController {
         
         imageView.sd_setImage(with: url)
         spinner.dismiss()
-       /* URLSession.shared.dataTask(with: url, completionHandler: { data, _, error in
-            guard let data = data, error == nil else { return }
-            
-            DispatchQueue.main.async {
-                let image = UIImage(data: data)
-                imageView.image = image
-                self.spinner.dismiss()
-            }
-        }).resume()*/
     }
     
     private func getData() {
@@ -116,6 +125,7 @@ class ProfileViewController: UIViewController {
             self.personInfo = data
             self.profileTableView.delegate = self
             self.profileTableView.dataSource = self
+            self.getImage(email: email)
         }
         
         
