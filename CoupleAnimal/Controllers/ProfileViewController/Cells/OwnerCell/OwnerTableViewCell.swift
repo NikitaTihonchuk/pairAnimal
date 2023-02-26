@@ -13,6 +13,7 @@ class OwnerTableViewCell: UITableViewCell {
     @IBOutlet weak var nameOwner: UILabel!
     @IBOutlet weak var title: UILabel!
     
+    @IBOutlet weak var messageMeButton: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -25,6 +26,11 @@ class OwnerTableViewCell: UITableViewCell {
 
         nameOwner.text = name
         title.text = "\(nickname) owner"
+    }
+    
+    
+    
+    @IBAction func messageMeButton(_ sender: UIButton) {
     }
     
 }

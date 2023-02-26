@@ -12,6 +12,9 @@ class LocationTableViewCell: UITableViewCell {
     
     @IBOutlet weak var nicknameLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var likeButton: UIButton!
+    
+    var isLiked = false
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,5 +28,15 @@ class LocationTableViewCell: UITableViewCell {
         nicknameLabel.text = nickname
         locationLabel.text = location
     }
+    
+    @IBAction func likeButtonDidTap(_ sender: UIButton) {
+        isLiked = !isLiked
+        if isLiked {
+            likeButton.tintColor = .purple
+        } else {
+            likeButton.tintColor = .lightGray
+        }
+    }
+    
 
 }
