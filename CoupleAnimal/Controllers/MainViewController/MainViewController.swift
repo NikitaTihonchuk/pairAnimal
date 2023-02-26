@@ -42,8 +42,8 @@ class MainViewController: UIViewController, UpdateTableView {
     }
     
     func goToProfile(user: UserModel) {
-        let vc = PetProfileViewController(nibName: "PetProfileViewController", bundle: nil)
-        vc.user = user
+        let vc = ProfileViewController(nibName: "ProfileViewController", bundle: nil)
+        vc.email = user.safeEmail
         self.present(vc, animated: true)
     }
     
