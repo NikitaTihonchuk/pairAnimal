@@ -95,7 +95,6 @@ extension DatabaseManager {
                 completion(.failure(DatabaseError.failedToReturn))
                 return
             }
-            
             completion(.success(value))
         }
     }
