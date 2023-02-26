@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseAuth
+import  JGProgressHUD
 
 class RegistrationViewController: UIViewController {
     static let id = String(describing: RegistrationViewController.self)
@@ -15,6 +16,8 @@ class RegistrationViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var nameTextField: UITextField!
     
+    private let spinner = JGProgressHUD(style: .dark)
+
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Registration"
@@ -40,7 +43,7 @@ class RegistrationViewController: UIViewController {
         guard let email = emailTextField.text else { return }
         guard let password = passwordTextField.text else { return }
         guard let name = nameTextField.text else { return }
-        
+        spinner.show(in: view)
         DatabaseManager.shared.isUserExists(email: email) { [weak self] exists in
             guard let strongSelf = self else { return }
             
@@ -49,6 +52,9 @@ class RegistrationViewController: UIViewController {
                 return
             }
                 FirebaseAuth.Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+                    DispatchQueue.main.async {
+                        strongSelf.spinner.dismiss()
+                    }
                     guard let result = authResult, error == nil else {
                         strongSelf.showAlert(title: "Error", message: "Please enter correct email or password", bool: false)
                         return

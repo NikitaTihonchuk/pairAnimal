@@ -35,7 +35,6 @@ class DefaultsManager {
         }
         set {
             defaults.set(newValue, forKey: #function)
-
         }
     }
     

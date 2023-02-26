@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import JGProgressHUD
+import SDWebImage
 
 class ProfileViewController: UIViewController {
 
@@ -16,7 +18,9 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var signOutButton: UIButton!
     
-    var personInfo = [String: Any]() {
+    private let spinner = JGProgressHUD(style: .dark)
+    
+    var personInfo = [String:Any]() {
         didSet {
             profileTableView.reloadData()
         }
@@ -25,8 +29,8 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getImage(email: DefaultsManager.safeEmail)
         getData()
+        getImage(email: DefaultsManager.safeEmail)
 
         let gesture = UITapGestureRecognizer(target: self,
                                              action: #selector(didTapChangeProfilePic))
@@ -91,14 +95,19 @@ class ProfileViewController: UIViewController {
     }
     
     private func downloadImage(imageView: UIImageView, url: URL) {
-        URLSession.shared.dataTask(with: url, completionHandler: { data, _, error in
+        spinner.show(in: view)
+        
+        imageView.sd_setImage(with: url)
+        spinner.dismiss()
+       /* URLSession.shared.dataTask(with: url, completionHandler: { data, _, error in
             guard let data = data, error == nil else { return }
             
             DispatchQueue.main.async {
                 let image = UIImage(data: data)
                 imageView.image = image
+                self.spinner.dismiss()
             }
-        }).resume()
+        }).resume()*/
     }
     
     private func getData() {

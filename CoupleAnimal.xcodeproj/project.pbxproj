@@ -11,10 +11,29 @@
 		1109D6F6299E041C000CEC3F /* ChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1109D6F4299E041C000CEC3F /* ChatViewController.xib */; };
 		1109D6FA299E7A8A000CEC3F /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1109D6F8299E7A8A000CEC3F /* ChatTableViewCell.swift */; };
 		1109D6FB299E7A8A000CEC3F /* ChatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1109D6F9299E7A8A000CEC3F /* ChatTableViewCell.xib */; };
+		1109D746299F8801000CEC3F /* ConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1109D745299F8801000CEC3F /* ConversationViewController.swift */; };
+		111F853B29A64D480025985D /* PetsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111F853929A64D480025985D /* PetsTableViewCell.swift */; };
+		111F853C29A64D480025985D /* PetsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 111F853A29A64D480025985D /* PetsTableViewCell.xib */; };
+		111F853F29A64D5B0025985D /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111F853D29A64D5B0025985D /* CategoryTableViewCell.swift */; };
+		111F854029A64D5B0025985D /* CategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 111F853E29A64D5B0025985D /* CategoryTableViewCell.xib */; };
+		111F854329A64D6B0025985D /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111F854129A64D6B0025985D /* SearchTableViewCell.swift */; };
+		111F854429A64D6B0025985D /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 111F854229A64D6B0025985D /* SearchTableViewCell.xib */; };
+		111F854B29A64E240025985D /* PersonalLocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111F854929A64E240025985D /* PersonalLocationTableViewCell.swift */; };
+		111F854C29A64E240025985D /* PersonalLocationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 111F854A29A64E240025985D /* PersonalLocationTableViewCell.xib */; };
+		111F854F29A64E510025985D /* MainEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111F854E29A64E510025985D /* MainEnum.swift */; };
+		111F855329A665F90025985D /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111F855129A665F90025985D /* CategoryCollectionViewCell.swift */; };
+		111F855429A665F90025985D /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 111F855229A665F90025985D /* CategoryCollectionViewCell.xib */; };
+		111F855729A666920025985D /* MainCategoryEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111F855629A666920025985D /* MainCategoryEnum.swift */; };
+		111F855B29A680130025985D /* PetsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111F855929A680130025985D /* PetsCollectionViewCell.swift */; };
+		111F855C29A680130025985D /* PetsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 111F855A29A680130025985D /* PetsCollectionViewCell.xib */; };
 		115035942990339D001F84D5 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115035932990339D001F84D5 /* UserModel.swift */; };
 		1150359729911F28001F84D5 /* DefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1150359629911F28001F84D5 /* DefaultsManager.swift */; };
 		115815892990145C0043442F /* WelcomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115815872990145C0043442F /* WelcomePageViewController.swift */; };
 		1158158A2990145C0043442F /* WelcomePageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 115815882990145C0043442F /* WelcomePageViewController.xib */; };
+		1163B9B729AA04370041CE6B /* ChangeCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1163B9B529AA04370041CE6B /* ChangeCityViewController.swift */; };
+		1163B9B829AA04370041CE6B /* ChangeCityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1163B9B629AA04370041CE6B /* ChangeCityViewController.xib */; };
+		1189189C29A7E89900B001E1 /* PetProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1189189A29A7E89800B001E1 /* PetProfileViewController.swift */; };
+		1189189D29A7E89900B001E1 /* PetProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1189189B29A7E89800B001E1 /* PetProfileViewController.xib */; };
 		1194D66B297808C0001E51BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1194D66A297808C0001E51BC /* AppDelegate.swift */; };
 		1194D66D297808C0001E51BC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1194D66C297808C0001E51BC /* SceneDelegate.swift */; };
 		1194D674297808C3001E51BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1194D673297808C3001E51BC /* Assets.xcassets */; };
@@ -56,10 +75,29 @@
 		1109D6F4299E041C000CEC3F /* ChatViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatViewController.xib; sourceTree = "<group>"; };
 		1109D6F8299E7A8A000CEC3F /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
 		1109D6F9299E7A8A000CEC3F /* ChatTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatTableViewCell.xib; sourceTree = "<group>"; };
+		1109D745299F8801000CEC3F /* ConversationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationViewController.swift; sourceTree = "<group>"; };
+		111F853929A64D480025985D /* PetsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsTableViewCell.swift; sourceTree = "<group>"; };
+		111F853A29A64D480025985D /* PetsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PetsTableViewCell.xib; sourceTree = "<group>"; };
+		111F853D29A64D5B0025985D /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
+		111F853E29A64D5B0025985D /* CategoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryTableViewCell.xib; sourceTree = "<group>"; };
+		111F854129A64D6B0025985D /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		111F854229A64D6B0025985D /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
+		111F854929A64E240025985D /* PersonalLocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalLocationTableViewCell.swift; sourceTree = "<group>"; };
+		111F854A29A64E240025985D /* PersonalLocationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonalLocationTableViewCell.xib; sourceTree = "<group>"; };
+		111F854E29A64E510025985D /* MainEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainEnum.swift; sourceTree = "<group>"; };
+		111F855129A665F90025985D /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		111F855229A665F90025985D /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
+		111F855629A666920025985D /* MainCategoryEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCategoryEnum.swift; sourceTree = "<group>"; };
+		111F855929A680130025985D /* PetsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsCollectionViewCell.swift; sourceTree = "<group>"; };
+		111F855A29A680130025985D /* PetsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PetsCollectionViewCell.xib; sourceTree = "<group>"; };
 		115035932990339D001F84D5 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		1150359629911F28001F84D5 /* DefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsManager.swift; sourceTree = "<group>"; };
 		115815872990145C0043442F /* WelcomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePageViewController.swift; sourceTree = "<group>"; };
 		115815882990145C0043442F /* WelcomePageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomePageViewController.xib; sourceTree = "<group>"; };
+		1163B9B529AA04370041CE6B /* ChangeCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeCityViewController.swift; sourceTree = "<group>"; };
+		1163B9B629AA04370041CE6B /* ChangeCityViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangeCityViewController.xib; sourceTree = "<group>"; };
+		1189189A29A7E89800B001E1 /* PetProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetProfileViewController.swift; sourceTree = "<group>"; };
+		1189189B29A7E89800B001E1 /* PetProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PetProfileViewController.xib; sourceTree = "<group>"; };
 		1194D667297808C0001E51BC /* CoupleAnimal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoupleAnimal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1194D66A297808C0001E51BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1194D66C297808C0001E51BC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -121,6 +159,105 @@
 			path = ChatCell;
 			sourceTree = "<group>";
 		};
+		1109D742299F8714000CEC3F /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				1109D6F7299E7A72000CEC3F /* ChatCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		1109D744299F876C000CEC3F /* ConversationViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1109D745299F8801000CEC3F /* ConversationViewController.swift */,
+			);
+			path = ConversationViewController;
+			sourceTree = "<group>";
+		};
+		111F853429A64CA40025985D /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				111F853829A64D140025985D /* PetsTableViewCell */,
+				111F853729A64CF60025985D /* CategoryTableViewCell */,
+				111F853629A64CD20025985D /* SearchTableViewCell */,
+				111F853529A64CB10025985D /* PersonalLocationTableViewCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		111F853529A64CB10025985D /* PersonalLocationTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				111F854929A64E240025985D /* PersonalLocationTableViewCell.swift */,
+				111F854A29A64E240025985D /* PersonalLocationTableViewCell.xib */,
+			);
+			path = PersonalLocationTableViewCell;
+			sourceTree = "<group>";
+		};
+		111F853629A64CD20025985D /* SearchTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				111F854129A64D6B0025985D /* SearchTableViewCell.swift */,
+				111F854229A64D6B0025985D /* SearchTableViewCell.xib */,
+			);
+			path = SearchTableViewCell;
+			sourceTree = "<group>";
+		};
+		111F853729A64CF60025985D /* CategoryTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				111F855029A665BE0025985D /* CategoryCollectionViewCell */,
+				111F853D29A64D5B0025985D /* CategoryTableViewCell.swift */,
+				111F853E29A64D5B0025985D /* CategoryTableViewCell.xib */,
+			);
+			path = CategoryTableViewCell;
+			sourceTree = "<group>";
+		};
+		111F853829A64D140025985D /* PetsTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				111F855829A67FFF0025985D /* PetsCollectionViewCell */,
+				111F853929A64D480025985D /* PetsTableViewCell.swift */,
+				111F853A29A64D480025985D /* PetsTableViewCell.xib */,
+			);
+			path = PetsTableViewCell;
+			sourceTree = "<group>";
+		};
+		111F854D29A64E330025985D /* MainEnum */ = {
+			isa = PBXGroup;
+			children = (
+				111F854E29A64E510025985D /* MainEnum.swift */,
+			);
+			path = MainEnum;
+			sourceTree = "<group>";
+		};
+		111F855029A665BE0025985D /* CategoryCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				111F855129A665F90025985D /* CategoryCollectionViewCell.swift */,
+				111F855229A665F90025985D /* CategoryCollectionViewCell.xib */,
+			);
+			path = CategoryCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		111F855529A6667C0025985D /* MainCategoryEnum */ = {
+			isa = PBXGroup;
+			children = (
+				111F855629A666920025985D /* MainCategoryEnum.swift */,
+			);
+			path = MainCategoryEnum;
+			sourceTree = "<group>";
+		};
+		111F855829A67FFF0025985D /* PetsCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				111F855929A680130025985D /* PetsCollectionViewCell.swift */,
+				111F855A29A680130025985D /* PetsCollectionViewCell.xib */,
+			);
+			path = PetsCollectionViewCell;
+			sourceTree = "<group>";
+		};
 		115035922990338A001F84D5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -146,6 +283,15 @@
 			path = WelcomePageViewController;
 			sourceTree = "<group>";
 		};
+		1163B9B429AA03F30041CE6B /* ChangeCityViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1163B9B529AA04370041CE6B /* ChangeCityViewController.swift */,
+				1163B9B629AA04370041CE6B /* ChangeCityViewController.xib */,
+			);
+			path = ChangeCityViewController;
+			sourceTree = "<group>";
+		};
 		11782B93297D2E3100A89433 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +299,15 @@
 				1194D69529780C9D001E51BC /* ProfileViewController.xib */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		1189189929A7E83200B001E1 /* PetProfileController */ = {
+			isa = PBXGroup;
+			children = (
+				1189189A29A7E89800B001E1 /* PetProfileViewController.swift */,
+				1189189B29A7E89800B001E1 /* PetProfileViewController.xib */,
+			);
+			path = PetProfileController;
 			sourceTree = "<group>";
 		};
 		1194D65E297808C0001E51BC = {
@@ -202,6 +357,7 @@
 		1194D68129780BA8001E51BC /* ChatViewController */ = {
 			isa = PBXGroup;
 			children = (
+				1109D742299F8714000CEC3F /* Cells */,
 				1109D6F3299E041C000CEC3F /* ChatViewController.swift */,
 				1109D6F4299E041C000CEC3F /* ChatViewController.xib */,
 			);
@@ -211,6 +367,8 @@
 		1194D68229780BB9001E51BC /* MainViewController */ = {
 			isa = PBXGroup;
 			children = (
+				1189189929A7E83200B001E1 /* PetProfileController */,
+				111F853429A64CA40025985D /* Cells */,
 				1194D68329780C0C001E51BC /* MainViewController.swift */,
 				1194D68429780C0C001E51BC /* MainViewController.xib */,
 			);
@@ -220,12 +378,14 @@
 		1194D68729780C3E001E51BC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				1163B9B429AA03F30041CE6B /* ChangeCityViewController */,
 				11B4B88C299B646D0036BA52 /* SettingsViewController */,
 				11BDFBCA2993DAA800B7CFE3 /* FillingDataViewController */,
 				115815862990143E0043442F /* WelcomePageViewController */,
 				11E99CB2298AD9450072D357 /* RegistrationViewController */,
 				11E99CA72989B9A30072D357 /* LoginViewController */,
 				1194D67E29780B4E001E51BC /* ProfileViewController */,
+				1109D744299F876C000CEC3F /* ConversationViewController */,
 				1194D68129780BA8001E51BC /* ChatViewController */,
 				1194D68229780BB9001E51BC /* MainViewController */,
 			);
@@ -243,6 +403,8 @@
 		11A09AB72985C71F0006767B /* Enums */ = {
 			isa = PBXGroup;
 			children = (
+				111F855529A6667C0025985D /* MainCategoryEnum */,
+				111F854D29A64E330025985D /* MainEnum */,
 				11E589502991946500BAFF53 /* DogGenderEnum */,
 				11A09AB82985C7470006767B /* ProfileInfoEnum */,
 			);
@@ -260,7 +422,6 @@
 		11A09ABB2985C8270006767B /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				1109D6F7299E7A72000CEC3F /* ChatCell */,
 				11A09ABF2985C89D0006767B /* InformationCell */,
 				11A09ABD2985C8640006767B /* AchievementCell */,
 				11BDAD232985E00100ACC21D /* AchievementCollectionViewCell */,
@@ -460,18 +621,26 @@
 				1194D69729780C9D001E51BC /* ProfileViewController.xib in Resources */,
 				1158158A2990145C0043442F /* WelcomePageViewController.xib in Resources */,
 				11BDAD272985E03400ACC21D /* AchievementCollectionViewCell.xib in Resources */,
+				1163B9B829AA04370041CE6B /* ChangeCityViewController.xib in Resources */,
 				11A09ACF2985C9150006767B /* InformationTableViewCell.xib in Resources */,
+				111F853C29A64D480025985D /* PetsTableViewCell.xib in Resources */,
 				1194D677297808C3001E51BC /* LaunchScreen.storyboard in Resources */,
 				1109D6F6299E041C000CEC3F /* ChatViewController.xib in Resources */,
 				11E99CB1298AD3610072D357 /* GoogleService-Info.plist in Resources */,
+				111F854429A64D6B0025985D /* SearchTableViewCell.xib in Resources */,
 				11A09AC32985C8CD0006767B /* LocationTableViewCell.xib in Resources */,
+				111F854C29A64E240025985D /* PersonalLocationTableViewCell.xib in Resources */,
+				111F855C29A680130025985D /* PetsCollectionViewCell.xib in Resources */,
 				1194D68629780C0C001E51BC /* MainViewController.xib in Resources */,
+				1189189D29A7E89900B001E1 /* PetProfileViewController.xib in Resources */,
 				11E99CAB2989B9C40072D357 /* LoginViewController.xib in Resources */,
 				11A09ACB2985C9020006767B /* OwnerTableViewCell.xib in Resources */,
 				1109D6FB299E7A8A000CEC3F /* ChatTableViewCell.xib in Resources */,
+				111F854029A64D5B0025985D /* CategoryTableViewCell.xib in Resources */,
 				11B4B890299B649D0036BA52 /* SettingsViewController.xib in Resources */,
 				11E99CB6298AD9680072D357 /* RegistrationViewController.xib in Resources */,
 				1194D674297808C3001E51BC /* Assets.xcassets in Resources */,
+				111F855429A665F90025985D /* CategoryCollectionViewCell.xib in Resources */,
 				11BDFBCE2993DABA00B7CFE3 /* FillingDataViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -527,18 +696,25 @@
 			files = (
 				11A09ABA2985C7710006767B /* ProfileInfoEnum.swift in Sources */,
 				1150359729911F28001F84D5 /* DefaultsManager.swift in Sources */,
+				1109D746299F8801000CEC3F /* ConversationViewController.swift in Sources */,
+				1163B9B729AA04370041CE6B /* ChangeCityViewController.swift in Sources */,
 				11A09ACE2985C9150006767B /* InformationTableViewCell.swift in Sources */,
 				11D9C09529990C710035BA78 /* StorageManager.swift in Sources */,
+				111F854F29A64E510025985D /* MainEnum.swift in Sources */,
 				1194D68529780C0C001E51BC /* MainViewController.swift in Sources */,
 				11A09AC22985C8CD0006767B /* LocationTableViewCell.swift in Sources */,
 				115815892990145C0043442F /* WelcomePageViewController.swift in Sources */,
+				111F855729A666920025985D /* MainCategoryEnum.swift in Sources */,
 				11E99CB5298AD9680072D357 /* RegistrationViewController.swift in Sources */,
 				1194D66B297808C0001E51BC /* AppDelegate.swift in Sources */,
+				1189189C29A7E89900B001E1 /* PetProfileViewController.swift in Sources */,
 				1194D69A29780E50001E51BC /* TabBar.swift in Sources */,
 				11A09ACA2985C9020006767B /* OwnerTableViewCell.swift in Sources */,
 				11B4B8C1299C1ED00036BA52 /* SetupSceneDelegate.swift in Sources */,
+				111F854329A64D6B0025985D /* SearchTableViewCell.swift in Sources */,
 				115035942990339D001F84D5 /* UserModel.swift in Sources */,
 				11B4B88F299B649D0036BA52 /* SettingsViewController.swift in Sources */,
+				111F855329A665F90025985D /* CategoryCollectionViewCell.swift in Sources */,
 				11BDFBCD2993DABA00B7CFE3 /* FillingDataViewController.swift in Sources */,
 				1194D69629780C9D001E51BC /* ProfileViewController.swift in Sources */,
 				1109D6F5299E041C000CEC3F /* ChatViewController.swift in Sources */,
@@ -547,8 +723,12 @@
 				11BDAD262985E03400ACC21D /* AchievementCollectionViewCell.swift in Sources */,
 				11E99CAA2989B9C40072D357 /* LoginViewController.swift in Sources */,
 				1109D6FA299E7A8A000CEC3F /* ChatTableViewCell.swift in Sources */,
+				111F853B29A64D480025985D /* PetsTableViewCell.swift in Sources */,
+				111F855B29A680130025985D /* PetsCollectionViewCell.swift in Sources */,
 				11E58952299194A200BAFF53 /* DogGenderEnum.swift in Sources */,
 				1194D66D297808C0001E51BC /* SceneDelegate.swift in Sources */,
+				111F854B29A64E240025985D /* PersonalLocationTableViewCell.swift in Sources */,
+				111F853F29A64D5B0025985D /* CategoryTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

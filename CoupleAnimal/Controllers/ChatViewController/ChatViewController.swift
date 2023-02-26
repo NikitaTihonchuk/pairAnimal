@@ -6,36 +6,68 @@
 //
 
 import UIKit
+import JGProgressHUD
 
-class ChatViewController: UIViewController, UISearchResultsUpdating {
+
+class ChatViewController: UIViewController {
     
     @IBOutlet weak var chatTableView: UITableView!
     
-    let searchController = UISearchController()
+    private let spinner = JGProgressHUD(style: .dark)
+    
+    
+    
+    private var users = [[String:Any]]()
+    private var results = [[String:String]]()
+
+    private var hasFetched = false
+    
+    private let noConversationLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "You don't have any conversations!"
+        label.textAlignment = .center
+        label.textColor = .black
+        label.font = .systemFont(ofSize: 21, weight: .medium)
+        label.isHidden = true
+        return label
+    }()
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        getAllUsers()
         title = "Messanger"
+        view.addSubview(noConversationLabel)
+        registerCell()
         chatTableView.dataSource = self
         chatTableView.delegate = self
-        registerCell()
-        addBarButton()
-        searchController.searchResultsUpdater = self
-        navigationItem.searchController = searchController
         
-        
+        fetchConversations()
     }
     
-    func updateSearchResults(for searchController: UISearchController) {
-        guard let text = searchController.searchBar.text else {
-            return
+    private func getAllUsers() {
+        DatabaseManager.shared.getAllUsers { [weak self] result in
+            guard let strongSelf = self else { return }
+            switch result {
+            case .success(let success):
+                print("\(success)///////////////////////////////")
+               // strongSelf.users = success
+                strongSelf.chatTableView.reloadData()
+            case .failure(let failure):
+                print("\(failure)///////////////")
+            }
         }
-        
-        print(text)
+    }
+    
+    private func registerCell() {
+        let nib = UINib(nibName: ChatTableViewCell.id, bundle: nil)
+        chatTableView.register(nib, forCellReuseIdentifier: ChatTableViewCell.id)
     }
     
     private func addBarButton() {
-        var rightBarSettingsButton = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+        let rightBarSettingsButton = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
         let settingsImage = UIImage(systemName: "gear")
         rightBarSettingsButton.setImage(settingsImage, for: .normal)
         rightBarSettingsButton.tintColor = .red
@@ -55,23 +87,26 @@ class ChatViewController: UIViewController, UISearchResultsUpdating {
         let leftBarButton = UIBarButtonItem(customView: leftBarCancelButton)
         navigationItem.leftBarButtonItem = leftBarButton
     }
-    
-    private func registerCell() {
-        let nib = UINib(nibName: ChatTableViewCell.id, bundle: nil)
-        chatTableView.register(nib, forCellReuseIdentifier: ChatTableViewCell.id)
+
+    private func fetchConversations() {
+        chatTableView.isHidden = false
     }
+  
 
 
 }
 
 extension ChatViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+       // return users.count
+        return 7
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ChatTableViewCell.id, for: indexPath)
         guard let messageCell = cell as? ChatTableViewCell else { return cell }
+       // messageCell.senderNameLabel.text = users["name"] as? String
+        
         return messageCell
     }
     
@@ -79,5 +114,12 @@ extension ChatViewController: UITableViewDataSource {
 }
 
 extension ChatViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let vc = ConversationViewController()
+        vc.title = "Nikita"
+        vc.navigationItem.largeTitleDisplayMode = .never
+        navigationController?.pushViewController(vc, animated: true)
+    }
     
 }

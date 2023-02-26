@@ -30,7 +30,6 @@ extension DatabaseManager {
     public func readUser(email: String, complition: @escaping(([String : Any]) -> Void)) {
             var safeEmail = email.replacingOccurrences(of: ".", with: "-")
             safeEmail = safeEmail.replacingOccurrences(of: "@", with: "-")
-        DefaultsManager.safeEmail = safeEmail
         database.child("users").child(safeEmail).observeSingleEvent(of: .value) { snapshot in
              guard (snapshot.value != nil) else { return }
             if let info = snapshot.value as? [String:Any] {
@@ -74,6 +73,11 @@ extension DatabaseManager {
             "weight" : user.weight,
             "height" : user.height,
             "info" : user.additionalInfo,
+            "age" : user.age,
+            "id" : user.id,
+            "gender" : user.gender,
+            "additionalInfo" : user.additionalInfo,
+            "species" : user.species,
             "fullRegister" : user.isFillingTheData
         ], withCompletionBlock: { error, _ in
             guard  error == nil else {
@@ -83,6 +87,21 @@ extension DatabaseManager {
             DefaultsManager.safeEmail = user.safeEmail
             complition(true)
         })
+    }
+    
+    public func getAllUsers(completion: @escaping(Result<[String:Any], Error>) -> Void) {
+        database.child("users").observeSingleEvent(of: .value) { snapshot in
+            guard let value = snapshot.value as? [String:Any] else {
+                completion(.failure(DatabaseError.failedToReturn))
+                return
+            }
+            
+            completion(.success(value))
+        }
+    }
+    
+    public enum DatabaseError:Error {
+        case failedToReturn
     }
 
 }

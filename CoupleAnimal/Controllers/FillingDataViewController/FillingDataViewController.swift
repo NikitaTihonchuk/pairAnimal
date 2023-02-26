@@ -7,6 +7,8 @@
 
 import UIKit
 import FirebaseStorage
+import JGProgressHUD
+
 class FillingDataViewController: UIViewController {
     static let id = String(describing: FillingDataViewController.self)
     
@@ -20,8 +22,11 @@ class FillingDataViewController: UIViewController {
     @IBOutlet weak var weightTextField: UITextField!
     @IBOutlet weak var heightTextField: UITextField!
     @IBOutlet weak var infoTextField: UITextField!
+    @IBOutlet weak var ageTextField: UITextField!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var warningLabel: UILabel!
+    
+    private let spinner = JGProgressHUD(style: .dark)
     
     var email = ""
 
@@ -79,8 +84,10 @@ class FillingDataViewController: UIViewController {
               let location = locationTextField.text,
               let weight = Int(weightTextField.text!),
               let height = Int(heightTextField.text!),
+              let age = Int(ageTextField.text!),
               let info = infoTextField.text else { return warningLabel.isHidden = false }
         
+        spinner.show(in: view)
         
         DatabaseManager.shared.readUser(email: email) { [weak self] userData in
             guard let strongSelf = self else { return }
@@ -92,16 +99,19 @@ class FillingDataViewController: UIViewController {
             user.location = location
             user.weight = Double(weight)
             user.height = Double(height)
+            user.age = age
             user.additionalInfo = info
             user.isFillingTheData = true
             DatabaseManager.shared.addAditionalInfo(user: user) { success in
                 if success {
                     guard let image = strongSelf.petImage.image,
-                            let data = image.pngData() else {
-                        return
-                    }
+                            let data = image.pngData() else { return }
                     let fileName = user.profileImageLink
+                    
                     StorageManager.shared.uploadProfilePicture(data: data, fileName: fileName) { result in
+                        DispatchQueue.main.async {
+                            strongSelf.spinner.dismiss()
+                        }
                         switch result {
                         case .success(let downlandUrl):
                             DefaultsManager.profileURL = downlandUrl
@@ -142,18 +152,26 @@ extension FillingDataViewController: UIImagePickerControllerDelegate, UINavigati
     }
     
     func presentCamera() {
+        spinner.show(in: view)
         let vc = UIImagePickerController()
         vc.sourceType = .camera
         vc.delegate = self
         vc.allowsEditing = true
+        DispatchQueue.main.async {
+            self.spinner.dismiss()
+        }
         present(vc, animated: true)
     }
     
     func presentPhotoPicker() {
+        spinner.show(in: view)
         let vc = UIImagePickerController()
         vc.sourceType = .photoLibrary
         vc.delegate = self
         vc.allowsEditing = true
+        DispatchQueue.main.async {
+            self.spinner.dismiss()
+        }
         present(vc, animated: true)
     }
     
@@ -168,6 +186,7 @@ extension FillingDataViewController: UIImagePickerControllerDelegate, UINavigati
         picker.dismiss(animated: true)
     }
 }
+
 
 
 extension FillingDataViewController: UITextFieldDelegate {

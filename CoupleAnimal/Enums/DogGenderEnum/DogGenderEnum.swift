@@ -10,4 +10,13 @@ import Foundation
 enum DogGenderEnum {
     case male
     case female
+    
+    var name: String {
+        switch self {
+        case .male:
+            return "Male"
+        case .female:
+            return "Female"
+        }
+    }
 }

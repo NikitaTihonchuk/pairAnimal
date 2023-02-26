@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import JGProgressHUD
 
 class WelcomePageViewController: UIViewController {
     static let id = String(describing: WelcomePageViewController.self)

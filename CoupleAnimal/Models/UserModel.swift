@@ -18,7 +18,7 @@ class UserModel {
     var height: Double = 0.0
     var additionalInfo: String = ""
     var id: String
-    var gender = DogGenderEnum.male
+    var gender = DogGenderEnum.male.name
     var emailAddress: String
     
     var safeEmail: String {
@@ -34,20 +34,17 @@ class UserModel {
     
     var isFillingTheData = false
     
-   /* convenience init(nickname: String, location: String, name: String, additionalInfo: String, id: String, species: String, age: Int, weight: Double, height: Double, gender: DogGenderEnum,         emailAddress: String) {
-        self.init()
+    convenience init(nickname: String, location: String, name: String, additionalInfo: String, id: String, species: String, age: Int, weight: Double, height: Double, gender: String, emailAddress: String) {
+        self.init(name: name, id: id, emailAddress: emailAddress)
         self.nickname = nickname
         self.location = location
-        self.emailAddress = emailAddress
-        self.name = name
         self.additionalInfo = additionalInfo
-        self.id = id
         self.species = species
         self.age = age
         self.weight = weight
         self.height = height
         self.gender = gender
-    }*/
+    }
     
     init(name: String, id: String, emailAddress: String) {
         self.emailAddress = emailAddress

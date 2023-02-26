@@ -7,12 +7,15 @@
 
 import UIKit
 import FirebaseAuth
+import JGProgressHUD
 
 class LoginViewController: UIViewController {
     static let id = String(describing: LoginViewController.self)
+    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    private let spinner = JGProgressHUD(style: .dark)
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -20,11 +23,18 @@ class LoginViewController: UIViewController {
     @IBAction func loginButtonDidTap(_ sender: UIButton) {
         guard let email = emailTextField.text else { return }
         guard let password = passwordTextField.text else { return }
+        spinner.show(in: view)
         FirebaseAuth.Auth.auth().signIn(withEmail: email, password: password) { loginResult, error in
             guard let result = loginResult, error == nil else { return }
         
             DatabaseManager.shared.readUser(email: email) { [weak self] userInfo in
                 guard let strongSelf = self else { return }
+                var safeEmail = email.replacingOccurrences(of: ".", with: "-")
+                safeEmail = safeEmail.replacingOccurrences(of: "@", with: "-")
+                DefaultsManager.safeEmail = safeEmail
+                DispatchQueue.main.async {
+                    strongSelf.spinner.dismiss()
+                }
                 if userInfo.isEmpty {
                     return
                 } else {
