@@ -69,6 +69,7 @@ extension DatabaseManager {
         database.child("users").child(user.safeEmail).updateChildValues([
             "nickname" : user.nickname,
             "breed" : user.species,
+            "animal" : user.animal,
             "location" : user.location,
             "weight" : user.weight,
             "height" : user.height,

@@ -31,6 +31,7 @@ class ConversationViewController: MessagesViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.isNavigationBarHidden = false
         view.backgroundColor = .white
 
         

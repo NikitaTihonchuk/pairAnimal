@@ -26,6 +26,9 @@
 		111F855729A666920025985D /* MainCategoryEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111F855629A666920025985D /* MainCategoryEnum.swift */; };
 		111F855B29A680130025985D /* PetsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111F855929A680130025985D /* PetsCollectionViewCell.swift */; };
 		111F855C29A680130025985D /* PetsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 111F855A29A680130025985D /* PetsCollectionViewCell.xib */; };
+		1148245629AFCDE000733B5E /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1148245429AFCDE000733B5E /* SettingsTableViewCell.swift */; };
+		1148245729AFCDE000733B5E /* SettingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1148245529AFCDE000733B5E /* SettingsTableViewCell.xib */; };
+		1148248729B11CF600733B5E /* CategoryEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1148248629B11CF600733B5E /* CategoryEnum.swift */; };
 		115035942990339D001F84D5 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115035932990339D001F84D5 /* UserModel.swift */; };
 		1150359729911F28001F84D5 /* DefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1150359629911F28001F84D5 /* DefaultsManager.swift */; };
 		115815892990145C0043442F /* WelcomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115815872990145C0043442F /* WelcomePageViewController.swift */; };
@@ -88,6 +91,9 @@
 		111F855629A666920025985D /* MainCategoryEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCategoryEnum.swift; sourceTree = "<group>"; };
 		111F855929A680130025985D /* PetsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsCollectionViewCell.swift; sourceTree = "<group>"; };
 		111F855A29A680130025985D /* PetsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PetsCollectionViewCell.xib; sourceTree = "<group>"; };
+		1148245429AFCDE000733B5E /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		1148245529AFCDE000733B5E /* SettingsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsTableViewCell.xib; sourceTree = "<group>"; };
+		1148248629B11CF600733B5E /* CategoryEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryEnum.swift; sourceTree = "<group>"; };
 		115035932990339D001F84D5 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		1150359629911F28001F84D5 /* DefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsManager.swift; sourceTree = "<group>"; };
 		115815872990145C0043442F /* WelcomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePageViewController.swift; sourceTree = "<group>"; };
@@ -254,6 +260,23 @@
 			path = PetsCollectionViewCell;
 			sourceTree = "<group>";
 		};
+		1148245329AFCDC000733B5E /* SettingsTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				1148245429AFCDE000733B5E /* SettingsTableViewCell.swift */,
+				1148245529AFCDE000733B5E /* SettingsTableViewCell.xib */,
+			);
+			path = SettingsTableViewCell;
+			sourceTree = "<group>";
+		};
+		1148248529B11CDE00733B5E /* CategoryEnum */ = {
+			isa = PBXGroup;
+			children = (
+				1148248629B11CF600733B5E /* CategoryEnum.swift */,
+			);
+			path = CategoryEnum;
+			sourceTree = "<group>";
+		};
 		115035922990338A001F84D5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -344,6 +367,7 @@
 		1194D68129780BA8001E51BC /* ChatViewController */ = {
 			isa = PBXGroup;
 			children = (
+				1109D744299F876C000CEC3F /* ConversationViewController */,
 				1109D742299F8714000CEC3F /* Cells */,
 				1109D6F3299E041C000CEC3F /* ChatViewController.swift */,
 				1109D6F4299E041C000CEC3F /* ChatViewController.xib */,
@@ -371,7 +395,6 @@
 				11E99CB2298AD9450072D357 /* RegistrationViewController */,
 				11E99CA72989B9A30072D357 /* LoginViewController */,
 				1194D67E29780B4E001E51BC /* ProfileViewController */,
-				1109D744299F876C000CEC3F /* ConversationViewController */,
 				1194D68129780BA8001E51BC /* ChatViewController */,
 				1194D68229780BB9001E51BC /* MainViewController */,
 			);
@@ -389,6 +412,7 @@
 		11A09AB72985C71F0006767B /* Enums */ = {
 			isa = PBXGroup;
 			children = (
+				1148248529B11CDE00733B5E /* CategoryEnum */,
 				111F855529A6667C0025985D /* MainCategoryEnum */,
 				111F854D29A64E330025985D /* MainEnum */,
 				11E589502991946500BAFF53 /* DogGenderEnum */,
@@ -456,6 +480,7 @@
 		11B4B88C299B646D0036BA52 /* SettingsViewController */ = {
 			isa = PBXGroup;
 			children = (
+				1148245329AFCDC000733B5E /* SettingsTableViewCell */,
 				11B4B88D299B649D0036BA52 /* SettingsViewController.swift */,
 				11B4B88E299B649D0036BA52 /* SettingsViewController.xib */,
 			);
@@ -616,6 +641,7 @@
 				111F854429A64D6B0025985D /* SearchTableViewCell.xib in Resources */,
 				11A09AC32985C8CD0006767B /* LocationTableViewCell.xib in Resources */,
 				111F854C29A64E240025985D /* PersonalLocationTableViewCell.xib in Resources */,
+				1148245729AFCDE000733B5E /* SettingsTableViewCell.xib in Resources */,
 				111F855C29A680130025985D /* PetsCollectionViewCell.xib in Resources */,
 				1194D68629780C0C001E51BC /* MainViewController.xib in Resources */,
 				11E99CAB2989B9C40072D357 /* LoginViewController.xib in Resources */,
@@ -687,6 +713,7 @@
 				11D9C09529990C710035BA78 /* StorageManager.swift in Sources */,
 				111F854F29A64E510025985D /* MainEnum.swift in Sources */,
 				1194D68529780C0C001E51BC /* MainViewController.swift in Sources */,
+				1148248729B11CF600733B5E /* CategoryEnum.swift in Sources */,
 				11A09AC22985C8CD0006767B /* LocationTableViewCell.swift in Sources */,
 				115815892990145C0043442F /* WelcomePageViewController.swift in Sources */,
 				111F855729A666920025985D /* MainCategoryEnum.swift in Sources */,
@@ -697,6 +724,7 @@
 				11B4B8C1299C1ED00036BA52 /* SetupSceneDelegate.swift in Sources */,
 				111F854329A64D6B0025985D /* SearchTableViewCell.swift in Sources */,
 				115035942990339D001F84D5 /* UserModel.swift in Sources */,
+				1148245629AFCDE000733B5E /* SettingsTableViewCell.swift in Sources */,
 				11B4B88F299B649D0036BA52 /* SettingsViewController.swift in Sources */,
 				111F855329A665F90025985D /* CategoryCollectionViewCell.swift in Sources */,
 				11BDFBCD2993DABA00B7CFE3 /* FillingDataViewController.swift in Sources */,

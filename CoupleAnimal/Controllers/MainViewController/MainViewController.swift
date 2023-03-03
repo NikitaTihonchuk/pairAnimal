@@ -7,7 +7,7 @@
 
 
 protocol UpdateTableView: UIViewController {
-    func update()
+    func update(selectedIndex: Int)
     func goToProfile(user: UserModel)
     func changeCity()
 }
@@ -21,15 +21,20 @@ class MainViewController: UIViewController, UpdateTableView {
     
     private var tableRows:[MainEnum] = MainEnum.allCases
     
-    var usersArray = [UserModel]()
+    var usersArray = [UserModel]() {
+        didSet {
+            mainTableView.reloadData()
+        }
+    }
+    var animalType: CategoryEnum = .dogs
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
-
         registerCell()
         mainTableView.delegate = self
         mainTableView.dataSource = self
+        getAllUsersData()
     }
     
     func changeCity() {
@@ -37,14 +42,20 @@ class MainViewController: UIViewController, UpdateTableView {
         self.present(vc, animated: true)
     }
     
-    func update() {
-        mainTableView.reloadData()
+    func update(selectedIndex: Int) {
+        
+        if selectedIndex == 0 {
+            animalType = .dogs
+        } else if selectedIndex == 1 {
+            animalType = .cats
+        }
+        getAllUsersData()
     }
     
     func goToProfile(user: UserModel) {
         let vc = ProfileViewController(nibName: "ProfileViewController", bundle: nil)
         vc.email = user.safeEmail
-        self.present(vc, animated: true)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     
@@ -60,6 +71,40 @@ class MainViewController: UIViewController, UpdateTableView {
         
         let nib4 = UINib(nibName: PersonalLocationTableViewCell.id , bundle: nil)
         mainTableView.register(nib4, forCellReuseIdentifier: PersonalLocationTableViewCell.id)
+    }
+    
+    private func getAllUsersData() {
+        usersArray.removeAll()
+        DatabaseManager.shared.getAllUsers { [weak self] result in
+            guard let strongSelf = self else { return }
+            switch result {
+            case .success(let success):
+                for value in success.keys {
+                    DatabaseManager.shared.readUser(email: value) { user in
+                        guard let nickname = user["nickname"] as? String,
+                        let location = user["location"] as? String,
+                        let name = user["name"] as? String,
+                        let additionalInfo = user["additionalInfo"] as? String,
+                        let id = user["id"] as? String,
+                        let species = user["species"] as? String,
+                        let age = user["age"] as? Int,
+                        let weight = user["weight"] as? Double,
+                        let height = user["height"] as? Double,
+                        let gender = user["gender"] as? String ,
+                        let animal = user["animal"] as? Int else { return }
+                        if animal == strongSelf.animalType.animalType {
+                            let user = UserModel(nickname: nickname, location: location, name: name, additionalInfo: additionalInfo, id: id, species: species, age: age, weight: weight, height: height, gender: gender, emailAddress: value)
+                            user.animal = animal
+                            
+                            strongSelf.usersArray.append(user)
+                        }
+                    }
+                }
+            case .failure(let failure):
+                print(failure)
+            }
+            //strongSelf.delegate?.update()
+        }
     }
 
 }
@@ -89,11 +134,14 @@ extension MainViewController: UITableViewDataSource {
         case .category:
             let cell = mainTableView.dequeueReusableCell(withIdentifier: CategoryTableViewCell.id, for: indexPath)
             guard let categoryCell = cell as? CategoryTableViewCell else { return cell }
+            categoryCell.delegate = self
             return categoryCell
         case .pets:
             let cell = mainTableView.dequeueReusableCell(withIdentifier: PetsTableViewCell.id, for: indexPath)
             guard let petsCell = cell as? PetsTableViewCell else { return cell }
             petsCell.delegate = self
+            petsCell.setAnimal(animal: animalType)
+            petsCell.setUser(users: usersArray)
             return petsCell
             
         }

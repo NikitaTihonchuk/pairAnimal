@@ -9,7 +9,11 @@ import UIKit
 import JGProgressHUD
 import SDWebImage
 
-class ProfileViewController: UIViewController {
+protocol GoToChatController: UIViewController {
+    func goToChatVC(email: String)
+}
+
+class ProfileViewController: UIViewController, GoToChatController{
 
     @IBOutlet weak var doggyImage: UIImageView!
     @IBOutlet weak var backgroundView: UIView!
@@ -74,6 +78,16 @@ class ProfileViewController: UIViewController {
         presentPhotoActionSheet()
     }
     
+    func goToChatVC(email: String) {
+        
+        let vc = ConversationViewController()
+        //self.navigationItem.setHidesBackButton(false, animated: false)
+        vc.title = email
+        
+        vc.navigationItem.largeTitleDisplayMode = .never
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     private func addBarButton() {
         let rightBarSettingsButton = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
         let settingsImage = UIImage(systemName: "gear")
@@ -86,7 +100,7 @@ class ProfileViewController: UIViewController {
         navigationItem.rightBarButtonItem = rightBarButton
         
         let leftBarCancelButton = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
-                let cancelImage = UIImage(systemName: "list.dash")
+        let cancelImage = UIImage(systemName: "list.dash")
         leftBarCancelButton.setImage(cancelImage, for: .normal)
         leftBarCancelButton.tintColor = .red
         leftBarCancelButton.layer.cornerRadius = 15
@@ -192,6 +206,8 @@ extension ProfileViewController: UITableViewDataSource {
             if email == DefaultsManager.safeEmail {
                 ownerCell.messageMeButton.isHidden = true
             }
+            ownerCell.email = email
+            ownerCell.delegate = self
             ownerCell.set(userInfo: personInfo)
             return ownerCell
         case .information:

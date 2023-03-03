@@ -12,7 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FillingDataViewController" customModule="CoupleAnimal" customModuleProvider="target">
             <connections>
                 <outlet property="ageTextField" destination="OPI-B6-BR3" id="oWV-it-3fa"/>
-                <outlet property="birthdayDatePicker" destination="n3g-PH-aq9" id="1BF-S2-Fpe"/>
+                <outlet property="animalSegment" destination="fl9-8r-bbS" id="J0d-Ld-nh1"/>
                 <outlet property="contentView" destination="ZFd-ld-fjw" id="sIK-BN-KrD"/>
                 <outlet property="heightTextField" destination="0RL-6h-Fsa" id="wte-Im-neM"/>
                 <outlet property="infoTextField" destination="ucy-zw-8Bf" id="Dn6-W2-VxZ"/>
@@ -121,8 +121,8 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2cb-Mf-V7M" userLabel="GenderView">
                                     <rect key="frame" x="16" y="416.33333333333331" width="361" height="76"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bcc-dd-vGw">
-                                            <rect key="frame" x="0.0" y="0.0" width="56.666666666666664" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Animal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bcc-dd-vGw">
+                                            <rect key="frame" x="0.0" y="0.0" width="51.666666666666664" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -180,7 +180,7 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vXy-qo-pLm" userLabel="BirthdayView">
-                                    <rect key="frame" x="16" y="600.33333333333337" width="361" height="76"/>
+                                    <rect key="frame" x="16" y="600.33333333333337" width="361" height="71"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of birth" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yIJ-UC-0Op">
                                             <rect key="frame" x="0.0" y="0.0" width="95.333333333333329" height="21"/>
@@ -188,28 +188,29 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="n3g-PH-aq9">
-                                            <rect key="frame" x="0.0" y="26" width="361" height="50"/>
+                                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="fl9-8r-bbS">
+                                            <rect key="frame" x="0.0" y="21" width="361" height="51"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="50" id="c13-wt-SfO"/>
+                                                <constraint firstAttribute="height" constant="50" id="BlV-Wx-DgU"/>
                                             </constraints>
-                                            <date key="minimumDate" timeIntervalSinceReferenceDate="-347115600">
-                                                <!--1990-01-01 11:00:00 +0000-->
-                                            </date>
-                                        </datePicker>
+                                            <segments>
+                                                <segment title="Dog"/>
+                                                <segment title="Cat"/>
+                                            </segments>
+                                        </segmentedControl>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="fl9-8r-bbS" secondAttribute="trailing" id="AJz-L0-Oh8"/>
                                         <constraint firstItem="yIJ-UC-0Op" firstAttribute="top" secondItem="vXy-qo-pLm" secondAttribute="top" id="Alr-BW-x8j"/>
-                                        <constraint firstAttribute="bottom" secondItem="n3g-PH-aq9" secondAttribute="bottom" id="Lcq-E0-EdQ"/>
+                                        <constraint firstItem="fl9-8r-bbS" firstAttribute="top" secondItem="yIJ-UC-0Op" secondAttribute="bottom" id="Atf-8a-yNA"/>
                                         <constraint firstItem="yIJ-UC-0Op" firstAttribute="leading" secondItem="vXy-qo-pLm" secondAttribute="leading" id="M85-ZE-udE"/>
-                                        <constraint firstItem="n3g-PH-aq9" firstAttribute="leading" secondItem="vXy-qo-pLm" secondAttribute="leading" id="bAA-Ht-ncR"/>
-                                        <constraint firstItem="n3g-PH-aq9" firstAttribute="top" secondItem="yIJ-UC-0Op" secondAttribute="bottom" constant="5" id="bur-pf-Rkn"/>
-                                        <constraint firstAttribute="trailing" secondItem="n3g-PH-aq9" secondAttribute="trailing" id="kHj-2a-m9E"/>
+                                        <constraint firstAttribute="bottom" secondItem="fl9-8r-bbS" secondAttribute="bottom" id="RRt-YG-a2W"/>
+                                        <constraint firstItem="fl9-8r-bbS" firstAttribute="leading" secondItem="vXy-qo-pLm" secondAttribute="leading" id="uyA-Gw-6fq"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2xL-Z1-x48" userLabel="LocationView">
-                                    <rect key="frame" x="16" y="692.33333333333337" width="361" height="76"/>
+                                    <rect key="frame" x="16" y="687.33333333333337" width="361" height="76"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country, City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="moN-Yf-5JT">
                                             <rect key="frame" x="0.0" y="0.0" width="99" height="21"/>
@@ -240,7 +241,7 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ffO-8T-Z3A" userLabel="WeightView">
-                                    <rect key="frame" x="16" y="784.33333333333337" width="361" height="76"/>
+                                    <rect key="frame" x="16" y="779.33333333333337" width="361" height="76"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight, kg" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JHv-tt-nJN">
                                             <rect key="frame" x="0.0" y="0.0" width="81" height="21"/>
@@ -281,7 +282,7 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IlN-j3-A0H">
-                                    <rect key="frame" x="16" y="876.33333333333337" width="361" height="76"/>
+                                    <rect key="frame" x="16" y="871.33333333333337" width="361" height="76"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Height, cm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hzO-dR-w9n">
                                             <rect key="frame" x="0.0" y="0.0" width="83" height="21"/>
@@ -322,7 +323,7 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vXM-J8-zoU">
-                                    <rect key="frame" x="16" y="968.33333333333326" width="361" height="76"/>
+                                    <rect key="frame" x="16" y="963.33333333333337" width="361" height="76.000000000000114"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Additional Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RwN-Pz-zQK">
                                             <rect key="frame" x="0.0" y="0.0" width="108.66666666666667" height="21"/>
@@ -331,7 +332,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tell something about your pet" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ucy-zw-8Bf">
-                                            <rect key="frame" x="0.0" y="26" width="361" height="50"/>
+                                            <rect key="frame" x="0.0" y="25.999999999999886" width="361" height="50"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="50" id="8H5-CJ-brD"/>
                                             </constraints>
@@ -353,7 +354,7 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q1V-xS-LcA" userLabel="NicknameView">
-                                    <rect key="frame" x="16" y="1060.3333333333333" width="361" height="76"/>
+                                    <rect key="frame" x="16" y="1055.3333333333333" width="361" height="76"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m1b-CL-bKz">
                                             <rect key="frame" x="0.0" y="0.0" width="30" height="21"/>

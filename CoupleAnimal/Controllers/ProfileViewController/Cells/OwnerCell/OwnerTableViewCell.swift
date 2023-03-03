@@ -12,6 +12,8 @@ class OwnerTableViewCell: UITableViewCell {
 
     @IBOutlet weak var nameOwner: UILabel!
     @IBOutlet weak var title: UILabel!
+    weak var delegate: GoToChatController?
+    var email: String?
     
     @IBOutlet weak var messageMeButton: UIButton!
     override func awakeFromNib() {
@@ -31,6 +33,8 @@ class OwnerTableViewCell: UITableViewCell {
     
     
     @IBAction func messageMeButton(_ sender: UIButton) {
+        guard let email = email else { return }
+        delegate?.goToChatVC(email: email)
     }
     
 }

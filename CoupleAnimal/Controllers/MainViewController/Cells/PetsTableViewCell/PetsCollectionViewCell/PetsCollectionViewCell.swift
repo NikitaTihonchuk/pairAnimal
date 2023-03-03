@@ -43,8 +43,6 @@ class PetsCollectionViewCell: UICollectionViewCell {
         speciesLabel.text = users.species
         ageLabel.text = String(users.age)
         getImage(email: users.safeEmail)
-        
-        
     }
     
     private func getImage(email: String?) {

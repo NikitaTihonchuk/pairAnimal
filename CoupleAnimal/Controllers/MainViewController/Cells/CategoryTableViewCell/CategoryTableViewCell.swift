@@ -16,7 +16,7 @@ class CategoryTableViewCell: UITableViewCell {
 
     let mainCategoryEnumArray: [MainCategoryEnum] = MainCategoryEnum.allCases
     var selectedIndex = 0
-    
+    weak var delegate: UpdateTableView?
     override func awakeFromNib() {
         super.awakeFromNib()
         registerCell()
@@ -38,7 +38,7 @@ extension CategoryTableViewCell: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     
         selectedIndex = indexPath.row
-      
+        delegate?.update(selectedIndex: selectedIndex)
         collectionView.reloadData()
 
     }

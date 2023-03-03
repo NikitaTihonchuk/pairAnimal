@@ -5,6 +5,8 @@
 //  Created by Nikita on 22.02.23.
 //
 
+
+
 protocol ProfileInformation: AnyObject {
     var color: UIColor { get }
     
@@ -19,8 +21,16 @@ class PetsTableViewCell: UITableViewCell, ProfileInformation {
     @IBOutlet weak var petsCollectionView: UICollectionView!
     var color: UIColor = .red
     weak var delegate: UpdateTableView?
+    
     var users = [UserModel]() {
         didSet {
+            petsCollectionView.reloadData()
+        }
+    }
+    
+    var animalType: CategoryEnum = .dogs {
+        didSet {
+            //getAllUsersData()
             petsCollectionView.reloadData()
         }
     }
@@ -30,36 +40,15 @@ class PetsTableViewCell: UITableViewCell, ProfileInformation {
         registerCell()
         petsCollectionView.delegate = self
         petsCollectionView.dataSource = self
-        getAllUsersData()
     }
     
-    func getAllUsersData() {
-        DatabaseManager.shared.getAllUsers { [weak self] result in
-            guard let strongSelf = self else { return }
-            switch result {
-            case .success(let success):
-                for value in success.keys {
-                    DatabaseManager.shared.readUser(email: value) { user in
-                        guard let nickname = user["nickname"] as? String,
-                        let location = user["location"] as? String,
-                        let name = user["name"] as? String,
-                        let additionalInfo = user["additionalInfo"] as? String,
-                        let id = user["id"] as? String,
-                        let species = user["species"] as? String,
-                        let age = user["age"] as? Int,
-                        let weight = user["weight"] as? Double,
-                        let height = user["height"] as? Double,
-                        let gender = user["gender"] as? String else { return }
-                        let user = UserModel(nickname: nickname, location: location, name: name, additionalInfo: additionalInfo, id: id, species: species, age: age, weight: weight, height: height, gender: gender, emailAddress: value)
-                        print(user.name)
-                        strongSelf.users.append(user)
-                    }
-                }
-            case .failure(let failure):
-                print(failure)
-            }
-            //strongSelf.delegate?.update()
-        }
+    func setAnimal(animal: CategoryEnum) {
+        animalType = animal
+        //getAllUsersData()
+    }
+    
+    func setUser(users: [UserModel]) {
+        self.users = users
     }
 
     

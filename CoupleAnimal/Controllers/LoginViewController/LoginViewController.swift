@@ -54,11 +54,8 @@ class LoginViewController: UIViewController {
                             UIView.animate(withDuration: 0.3) {
                                 SetupSceneDelegate.sceneDelegate?.setAsInitial(vc: vc)
                             }
-                            
                         }
-                        
                     }
-                    
                 }
             }
         }

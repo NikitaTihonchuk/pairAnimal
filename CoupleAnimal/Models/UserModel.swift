@@ -20,6 +20,7 @@ class UserModel {
     var id: String
     var gender = DogGenderEnum.male.name
     var emailAddress: String
+    var animal: Int = 2
     
     var safeEmail: String {
         var safemail = emailAddress.replacingOccurrences(of: ".", with: "-")

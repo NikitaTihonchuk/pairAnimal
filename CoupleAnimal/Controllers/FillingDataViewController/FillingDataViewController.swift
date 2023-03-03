@@ -17,7 +17,6 @@ class FillingDataViewController: UIViewController {
     @IBOutlet weak var petNicknameTextField: UITextField!
     @IBOutlet weak var petGenderSegmentControl: UISegmentedControl!
     @IBOutlet weak var petBreedTextField: UITextField!
-    @IBOutlet weak var birthdayDatePicker: UIDatePicker!
     @IBOutlet weak var locationTextField: UITextField!
     @IBOutlet weak var weightTextField: UITextField!
     @IBOutlet weak var heightTextField: UITextField!
@@ -25,6 +24,7 @@ class FillingDataViewController: UIViewController {
     @IBOutlet weak var ageTextField: UITextField!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var warningLabel: UILabel!
+    @IBOutlet weak var animalSegment: UISegmentedControl!
     
     private let spinner = JGProgressHUD(style: .dark)
     
@@ -99,6 +99,7 @@ class FillingDataViewController: UIViewController {
             user.location = location
             user.weight = Double(weight)
             user.height = Double(height)
+            user.animal = strongSelf.animalSegment.selectedSegmentIndex
             user.age = age
             user.additionalInfo = info
             user.isFillingTheData = true
