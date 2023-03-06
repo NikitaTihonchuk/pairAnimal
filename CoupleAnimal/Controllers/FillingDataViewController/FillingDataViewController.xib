@@ -13,10 +13,10 @@
             <connections>
                 <outlet property="ageTextField" destination="OPI-B6-BR3" id="oWV-it-3fa"/>
                 <outlet property="animalSegment" destination="fl9-8r-bbS" id="J0d-Ld-nh1"/>
+                <outlet property="chooseCityButton" destination="faf-ML-V9J" id="A6p-IJ-kvt"/>
                 <outlet property="contentView" destination="ZFd-ld-fjw" id="sIK-BN-KrD"/>
                 <outlet property="heightTextField" destination="0RL-6h-Fsa" id="wte-Im-neM"/>
                 <outlet property="infoTextField" destination="ucy-zw-8Bf" id="Dn6-W2-VxZ"/>
-                <outlet property="locationTextField" destination="dVg-Qg-aTj" id="JrG-bn-eCV"/>
                 <outlet property="petBreedTextField" destination="keL-ia-vhI" id="Y0B-OK-Ur4"/>
                 <outlet property="petGenderSegmentControl" destination="ICm-Ul-V5L" id="X3o-cF-tWL"/>
                 <outlet property="petImage" destination="o58-VG-8pK" id="t8P-2y-n9J"/>
@@ -210,7 +210,7 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2xL-Z1-x48" userLabel="LocationView">
-                                    <rect key="frame" x="16" y="687.33333333333337" width="361" height="76"/>
+                                    <rect key="frame" x="16" y="687.33333333333337" width="361" height="71"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country, City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="moN-Yf-5JT">
                                             <rect key="frame" x="0.0" y="0.0" width="99" height="21"/>
@@ -218,30 +218,31 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type to edit" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dVg-Qg-aTj">
-                                            <rect key="frame" x="0.0" y="26" width="361" height="50"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="faf-ML-V9J">
+                                            <rect key="frame" x="0.0" y="21" width="361" height="50"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="50" id="dhg-Mc-sfN"/>
+                                                <constraint firstAttribute="height" constant="50" id="a90-nI-sLX"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits"/>
+                                            <color key="tintColor" systemColor="systemIndigoColor"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="filled" title="Choose city"/>
                                             <connections>
-                                                <outlet property="delegate" destination="-1" id="ljR-a5-2nb"/>
+                                                <action selector="chooseCityButton:" destination="-1" eventType="touchUpInside" id="9PR-eZ-Kx8"/>
                                             </connections>
-                                        </textField>
+                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="dVg-Qg-aTj" secondAttribute="bottom" id="4RL-Rs-aje"/>
                                         <constraint firstItem="moN-Yf-5JT" firstAttribute="top" secondItem="2xL-Z1-x48" secondAttribute="top" id="IrF-U2-PTg"/>
+                                        <constraint firstAttribute="trailing" secondItem="faf-ML-V9J" secondAttribute="trailing" id="SEo-c1-YEe"/>
+                                        <constraint firstAttribute="bottom" secondItem="faf-ML-V9J" secondAttribute="bottom" id="XVL-M9-fwZ"/>
+                                        <constraint firstItem="faf-ML-V9J" firstAttribute="leading" secondItem="2xL-Z1-x48" secondAttribute="leading" id="aZG-5i-zzx"/>
                                         <constraint firstItem="moN-Yf-5JT" firstAttribute="leading" secondItem="2xL-Z1-x48" secondAttribute="leading" id="ble-e8-HBF"/>
-                                        <constraint firstItem="dVg-Qg-aTj" firstAttribute="leading" secondItem="2xL-Z1-x48" secondAttribute="leading" id="f2l-2S-fyC"/>
-                                        <constraint firstItem="dVg-Qg-aTj" firstAttribute="top" secondItem="moN-Yf-5JT" secondAttribute="bottom" constant="5" id="sxd-as-Ejh"/>
-                                        <constraint firstAttribute="trailing" secondItem="dVg-Qg-aTj" secondAttribute="trailing" id="ykh-es-m8P"/>
+                                        <constraint firstItem="faf-ML-V9J" firstAttribute="top" secondItem="moN-Yf-5JT" secondAttribute="bottom" id="glV-Hk-gGW"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ffO-8T-Z3A" userLabel="WeightView">
-                                    <rect key="frame" x="16" y="779.33333333333337" width="361" height="76"/>
+                                    <rect key="frame" x="16" y="774.33333333333337" width="361" height="76"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight, kg" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JHv-tt-nJN">
                                             <rect key="frame" x="0.0" y="0.0" width="81" height="21"/>
@@ -282,7 +283,7 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IlN-j3-A0H">
-                                    <rect key="frame" x="16" y="871.33333333333337" width="361" height="76"/>
+                                    <rect key="frame" x="16" y="866.33333333333337" width="361" height="76"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Height, cm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hzO-dR-w9n">
                                             <rect key="frame" x="0.0" y="0.0" width="83" height="21"/>
@@ -323,7 +324,7 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vXM-J8-zoU">
-                                    <rect key="frame" x="16" y="963.33333333333337" width="361" height="76.000000000000114"/>
+                                    <rect key="frame" x="16" y="958.33333333333337" width="361" height="76.000000000000114"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Additional Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RwN-Pz-zQK">
                                             <rect key="frame" x="0.0" y="0.0" width="108.66666666666667" height="21"/>
@@ -354,7 +355,7 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q1V-xS-LcA" userLabel="NicknameView">
-                                    <rect key="frame" x="16" y="1055.3333333333333" width="361" height="76"/>
+                                    <rect key="frame" x="16" y="1050.3333333333333" width="361" height="76"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m1b-CL-bKz">
                                             <rect key="frame" x="0.0" y="0.0" width="30" height="21"/>
@@ -465,6 +466,9 @@
         <image name="photo_profile" width="1153" height="1174"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

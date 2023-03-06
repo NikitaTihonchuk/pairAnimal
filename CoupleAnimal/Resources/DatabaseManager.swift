@@ -37,6 +37,29 @@ extension DatabaseManager {
             }
         }
     }
+    
+    ///read country
+   
+    public func readCountry(completion: @escaping(Result<[String:Any], Error>) -> Void) {
+
+        database.child("country").observeSingleEvent(of: .value) { snapshot in
+            guard let value = snapshot.value as? [String:Any] else {
+                completion(.failure(DatabaseError.failedToReturn))
+                return
+            }
+            completion(.success(value))
+        }
+    }
+    
+    public func readCity(nameCountry: String, completion: @escaping(Result<[String:Any], Error>) -> Void) {
+        database.child("country").child(nameCountry).observeSingleEvent(of: .value) { snapshot in
+            guard let value = snapshot.value as? [String:Any] else {
+                completion(.failure(DatabaseError.failedToReturn))
+                return
+            }
+            completion(.success(value))
+        }
+    }
     /// search if user exist
     public func isUserExists(email: String, complition: @escaping ((Bool) -> Void)) {
 

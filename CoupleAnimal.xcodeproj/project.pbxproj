@@ -29,12 +29,20 @@
 		1148245629AFCDE000733B5E /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1148245429AFCDE000733B5E /* SettingsTableViewCell.swift */; };
 		1148245729AFCDE000733B5E /* SettingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1148245529AFCDE000733B5E /* SettingsTableViewCell.xib */; };
 		1148248729B11CF600733B5E /* CategoryEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1148248629B11CF600733B5E /* CategoryEnum.swift */; };
+		1148248B29B4AB2E00733B5E /* ChooseCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1148248929B4AB2E00733B5E /* ChooseCityViewController.swift */; };
+		1148248C29B4AB2E00733B5E /* ChooseCityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1148248A29B4AB2E00733B5E /* ChooseCityViewController.xib */; };
+		1148249029B4ABDD00733B5E /* ChooseCityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1148248E29B4ABDD00733B5E /* ChooseCityTableViewCell.swift */; };
+		1148249129B4ABDD00733B5E /* ChooseCityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1148248F29B4ABDD00733B5E /* ChooseCityTableViewCell.xib */; };
+		1148249529B5398A00733B5E /* ChooseDefiniteCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1148249329B5398A00733B5E /* ChooseDefiniteCityViewController.swift */; };
+		1148249629B5398A00733B5E /* ChooseDefiniteCityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1148249429B5398A00733B5E /* ChooseDefiniteCityViewController.xib */; };
+		1148249A29B53A4700733B5E /* ChooseDefiniteCityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1148249829B53A4700733B5E /* ChooseDefiniteCityTableViewCell.swift */; };
+		1148249B29B53A4700733B5E /* ChooseDefiniteCityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1148249929B53A4700733B5E /* ChooseDefiniteCityTableViewCell.xib */; };
+		1148249F29B60C0500733B5E /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1148249D29B60C0500733B5E /* NotificationViewController.swift */; };
+		114824A029B60C0500733B5E /* NotificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1148249E29B60C0500733B5E /* NotificationViewController.xib */; };
 		115035942990339D001F84D5 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115035932990339D001F84D5 /* UserModel.swift */; };
 		1150359729911F28001F84D5 /* DefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1150359629911F28001F84D5 /* DefaultsManager.swift */; };
 		115815892990145C0043442F /* WelcomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115815872990145C0043442F /* WelcomePageViewController.swift */; };
 		1158158A2990145C0043442F /* WelcomePageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 115815882990145C0043442F /* WelcomePageViewController.xib */; };
-		1163B9B729AA04370041CE6B /* ChangeCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1163B9B529AA04370041CE6B /* ChangeCityViewController.swift */; };
-		1163B9B829AA04370041CE6B /* ChangeCityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1163B9B629AA04370041CE6B /* ChangeCityViewController.xib */; };
 		1194D66B297808C0001E51BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1194D66A297808C0001E51BC /* AppDelegate.swift */; };
 		1194D66D297808C0001E51BC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1194D66C297808C0001E51BC /* SceneDelegate.swift */; };
 		1194D674297808C3001E51BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1194D673297808C3001E51BC /* Assets.xcassets */; };
@@ -94,12 +102,20 @@
 		1148245429AFCDE000733B5E /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		1148245529AFCDE000733B5E /* SettingsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsTableViewCell.xib; sourceTree = "<group>"; };
 		1148248629B11CF600733B5E /* CategoryEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryEnum.swift; sourceTree = "<group>"; };
+		1148248929B4AB2E00733B5E /* ChooseCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCityViewController.swift; sourceTree = "<group>"; };
+		1148248A29B4AB2E00733B5E /* ChooseCityViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseCityViewController.xib; sourceTree = "<group>"; };
+		1148248E29B4ABDD00733B5E /* ChooseCityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCityTableViewCell.swift; sourceTree = "<group>"; };
+		1148248F29B4ABDD00733B5E /* ChooseCityTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseCityTableViewCell.xib; sourceTree = "<group>"; };
+		1148249329B5398A00733B5E /* ChooseDefiniteCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseDefiniteCityViewController.swift; sourceTree = "<group>"; };
+		1148249429B5398A00733B5E /* ChooseDefiniteCityViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseDefiniteCityViewController.xib; sourceTree = "<group>"; };
+		1148249829B53A4700733B5E /* ChooseDefiniteCityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseDefiniteCityTableViewCell.swift; sourceTree = "<group>"; };
+		1148249929B53A4700733B5E /* ChooseDefiniteCityTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseDefiniteCityTableViewCell.xib; sourceTree = "<group>"; };
+		1148249D29B60C0500733B5E /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		1148249E29B60C0500733B5E /* NotificationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationViewController.xib; sourceTree = "<group>"; };
 		115035932990339D001F84D5 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		1150359629911F28001F84D5 /* DefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsManager.swift; sourceTree = "<group>"; };
 		115815872990145C0043442F /* WelcomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePageViewController.swift; sourceTree = "<group>"; };
 		115815882990145C0043442F /* WelcomePageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomePageViewController.xib; sourceTree = "<group>"; };
-		1163B9B529AA04370041CE6B /* ChangeCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeCityViewController.swift; sourceTree = "<group>"; };
-		1163B9B629AA04370041CE6B /* ChangeCityViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangeCityViewController.xib; sourceTree = "<group>"; };
 		1194D667297808C0001E51BC /* CoupleAnimal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoupleAnimal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1194D66A297808C0001E51BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1194D66C297808C0001E51BC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -277,6 +293,52 @@
 			path = CategoryEnum;
 			sourceTree = "<group>";
 		};
+		1148248829B4AB0000733B5E /* ChooseCityViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1148248929B4AB2E00733B5E /* ChooseCityViewController.swift */,
+				1148248A29B4AB2E00733B5E /* ChooseCityViewController.xib */,
+			);
+			path = ChooseCityViewController;
+			sourceTree = "<group>";
+		};
+		1148248D29B4ABA900733B5E /* ChooseCityTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				1148248E29B4ABDD00733B5E /* ChooseCityTableViewCell.swift */,
+				1148248F29B4ABDD00733B5E /* ChooseCityTableViewCell.xib */,
+			);
+			path = ChooseCityTableViewCell;
+			sourceTree = "<group>";
+		};
+		1148249229B538E600733B5E /* ChooseDefiniteCityViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1148249729B53A1900733B5E /* ChooseDefiniteCityCell */,
+				1148249329B5398A00733B5E /* ChooseDefiniteCityViewController.swift */,
+				1148249429B5398A00733B5E /* ChooseDefiniteCityViewController.xib */,
+			);
+			path = ChooseDefiniteCityViewController;
+			sourceTree = "<group>";
+		};
+		1148249729B53A1900733B5E /* ChooseDefiniteCityCell */ = {
+			isa = PBXGroup;
+			children = (
+				1148249829B53A4700733B5E /* ChooseDefiniteCityTableViewCell.swift */,
+				1148249929B53A4700733B5E /* ChooseDefiniteCityTableViewCell.xib */,
+			);
+			path = ChooseDefiniteCityCell;
+			sourceTree = "<group>";
+		};
+		1148249C29B60BE000733B5E /* NoticationViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1148249D29B60C0500733B5E /* NotificationViewController.swift */,
+				1148249E29B60C0500733B5E /* NotificationViewController.xib */,
+			);
+			path = NoticationViewController;
+			sourceTree = "<group>";
+		};
 		115035922990338A001F84D5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -305,8 +367,9 @@
 		1163B9B429AA03F30041CE6B /* ChangeCityViewController */ = {
 			isa = PBXGroup;
 			children = (
-				1163B9B529AA04370041CE6B /* ChangeCityViewController.swift */,
-				1163B9B629AA04370041CE6B /* ChangeCityViewController.xib */,
+				1148249229B538E600733B5E /* ChooseDefiniteCityViewController */,
+				1148248D29B4ABA900733B5E /* ChooseCityTableViewCell */,
+				1148248829B4AB0000733B5E /* ChooseCityViewController */,
 			);
 			path = ChangeCityViewController;
 			sourceTree = "<group>";
@@ -388,6 +451,7 @@
 		1194D68729780C3E001E51BC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				1148249C29B60BE000733B5E /* NoticationViewController */,
 				1163B9B429AA03F30041CE6B /* ChangeCityViewController */,
 				11B4B88C299B646D0036BA52 /* SettingsViewController */,
 				11BDFBCA2993DAA800B7CFE3 /* FillingDataViewController */,
@@ -632,18 +696,22 @@
 				1194D69729780C9D001E51BC /* ProfileViewController.xib in Resources */,
 				1158158A2990145C0043442F /* WelcomePageViewController.xib in Resources */,
 				11BDAD272985E03400ACC21D /* AchievementCollectionViewCell.xib in Resources */,
-				1163B9B829AA04370041CE6B /* ChangeCityViewController.xib in Resources */,
 				11A09ACF2985C9150006767B /* InformationTableViewCell.xib in Resources */,
 				111F853C29A64D480025985D /* PetsTableViewCell.xib in Resources */,
 				1194D677297808C3001E51BC /* LaunchScreen.storyboard in Resources */,
+				1148249B29B53A4700733B5E /* ChooseDefiniteCityTableViewCell.xib in Resources */,
+				114824A029B60C0500733B5E /* NotificationViewController.xib in Resources */,
 				1109D6F6299E041C000CEC3F /* ChatViewController.xib in Resources */,
 				11E99CB1298AD3610072D357 /* GoogleService-Info.plist in Resources */,
+				1148249629B5398A00733B5E /* ChooseDefiniteCityViewController.xib in Resources */,
 				111F854429A64D6B0025985D /* SearchTableViewCell.xib in Resources */,
 				11A09AC32985C8CD0006767B /* LocationTableViewCell.xib in Resources */,
 				111F854C29A64E240025985D /* PersonalLocationTableViewCell.xib in Resources */,
 				1148245729AFCDE000733B5E /* SettingsTableViewCell.xib in Resources */,
+				1148249129B4ABDD00733B5E /* ChooseCityTableViewCell.xib in Resources */,
 				111F855C29A680130025985D /* PetsCollectionViewCell.xib in Resources */,
 				1194D68629780C0C001E51BC /* MainViewController.xib in Resources */,
+				1148248C29B4AB2E00733B5E /* ChooseCityViewController.xib in Resources */,
 				11E99CAB2989B9C40072D357 /* LoginViewController.xib in Resources */,
 				11A09ACB2985C9020006767B /* OwnerTableViewCell.xib in Resources */,
 				1109D6FB299E7A8A000CEC3F /* ChatTableViewCell.xib in Resources */,
@@ -708,13 +776,14 @@
 				11A09ABA2985C7710006767B /* ProfileInfoEnum.swift in Sources */,
 				1150359729911F28001F84D5 /* DefaultsManager.swift in Sources */,
 				1109D746299F8801000CEC3F /* ConversationViewController.swift in Sources */,
-				1163B9B729AA04370041CE6B /* ChangeCityViewController.swift in Sources */,
 				11A09ACE2985C9150006767B /* InformationTableViewCell.swift in Sources */,
+				1148249A29B53A4700733B5E /* ChooseDefiniteCityTableViewCell.swift in Sources */,
 				11D9C09529990C710035BA78 /* StorageManager.swift in Sources */,
 				111F854F29A64E510025985D /* MainEnum.swift in Sources */,
 				1194D68529780C0C001E51BC /* MainViewController.swift in Sources */,
 				1148248729B11CF600733B5E /* CategoryEnum.swift in Sources */,
 				11A09AC22985C8CD0006767B /* LocationTableViewCell.swift in Sources */,
+				1148249F29B60C0500733B5E /* NotificationViewController.swift in Sources */,
 				115815892990145C0043442F /* WelcomePageViewController.swift in Sources */,
 				111F855729A666920025985D /* MainCategoryEnum.swift in Sources */,
 				11E99CB5298AD9680072D357 /* RegistrationViewController.swift in Sources */,
@@ -736,11 +805,14 @@
 				11E99CAA2989B9C40072D357 /* LoginViewController.swift in Sources */,
 				1109D6FA299E7A8A000CEC3F /* ChatTableViewCell.swift in Sources */,
 				111F853B29A64D480025985D /* PetsTableViewCell.swift in Sources */,
+				1148248B29B4AB2E00733B5E /* ChooseCityViewController.swift in Sources */,
 				111F855B29A680130025985D /* PetsCollectionViewCell.swift in Sources */,
 				11E58952299194A200BAFF53 /* DogGenderEnum.swift in Sources */,
+				1148249529B5398A00733B5E /* ChooseDefiniteCityViewController.swift in Sources */,
 				1194D66D297808C0001E51BC /* SceneDelegate.swift in Sources */,
 				111F854B29A64E240025985D /* PersonalLocationTableViewCell.swift in Sources */,
 				111F853F29A64D5B0025985D /* CategoryTableViewCell.swift in Sources */,
+				1148249029B4ABDD00733B5E /* ChooseCityTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

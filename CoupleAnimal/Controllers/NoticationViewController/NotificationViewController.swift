@@ -1,15 +1,15 @@
 //
-//  ChangeCityViewController.swift
+//  NotificationViewController.swift
 //  CoupleAnimal
 //
-//  Created by Nikita on 25.02.23.
+//  Created by Nikita on 6.03.23.
 //
 
 import UIKit
 
-class ChangeCityViewController: UIViewController {
-    static let id = String(describing: ChangeCityViewController.self)
-    
+class NotificationViewController: UIViewController {
+    static let id = String(describing: NotificationViewController.self)
+
     override func viewDidLoad() {
         super.viewDidLoad()
 

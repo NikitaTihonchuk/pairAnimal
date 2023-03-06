@@ -21,12 +21,23 @@ class PersonalLocationTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        let viewGesture = UITapGestureRecognizer(target: self, action: #selector(didTapContentView))
+        self.contentView.addGestureRecognizer(viewGesture)
+    }
+    
+    @objc func didTapContentView() {
+        contentView.endEditing(true)
     }
     
     func set(text: String) {
         cityNameButton.setTitle(text, for: .normal)
     }
+    
+    
+    @IBAction func notificationButtonDidTap(_ sender: UIButton) {
+        delegate?.notificationVC()
+    }
+    
     
     @IBAction func cityNameButtonDidTap(_ sender: UIButton) {
         delegate?.changeCity()

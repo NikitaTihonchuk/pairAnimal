@@ -9,7 +9,8 @@ import UIKit
 import FirebaseStorage
 import JGProgressHUD
 
-class FillingDataViewController: UIViewController {
+class FillingDataViewController: UIViewController, CityProtocol {
+    
     static let id = String(describing: FillingDataViewController.self)
     
     
@@ -17,7 +18,6 @@ class FillingDataViewController: UIViewController {
     @IBOutlet weak var petNicknameTextField: UITextField!
     @IBOutlet weak var petGenderSegmentControl: UISegmentedControl!
     @IBOutlet weak var petBreedTextField: UITextField!
-    @IBOutlet weak var locationTextField: UITextField!
     @IBOutlet weak var weightTextField: UITextField!
     @IBOutlet weak var heightTextField: UITextField!
     @IBOutlet weak var infoTextField: UITextField!
@@ -25,10 +25,14 @@ class FillingDataViewController: UIViewController {
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var warningLabel: UILabel!
     @IBOutlet weak var animalSegment: UISegmentedControl!
+    @IBOutlet weak var chooseCityButton: UIButton!
+    
+    
     
     private let spinner = JGProgressHUD(style: .dark)
     
     var email = ""
+    var location: String? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,13 +81,28 @@ class FillingDataViewController: UIViewController {
     }
     
     
+    @IBAction func chooseCityButton(_ sender: UIButton) {
+        let vc = ChooseCityViewController(nibName: "ChooseCityViewController", bundle: nil)
+        vc.modalPresentationStyle = .fullScreen
+        vc.delegate = self
+       // navigationController?.pushViewController(vc, animated: true)
+        present(vc, animated: true)
+    }
+    
+    func update(text: String) {
+        self.location = text
+        chooseCityButton.setTitle(location, for: .normal)
+    }
+    
+    
     @IBAction func buttonDidTap(_ sender: UIButton!) {
+        
     
         guard let nickname = petNicknameTextField.text,
               let breed = petBreedTextField.text,
-              let location = locationTextField.text,
               let weight = Int(weightTextField.text!),
               let height = Int(heightTextField.text!),
+              let city = location,
               let age = Int(ageTextField.text!),
               let info = infoTextField.text else { return warningLabel.isHidden = false }
         
@@ -96,7 +115,7 @@ class FillingDataViewController: UIViewController {
             let user = UserModel(name: name, id: id, emailAddress: strongSelf.email)
             user.nickname = nickname
             user.species = breed
-            user.location = location
+            user.location = city
             user.weight = Double(weight)
             user.height = Double(height)
             user.animal = strongSelf.animalSegment.selectedSegmentIndex
@@ -210,11 +229,6 @@ extension FillingDataViewController: UITextFieldDelegate {
             return newString.count <= maxLength
         } else if heightTextField == textField {
             let maxLength = 3
-            let currentString = (textField.text ?? "") as NSString
-            let newString = currentString.replacingCharacters(in: range, with: string)
-            return newString.count <= maxLength
-        } else if locationTextField == textField {
-            let maxLength = 20
             let currentString = (textField.text ?? "") as NSString
             let newString = currentString.replacingCharacters(in: range, with: string)
             return newString.count <= maxLength

@@ -40,7 +40,11 @@ class PetsTableViewCell: UITableViewCell, ProfileInformation {
         registerCell()
         petsCollectionView.delegate = self
         petsCollectionView.dataSource = self
+     
     }
+    
+    
+    
     
     func setAnimal(animal: CategoryEnum) {
         animalType = animal

@@ -10,26 +10,41 @@ protocol UpdateTableView: UIViewController {
     func update(selectedIndex: Int)
     func goToProfile(user: UserModel)
     func changeCity()
+    func notificationVC()
+    func searchResult(text:String)
 }
 
 import UIKit
 
-class MainViewController: UIViewController, UpdateTableView {
-    
+class MainViewController: UIViewController, UpdateTableView, CityProtocol {
 
     @IBOutlet weak var mainTableView: UITableView!
     
     private var tableRows:[MainEnum] = MainEnum.allCases
+    private var personalEmail = DefaultsManager.safeEmail
+    var animalType: CategoryEnum = .dogs
+    
+    private var searchResult: String? = nil {
+        didSet {
+            mainTableView.reloadData()
+        }
+    }
     
     var usersArray = [UserModel]() {
         didSet {
             mainTableView.reloadData()
         }
     }
-    var animalType: CategoryEnum = .dogs
+    
+    var city: String? = nil {
+        didSet {
+            mainTableView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.navigationController?.isNavigationBarHidden = true
         registerCell()
         mainTableView.delegate = self
@@ -37,9 +52,23 @@ class MainViewController: UIViewController, UpdateTableView {
         getAllUsersData()
     }
     
+  
+    
     func changeCity() {
-        let vc = ChangeCityViewController(nibName: ChangeCityViewController.id, bundle: nil)
+        let vc = ChooseCityViewController(nibName: "ChooseCityViewController", bundle: nil)
+        vc.delegate = self
         self.present(vc, animated: true)
+        
+    }
+    
+    func notificationVC() {
+        let vc = NotificationViewController(nibName: NotificationViewController.id, bundle: nil)
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func update(text: String) {
+        city = text
+        getAllUsersData()
     }
     
     func update(selectedIndex: Int) {
@@ -56,6 +85,10 @@ class MainViewController: UIViewController, UpdateTableView {
         let vc = ProfileViewController(nibName: "ProfileViewController", bundle: nil)
         vc.email = user.safeEmail
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func searchResult(text: String) {
+        searchResult = text
     }
     
     
@@ -75,29 +108,48 @@ class MainViewController: UIViewController, UpdateTableView {
     
     private func getAllUsersData() {
         usersArray.removeAll()
+        
+        guard let ownEmail = personalEmail else { return }
         DatabaseManager.shared.getAllUsers { [weak self] result in
             guard let strongSelf = self else { return }
             switch result {
             case .success(let success):
                 for value in success.keys {
-                    DatabaseManager.shared.readUser(email: value) { user in
-                        guard let nickname = user["nickname"] as? String,
-                        let location = user["location"] as? String,
-                        let name = user["name"] as? String,
-                        let additionalInfo = user["additionalInfo"] as? String,
-                        let id = user["id"] as? String,
-                        let species = user["species"] as? String,
-                        let age = user["age"] as? Int,
-                        let weight = user["weight"] as? Double,
-                        let height = user["height"] as? Double,
-                        let gender = user["gender"] as? String ,
-                        let animal = user["animal"] as? Int else { return }
-                        if animal == strongSelf.animalType.animalType {
-                            let user = UserModel(nickname: nickname, location: location, name: name, additionalInfo: additionalInfo, id: id, species: species, age: age, weight: weight, height: height, gender: gender, emailAddress: value)
-                            user.animal = animal
+                    if value != ownEmail {
+                        
+                        DatabaseManager.shared.readUser(email: value) { user in
+                            guard let nickname = user["nickname"] as? String,
+                                  let location = user["location"] as? String,
+                                  let name = user["name"] as? String,
+                                  let additionalInfo = user["additionalInfo"] as? String,
+                                  let id = user["id"] as? String,
+                                  let species = user["species"] as? String,
+                                  let age = user["age"] as? Int,
+                                  let weight = user["weight"] as? Double,
+                                  let height = user["height"] as? Double,
+                                  let gender = user["gender"] as? String ,
+                                  let animal = user["animal"] as? Int else { return }
+                            if animal == strongSelf.animalType.animalType {
+                                if let city = strongSelf.city {
+                                    if city == location {
+                                        let user = UserModel(nickname: nickname, location: location, name: name, additionalInfo: additionalInfo, id: id, species: species, age: age, weight: weight, height: height, gender: gender, emailAddress: value)
+                                        user.animal = animal
+                                        
+                                        strongSelf.usersArray.append(user)
+                                    }
+                                } else {
+                                    let user = UserModel(nickname: nickname, location: location, name: name, additionalInfo: additionalInfo, id: id, species: species, age: age, weight: weight, height: height, gender: gender, emailAddress: value)
+                                    user.animal = animal
+                                    
+                                    strongSelf.usersArray.append(user)
+                                }
+                            }
                             
-                            strongSelf.usersArray.append(user)
+                            
                         }
+                        
+                        
+                        
                     }
                 }
             case .failure(let failure):
@@ -126,10 +178,15 @@ extension MainViewController: UITableViewDataSource {
             let cell = mainTableView.dequeueReusableCell(withIdentifier: PersonalLocationTableViewCell.id, for: indexPath)
             guard let locationCell = cell as? PersonalLocationTableViewCell else { return cell }
             locationCell.delegate = self
+            if let city = city {
+                locationCell.set(text: city)
+            }
             return locationCell
         case .search:
             let cell = mainTableView.dequeueReusableCell(withIdentifier: SearchTableViewCell.id, for: indexPath)
             guard let searchCell = cell as? SearchTableViewCell else { return cell }
+            searchCell.delegate = self
+
             return searchCell
         case .category:
             let cell = mainTableView.dequeueReusableCell(withIdentifier: CategoryTableViewCell.id, for: indexPath)
@@ -141,7 +198,22 @@ extension MainViewController: UITableViewDataSource {
             guard let petsCell = cell as? PetsTableViewCell else { return cell }
             petsCell.delegate = self
             petsCell.setAnimal(animal: animalType)
-            petsCell.setUser(users: usersArray)
+            if searchResult == nil || searchResult == "" || searchResult == " " {
+                petsCell.setUser(users: usersArray)
+            } else {
+                var filtredData = [UserModel]()
+                let text = searchResult!.lowercased()
+                for user in usersArray {
+                    let isArrayContain = user.nickname.lowercased().range(of: text)
+                    
+                    if isArrayContain != nil {
+                        print("Search Complete")
+                        filtredData.append(user)
+                    }
+
+                }
+                petsCell.setUser(users: filtredData)
+            }
             return petsCell
             
         }

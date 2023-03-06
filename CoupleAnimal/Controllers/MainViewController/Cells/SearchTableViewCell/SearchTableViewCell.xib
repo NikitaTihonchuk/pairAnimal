@@ -61,6 +61,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
+                <outlet property="searchBar" destination="gU9-gg-4j9" id="119-Sm-9AN"/>
                 <outlet property="searchFilterButton" destination="Qbn-f0-faQ" id="Q0o-rP-8jR"/>
             </connections>
             <point key="canvasLocation" x="-103.81679389312977" y="41.197183098591552"/>
