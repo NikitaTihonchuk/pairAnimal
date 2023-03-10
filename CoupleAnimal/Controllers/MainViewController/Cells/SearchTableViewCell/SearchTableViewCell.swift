@@ -71,6 +71,7 @@ extension SearchTableViewCell: UISearchBarDelegate {
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         delegate?.searchResult(text: "")
     }
+    //
 }
 
 
