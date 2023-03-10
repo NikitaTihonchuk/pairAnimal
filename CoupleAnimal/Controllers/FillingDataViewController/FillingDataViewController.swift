@@ -3,7 +3,6 @@
 //  CoupleAnimal
 //
 //  Created by Nikita on 8.02.23.
-//
 
 import UIKit
 import FirebaseStorage
@@ -31,8 +30,12 @@ class FillingDataViewController: UIViewController, CityProtocol {
     
     private let spinner = JGProgressHUD(style: .dark)
     
-    var email = ""
+    var email = "" 
     var location: String? = nil
+    var user: UserModel? 
+    var image = UIImage()
+    
+    weak var delegate: GoToChatController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,9 +45,11 @@ class FillingDataViewController: UIViewController, CityProtocol {
         petImage.layer.cornerRadius = 25
         warningLabel.isHidden = true
         addGestures()
+        setTextFieldText()
     }
     
-    @objc func keyboardWillShow(notification: NSNotification) {
+   
+    @objc private func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             if self.view.frame.origin.y == 0 {
                 self.view.frame.origin.y -= keyboardSize.height
@@ -52,12 +57,66 @@ class FillingDataViewController: UIViewController, CityProtocol {
         }
     }
 
-    @objc func keyboardWillHide(notification: NSNotification) {
+    @objc private func keyboardWillHide(notification: NSNotification) {
         if self.view.frame.origin.y != 0 {
             self.view.frame.origin.y = 0
         }
     }
     
+    @objc private func didTapChangeProfilePic() {
+        presentPhotoActionSheet()
+    }
+    
+    @objc private func didTapContentView() {
+        view.endEditing(true)
+    }
+    
+    
+    
+    func setTextFields(person: [String:Any], doggyImage: UIImageView ) {
+        guard let nickname = person["nickname"] as? String,
+              let location = person["location"] as? String,
+              let name = person["name"] as? String,
+              let additionalInfo = person["additionalInfo"] as? String,
+              let id = person["id"] as? String,
+              let species = person["species"] as? String,
+              let age = person["age"] as? Int,
+              let weight = person["weight"] as? Int,
+              let height = person["height"] as? Int,
+              let gender = person["gender"] as? String ,
+              let animal = person["animal"] as? Int else { return }
+        
+        let user = UserModel(name: name, id: id, emailAddress: email)
+        user.gender = gender
+        user.nickname = nickname
+        user.species = species
+        user.location = location
+        user.weight = Double(weight)
+        user.height = Double(height)
+        user.animal = animal
+        user.age = age
+        user.additionalInfo = additionalInfo
+        self.user = user
+        
+        guard let image = doggyImage.image else { return }
+        
+        self.image = image
+    }
+    
+    func setTextFieldText() {
+        guard let user = user else { return }
+            self.petNicknameTextField.text = user.nickname
+            self.petBreedTextField.text = user.species
+            self.weightTextField.text = String(Int(user.weight))
+            self.heightTextField.text = String(Int(user.height))
+            self.location = user.location
+            self.ageTextField.text = String(user.age)
+            self.infoTextField.text = user.additionalInfo
+            self.animalSegment.selectedSegmentIndex = user.animal
+        
+        petImage.image = image
+        chooseCityButton.setTitle(location, for: .normal)
+    }
     
     private func addGestures() {
         let gesture = UITapGestureRecognizer(target: self,
@@ -71,14 +130,11 @@ class FillingDataViewController: UIViewController, CityProtocol {
 
     }
     
- 
-    @objc func didTapChangeProfilePic() {
-        presentPhotoActionSheet()
+    func update(text: String) {
+        self.location = text
+        chooseCityButton.setTitle(location, for: .normal)
     }
     
-    @objc func didTapContentView() {
-        view.endEditing(true)
-    }
     
     
     @IBAction func chooseCityButton(_ sender: UIButton) {
@@ -87,11 +143,6 @@ class FillingDataViewController: UIViewController, CityProtocol {
         vc.delegate = self
        // navigationController?.pushViewController(vc, animated: true)
         present(vc, animated: true)
-    }
-    
-    func update(text: String) {
-        self.location = text
-        chooseCityButton.setTitle(location, for: .normal)
     }
     
     
@@ -136,7 +187,13 @@ class FillingDataViewController: UIViewController, CityProtocol {
                         case .success(let downlandUrl):
                             DefaultsManager.profileURL = downlandUrl
                             DefaultsManager.rememberMe = true
-                            SetupSceneDelegate.sceneDelegate?.setTabbarAsInitial()
+                            if strongSelf.user != nil {
+                                strongSelf.dismiss(animated: true) {
+                                    strongSelf.delegate?.updateTableView()
+                                }
+                            } else {
+                                SetupSceneDelegate.sceneDelegate?.setTabbarAsInitial()
+                            }
                         case .failure(let error):
                             print("Storage error \(error)")
                         }

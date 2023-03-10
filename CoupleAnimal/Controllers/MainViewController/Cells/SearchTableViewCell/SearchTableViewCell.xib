@@ -24,13 +24,18 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search for Pets..." translatesAutoresizingMaskIntoConstraints="NO" id="gU9-gg-4j9">
-                        <rect key="frame" x="5" y="47" width="286" height="55"/>
+                        <rect key="frame" x="0.0" y="47" width="291" height="55"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="55" id="Rr4-ba-MOk"/>
                         </constraints>
-                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="8" bottom="8" trailing="8"/>
+                        <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <textInputTraits key="textInputTraits"/>
+                        <scopeButtonTitles>
+                            <string>Title</string>
+                            <string>Title</string>
+                        </scopeButtonTitles>
                     </searchBar>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qbn-f0-faQ">
                         <rect key="frame" x="296" y="57" width="35" height="35"/>
@@ -53,7 +58,7 @@
                     <constraint firstItem="OnJ-ih-fpR" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="25" id="MYa-Qu-ei7"/>
                     <constraint firstAttribute="bottom" secondItem="gU9-gg-4j9" secondAttribute="bottom" constant="5" id="TAk-Pl-Kt9"/>
                     <constraint firstItem="Qbn-f0-faQ" firstAttribute="leading" secondItem="gU9-gg-4j9" secondAttribute="trailing" constant="5" id="Zif-MF-3bp"/>
-                    <constraint firstItem="gU9-gg-4j9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="dta-vf-Uzi"/>
+                    <constraint firstItem="gU9-gg-4j9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="dta-vf-Uzi"/>
                     <constraint firstItem="gU9-gg-4j9" firstAttribute="top" secondItem="OnJ-ih-fpR" secondAttribute="bottom" constant="5" id="iON-Gw-A6u"/>
                     <constraint firstItem="OnJ-ih-fpR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="p69-pk-rKC"/>
                 </constraints>

@@ -36,7 +36,12 @@ class RegistrationViewController: UIViewController {
         }))
         present(alert, animated: true)
     }
-
+    
+    
+    @IBAction func backButtonDidTap(_ sender: UIButton) {
+        self.dismiss(animated: true)
+    }
+    
 
     @IBAction func registerButtonDidTap(_ sender: UIButton) {
         

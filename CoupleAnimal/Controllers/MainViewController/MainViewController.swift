@@ -11,7 +11,7 @@ protocol UpdateTableView: UIViewController {
     func goToProfile(user: UserModel)
     func changeCity()
     func notificationVC()
-    func searchResult(text:String)
+    func searchResult(text: String)
 }
 
 import UIKit
@@ -22,38 +22,33 @@ class MainViewController: UIViewController, UpdateTableView, CityProtocol {
     
     private var tableRows:[MainEnum] = MainEnum.allCases
     private var personalEmail = DefaultsManager.safeEmail
+    private var filterArray: [UserModel]? = nil
+
     var animalType: CategoryEnum = .dogs
-    
+    var city: String? = nil
+
     private var searchResult: String? = nil {
         didSet {
-            mainTableView.reloadData()
+            usersFilter()
         }
     }
     
     var usersArray = [UserModel]() {
         didSet {
-            mainTableView.reloadData()
+            usersFilter()
         }
     }
-    
-    var city: String? = nil {
-        didSet {
-            mainTableView.reloadData()
-        }
-    }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        mainTableView.keyboardDismissMode = .onDrag
         self.navigationController?.isNavigationBarHidden = true
         registerCell()
         mainTableView.delegate = self
         mainTableView.dataSource = self
         getAllUsersData()
     }
-    
-  
-    
+    //MARK: Protocol Fuctions
     func changeCity() {
         let vc = ChooseCityViewController(nibName: "ChooseCityViewController", bundle: nil)
         vc.delegate = self
@@ -91,7 +86,7 @@ class MainViewController: UIViewController, UpdateTableView, CityProtocol {
         searchResult = text
     }
     
-    
+    //MARK: Register Cells
     private func registerCell() {
         let nib = UINib(nibName: PetsTableViewCell.id , bundle: nil)
         mainTableView.register(nib, forCellReuseIdentifier: PetsTableViewCell.id)
@@ -106,6 +101,7 @@ class MainViewController: UIViewController, UpdateTableView, CityProtocol {
         mainTableView.register(nib4, forCellReuseIdentifier: PersonalLocationTableViewCell.id)
     }
     
+    //MARK: Get and filter user
     private func getAllUsersData() {
         usersArray.removeAll()
         
@@ -116,7 +112,6 @@ class MainViewController: UIViewController, UpdateTableView, CityProtocol {
             case .success(let success):
                 for value in success.keys {
                     if value != ownEmail {
-                        
                         DatabaseManager.shared.readUser(email: value) { user in
                             guard let nickname = user["nickname"] as? String,
                                   let location = user["location"] as? String,
@@ -129,37 +124,42 @@ class MainViewController: UIViewController, UpdateTableView, CityProtocol {
                                   let height = user["height"] as? Double,
                                   let gender = user["gender"] as? String ,
                                   let animal = user["animal"] as? Int else { return }
-                            if animal == strongSelf.animalType.animalType {
-                                if let city = strongSelf.city {
-                                    if city == location {
-                                        let user = UserModel(nickname: nickname, location: location, name: name, additionalInfo: additionalInfo, id: id, species: species, age: age, weight: weight, height: height, gender: gender, emailAddress: value)
-                                        user.animal = animal
-                                        
-                                        strongSelf.usersArray.append(user)
-                                    }
-                                } else {
-                                    let user = UserModel(nickname: nickname, location: location, name: name, additionalInfo: additionalInfo, id: id, species: species, age: age, weight: weight, height: height, gender: gender, emailAddress: value)
-                                    user.animal = animal
-                                    
-                                    strongSelf.usersArray.append(user)
-                                }
-                            }
+                            let user = UserModel(nickname: nickname, location: location, name: name, additionalInfo: additionalInfo, id: id, species: species, age: age, weight: weight, height: height, gender: gender, emailAddress: value)
+                            user.animal = animal
                             
-                            
+                            strongSelf.usersArray.append(user)
                         }
-                        
-                        
-                        
                     }
                 }
             case .failure(let failure):
                 print(failure)
             }
-            //strongSelf.delegate?.update()
         }
+    }
+    
+    func usersFilter() {
+        filterArray = usersArray.filter { $0.animal == animalType.animalType }
+        if let city = self.city {
+            filterArray = filterArray?.filter({ $0.location == city })
+        }
+        if searchResult != nil, searchResult != "", searchResult != " " {
+            var filtredData = [UserModel]()
+            let text = searchResult!.lowercased()
+            guard let filterArray = filterArray else { return }
+            for user in filterArray {
+                let isArrayContain = user.nickname.lowercased().range(of: text)
+                if isArrayContain != nil {
+                    print("Search Complete")
+                    filtredData.append(user)
+                }
+                self.filterArray = filtredData
+            }
+        }
+        mainTableView.reloadData()
     }
 
 }
+//MARK: TableView DataSource and Delegate
 
 extension MainViewController: UITableViewDelegate {
     
@@ -181,6 +181,7 @@ extension MainViewController: UITableViewDataSource {
             if let city = city {
                 locationCell.set(text: city)
             }
+            
             return locationCell
         case .search:
             let cell = mainTableView.dequeueReusableCell(withIdentifier: SearchTableViewCell.id, for: indexPath)
@@ -192,28 +193,16 @@ extension MainViewController: UITableViewDataSource {
             let cell = mainTableView.dequeueReusableCell(withIdentifier: CategoryTableViewCell.id, for: indexPath)
             guard let categoryCell = cell as? CategoryTableViewCell else { return cell }
             categoryCell.delegate = self
+            
             return categoryCell
         case .pets:
             let cell = mainTableView.dequeueReusableCell(withIdentifier: PetsTableViewCell.id, for: indexPath)
             guard let petsCell = cell as? PetsTableViewCell else { return cell }
             petsCell.delegate = self
             petsCell.setAnimal(animal: animalType)
-            if searchResult == nil || searchResult == "" || searchResult == " " {
-                petsCell.setUser(users: usersArray)
-            } else {
-                var filtredData = [UserModel]()
-                let text = searchResult!.lowercased()
-                for user in usersArray {
-                    let isArrayContain = user.nickname.lowercased().range(of: text)
-                    
-                    if isArrayContain != nil {
-                        print("Search Complete")
-                        filtredData.append(user)
-                    }
-
-                }
-                petsCell.setUser(users: filtredData)
-            }
+            guard let filterArray = filterArray else { return petsCell }
+            petsCell.setUser(users: filterArray)
+            
             return petsCell
             
         }

@@ -27,12 +27,22 @@ class SearchTableViewCell: UITableViewCell {
 
         searchFilterButton.layer.cornerRadius = 7
         searchFilterButton.layer.masksToBounds = true
+        self.searchBar.translatesAutoresizingMaskIntoConstraints = false
         self.searchBar.delegate = self
-        
+        textFieldSubviews()
     }
-
-    @IBAction func searchFilterButtonDidTap(_ sender: UIButton) {
-        
+    
+    func textFieldSubviews() {
+        if let textField = searchBar.value(forKey: "searchField") as? UITextField {
+            textField.backgroundColor = .white
+            
+            guard let backgroundView = textField.subviews.first else { return }
+            if #available(iOS 11.0, *) {
+                backgroundView.backgroundColor = UIColor.white.withAlphaComponent(0.3)
+                backgroundView.subviews.forEach({ $0.removeFromSuperview() })
+            }
+            backgroundView.layer.masksToBounds = true
+        }
     }
     
     @objc func didTapContentView() {
@@ -47,7 +57,7 @@ extension SearchTableViewCell: UISearchBarDelegate {
         
         guard searchText != "" || searchText != " " else {
            
-            print("Emplty search")
+            print("Empty search")
             return
         }
         word = searchText
@@ -62,3 +72,5 @@ extension SearchTableViewCell: UISearchBarDelegate {
         delegate?.searchResult(text: "")
     }
 }
+
+

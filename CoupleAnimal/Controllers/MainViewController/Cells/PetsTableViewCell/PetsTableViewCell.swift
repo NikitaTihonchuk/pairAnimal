@@ -21,6 +21,7 @@ class PetsTableViewCell: UITableViewCell, ProfileInformation {
     @IBOutlet weak var petsCollectionView: UICollectionView!
     var color: UIColor = .red
     weak var delegate: UpdateTableView?
+    var isCellSelected: Bool = false
     
     var users = [UserModel]() {
         didSet {
@@ -71,11 +72,12 @@ extension PetsTableViewCell: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PetsCollectionViewCell.id, for: indexPath)
         guard let petCell = cell as? PetsCollectionViewCell else { return cell }
         petCell.set(users: users[indexPath.row])
-        if petCell.isCellSelected {
+       /* if petCell.isCellSelected {
+            petCell.isSelected = isCellSelected
             petCell.likeButton.tintColor = .purple
         } else {
             petCell.likeButton.tintColor = .blue
-        }
+        }*/
         return petCell
     }
     

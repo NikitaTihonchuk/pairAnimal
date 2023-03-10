@@ -58,10 +58,17 @@ extension AchievementTableViewCell: UICollectionViewDataSource {
                 achievmentCell.valueLabel.text = "Weight"
                 guard let weight = dictionary["weight"] as? Int else { return cell }
                 achievmentCell.typeLabel.text = "\(weight)"
+            achievmentCell.backgroundImage.isHidden = true
+            achievmentCell.collectionBackgroundView.backgroundColor = .yellow
             case 2:
                 achievmentCell.valueLabel.text = "Height"
                 guard let height = dictionary["height"] as? Int else { return cell }
                 achievmentCell.typeLabel.text = "\(height)"
+                achievmentCell.typeLabel.textColor = .white
+                achievmentCell.valueLabel.textColor = .white
+                achievmentCell.backgroundImage.isHidden = true
+                achievmentCell.collectionBackgroundView.backgroundColor = .blue
+
             default:
                 return achievmentCell
             }

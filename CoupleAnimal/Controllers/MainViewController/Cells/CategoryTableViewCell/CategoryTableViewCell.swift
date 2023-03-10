@@ -57,13 +57,13 @@ extension CategoryTableViewCell: UICollectionViewDataSource {
         case .dogs:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCollectionViewCell.id, for: indexPath)
             guard let dogCell = cell as? CategoryCollectionViewCell else { return cell }
-            dogCell.set(text: animal.name)
+            dogCell.set(text: animal.name, image: UIImage(named: "dog")!)
             if selectedIndex == indexPath.row { dogCell.categoryBackgroundView.backgroundColor = .red } else { dogCell.categoryBackgroundView.backgroundColor = .white }
             return dogCell
         case .cats:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCollectionViewCell.id, for: indexPath)
             guard let catCell = cell as? CategoryCollectionViewCell else { return cell }
-            catCell.set(text: animal.name)
+            catCell.set(text: animal.name, image: UIImage(named: "cat")!)
             if selectedIndex == indexPath.row { catCell.categoryBackgroundView.backgroundColor = .red } else { catCell.categoryBackgroundView.backgroundColor = .white }
             return catCell
         }
@@ -72,7 +72,7 @@ extension CategoryTableViewCell: UICollectionViewDataSource {
 
 extension CategoryTableViewCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 135.0, height: 50.0)
+        return CGSize(width: 135.0, height: 60.0)
         
     }
 }

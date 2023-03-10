@@ -20,6 +20,8 @@ class PetsCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var likeButton: UIButton!
     
     var isCellSelected = false
+    var imageIsNotSelected = UIImage(systemName: "heart")
+    var imageIsSelected = UIImage(systemName: "heart.fill")
     
     
     override func awakeFromNib() {
@@ -32,9 +34,16 @@ class PetsCollectionViewCell: UICollectionViewCell {
        //Do reset here
         nicknameLabel.text = nil
         speciesLabel.text = ""
-        likeButton.tintColor = nil
-        
         photoProfileImageView.image = nil
+        
+        if isCellSelected {
+            likeButton.setImage(imageIsNotSelected, for: .normal)
+        } else {
+            likeButton.setImage(imageIsSelected, for: .normal)
+        }
+
+        //likeButton.setImage(, for: <#T##UIControl.State#>)
+        
 
    }
     
@@ -67,9 +76,9 @@ class PetsCollectionViewCell: UICollectionViewCell {
     @IBAction func likeButtonDidTap(_ sender: UIButton) {
         isCellSelected = !isCellSelected
         if isCellSelected {
-            likeButton.tintColor = .purple
+            likeButton.setImage(imageIsNotSelected, for: .normal)
         } else {
-            likeButton.tintColor = nil
+            likeButton.setImage(imageIsSelected, for: .normal)
         }
     }
     

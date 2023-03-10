@@ -11,6 +11,7 @@ import SDWebImage
 
 protocol GoToChatController: UIViewController {
     func goToChatVC(email: String)
+    func updateTableView()
 }
 
 class ProfileViewController: UIViewController, GoToChatController{
@@ -18,9 +19,6 @@ class ProfileViewController: UIViewController, GoToChatController{
     @IBOutlet weak var doggyImage: UIImageView!
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var profileTableView: UITableView!
-    @IBOutlet weak var settingsButtonOutlet: UIButton!
-    @IBOutlet weak var signOutButton: UIButton!
-    
     
     private let spinner = JGProgressHUD(style: .dark)
     
@@ -34,7 +32,10 @@ class ProfileViewController: UIViewController, GoToChatController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        emailFirstCheck()
+    }
+    
+    func emailFirstCheck() {
         if let email = email {
             DatabaseManager.shared.readUser(email: email) { data in
                 self.personInfo = data
@@ -64,18 +65,28 @@ class ProfileViewController: UIViewController, GoToChatController{
         registerCell()
         
         addBarButton()
-        
     }
     
-    
-    
-    @objc func addTapped() {
+    @objc private func addTapped() {
         let vc = SettingsViewController(nibName: SettingsViewController.id, bundle: nil)
         present(vc, animated: true)
     }
     
-    @objc func didTapChangeProfilePic() {
+    @objc private func changeAdditionalInformation() {
+        let vc = FillingDataViewController(nibName: FillingDataViewController.id, bundle: nil)
+        guard let ownEmail = email else { return }
+        vc.email = ownEmail
+        vc.delegate = self
+        vc.setTextFields(person: personInfo, doggyImage: doggyImage)
+        present(vc, animated: true)
+    }
+    
+    @objc private func didTapChangeProfilePic() {
         presentPhotoActionSheet()
+    }
+    
+    func updateTableView() {
+        emailFirstCheck()
     }
     
     func goToChatVC(email: String) {
@@ -100,12 +111,12 @@ class ProfileViewController: UIViewController, GoToChatController{
         navigationItem.rightBarButtonItem = rightBarButton
         
         let leftBarCancelButton = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
-        let cancelImage = UIImage(systemName: "list.dash")
+        let cancelImage = UIImage(systemName: "person.fill")
         leftBarCancelButton.setImage(cancelImage, for: .normal)
         leftBarCancelButton.tintColor = .red
         leftBarCancelButton.layer.cornerRadius = 15
         leftBarCancelButton.backgroundColor = UIColor.white
-      //  leftBarCancelButton.addTarget(self, action: #selector(addTapped), for: .touchUpInside)
+        leftBarCancelButton.addTarget(self, action: #selector(changeAdditionalInformation), for: .touchUpInside)
         let leftBarButton = UIBarButtonItem(customView: leftBarCancelButton)
         navigationItem.leftBarButtonItem = leftBarButton
         
@@ -159,18 +170,7 @@ class ProfileViewController: UIViewController, GoToChatController{
         let nib4 = UINib(nibName: InformationTableViewCell.id , bundle: nil)
         profileTableView.register(nib4, forCellReuseIdentifier: InformationTableViewCell.id)
     }
-    
-    
-    @IBAction func signOutButton(_ sender: UIButton) {
-        DefaultsManager.rememberMe = false
-        let vc = WelcomePageViewController(nibName: WelcomePageViewController.id, bundle: nil)
-        tabBarController?.tabBar.isHidden = true
-        navigationController?.pushViewController(vc, animated: true)
-        
-    }
-    
- 
-    
+
 }
 
 extension ProfileViewController: UITableViewDelegate {
