@@ -12,27 +12,27 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AchievementCollectionViewCell" id="gTV-IL-0wX" customClass="AchievementCollectionViewCell" customModule="CoupleAnimal" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="100" height="80"/>
+            <rect key="frame" x="0.0" y="0.0" width="90" height="80"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="100" height="80"/>
+                <rect key="frame" x="0.0" y="0.0" width="90" height="80"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j4F-KI-WXf">
-                        <rect key="frame" x="0.0" y="0.0" width="100" height="80"/>
+                        <rect key="frame" x="0.0" y="0.0" width="90" height="80"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="6f3353843f29ccd6deb1659373838826" translatesAutoresizingMaskIntoConstraints="NO" id="3C3-ym-B3d">
-                                <rect key="frame" x="0.0" y="0.0" width="100" height="80"/>
+                                <rect key="frame" x="0.0" y="0.0" width="90" height="80"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Male" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PnE-AK-t2c">
-                                <rect key="frame" x="32.666666666666664" y="31" width="34.999999999999993" height="18"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <rect key="frame" x="26.000000000000004" y="30.333333333333336" width="38.333333333333343" height="19.333333333333336"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sex" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HG7-x9-ajv">
-                                <rect key="frame" x="39.333333333333336" y="54" width="21.666666666666664" height="15.666666666666671"/>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="13"/>
+                                <rect key="frame" x="34" y="54.666666666666664" width="22" height="15.666666666666664"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -45,7 +45,7 @@
                             <constraint firstItem="PnE-AK-t2c" firstAttribute="centerY" secondItem="3C3-ym-B3d" secondAttribute="centerY" id="OXO-KD-p9c"/>
                             <constraint firstItem="PnE-AK-t2c" firstAttribute="centerX" secondItem="3C3-ym-B3d" secondAttribute="centerX" id="QhE-Ae-U9A"/>
                             <constraint firstAttribute="bottom" secondItem="3C3-ym-B3d" secondAttribute="bottom" id="U80-IT-e0j"/>
-                            <constraint firstAttribute="width" constant="100" id="WQ0-fU-EB2"/>
+                            <constraint firstAttribute="width" constant="90" id="WQ0-fU-EB2"/>
                             <constraint firstItem="3C3-ym-B3d" firstAttribute="top" secondItem="j4F-KI-WXf" secondAttribute="top" id="jhe-RU-nkh"/>
                             <constraint firstItem="3C3-ym-B3d" firstAttribute="leading" secondItem="j4F-KI-WXf" secondAttribute="leading" id="ju2-8u-Uly"/>
                             <constraint firstItem="HG7-x9-ajv" firstAttribute="centerX" secondItem="PnE-AK-t2c" secondAttribute="centerX" id="nPR-23-uhb"/>
@@ -60,14 +60,14 @@
                 <constraint firstAttribute="bottom" secondItem="j4F-KI-WXf" secondAttribute="bottom" id="SiF-6B-0i5"/>
                 <constraint firstItem="j4F-KI-WXf" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="YTR-Fr-EZv"/>
             </constraints>
-            <size key="customSize" width="100" height="80"/>
+            <size key="customSize" width="90" height="80"/>
             <connections>
                 <outlet property="backgroundImage" destination="3C3-ym-B3d" id="pSX-Gw-CgK"/>
                 <outlet property="collectionBackgroundView" destination="j4F-KI-WXf" id="xOU-br-ozR"/>
                 <outlet property="typeLabel" destination="PnE-AK-t2c" id="voc-z6-tOG"/>
                 <outlet property="valueLabel" destination="HG7-x9-ajv" id="stC-KU-6uc"/>
             </connections>
-            <point key="canvasLocation" x="96.18320610687023" y="30.985915492957748"/>
+            <point key="canvasLocation" x="88.549618320610676" y="30.985915492957748"/>
         </collectionViewCell>
     </objects>
     <resources>

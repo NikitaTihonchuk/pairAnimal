@@ -12,6 +12,7 @@ class PetsCollectionViewCell: UICollectionViewCell {
     static let id = String(describing: PetsCollectionViewCell.self)
 
     
+    @IBOutlet weak var ageView: UILabel!
     @IBOutlet weak var photoProfileImageView: UIImageView!
     @IBOutlet weak var nicknameLabel: UILabel!
     @IBOutlet weak var speciesLabel: UILabel!
@@ -26,7 +27,8 @@ class PetsCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        photoProfileImageView.layer.masksToBounds = true
+        photoProfileImageView.layer.cornerRadius = 15
     }
     
     override func prepareForReuse() {
@@ -41,6 +43,8 @@ class PetsCollectionViewCell: UICollectionViewCell {
         } else {
             likeButton.setImage(imageIsSelected, for: .normal)
         }
+        ageView.layer.masksToBounds = true
+        ageView.layer.cornerRadius = 9
 
         //likeButton.setImage(, for: <#T##UIControl.State#>)
         
@@ -50,7 +54,7 @@ class PetsCollectionViewCell: UICollectionViewCell {
     func set(users: UserModel) {
         nicknameLabel.text = users.nickname
         speciesLabel.text = users.species
-        ageLabel.text = String(users.age)
+        ageLabel.text = "\(users.age) YRS"
         getImage(email: users.safeEmail)
     }
     
