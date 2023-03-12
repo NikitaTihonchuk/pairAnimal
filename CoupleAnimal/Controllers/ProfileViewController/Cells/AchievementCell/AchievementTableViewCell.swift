@@ -26,6 +26,8 @@ class AchievementTableViewCell: UITableViewCell {
         dictionary["weight"] = weight
         guard let height = userInfo["height"] as? Int else { return }
         dictionary["height"] = height
+        guard let age = userInfo["age"] as? Int else { return }
+        dictionary["age"] = age
         achievementCollection.reloadData()
     }
     
@@ -57,18 +59,25 @@ extension AchievementTableViewCell: UICollectionViewDataSource {
             case 1:
                 achievmentCell.valueLabel.text = "Weight"
                 guard let weight = dictionary["weight"] as? Int else { return cell }
-                achievmentCell.typeLabel.text = "\(weight)"
+                achievmentCell.typeLabel.text = "\(weight) kg"
             achievmentCell.backgroundImage.isHidden = true
-            achievmentCell.collectionBackgroundView.backgroundColor = .yellow
+            achievmentCell.collectionBackgroundView.backgroundColor = .lightGray
             case 2:
                 achievmentCell.valueLabel.text = "Height"
                 guard let height = dictionary["height"] as? Int else { return cell }
-                achievmentCell.typeLabel.text = "\(height)"
+                achievmentCell.typeLabel.text = "\(height) сm"
                 achievmentCell.typeLabel.textColor = .white
                 achievmentCell.valueLabel.textColor = .white
                 achievmentCell.backgroundImage.isHidden = true
                 achievmentCell.collectionBackgroundView.backgroundColor = .blue
-
+            case 3:
+                achievmentCell.valueLabel.text = "Age"
+                guard let age = dictionary["age"] as? Int else { return cell }
+                achievmentCell.typeLabel.text = "\(age) years"
+                achievmentCell.typeLabel.textColor = .white
+                achievmentCell.valueLabel.textColor = .white
+                achievmentCell.backgroundImage.isHidden = true
+                achievmentCell.collectionBackgroundView.backgroundColor = .systemRed
             default:
                 return achievmentCell
             }

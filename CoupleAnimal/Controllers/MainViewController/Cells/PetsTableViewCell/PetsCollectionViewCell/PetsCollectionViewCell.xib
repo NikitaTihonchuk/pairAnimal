@@ -41,18 +41,24 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cyn-oa-jxK">
-                                <rect key="frame" x="177" y="161" width="30" height="15"/>
+                                <rect key="frame" x="172" y="161" width="35" height="15"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Efv-U9-rwz">
-                                        <rect key="frame" x="1" y="1" width="28" height="13"/>
+                                        <rect key="frame" x="1" y="1" width="33" height="13"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="8"/>
                                         <color key="textColor" red="1" green="0.081126495640000004" blue="0.33585959339999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="9"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.081126495644769148" blue="0.33585959338154781" alpha="0.13680469211434171" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="30" id="2N1-Pt-KBc"/>
+                                    <constraint firstAttribute="width" constant="35" id="2N1-Pt-KBc"/>
                                     <constraint firstAttribute="trailing" secondItem="Efv-U9-rwz" secondAttribute="trailing" constant="1" id="Q6Q-Iw-rjb"/>
                                     <constraint firstItem="Efv-U9-rwz" firstAttribute="top" secondItem="cyn-oa-jxK" secondAttribute="top" constant="1" id="Szo-Um-WCx"/>
                                     <constraint firstAttribute="height" constant="15" id="TAB-N9-k4z"/>
@@ -102,6 +108,7 @@
             <size key="customSize" width="210" height="182"/>
             <connections>
                 <outlet property="ageLabel" destination="Efv-U9-rwz" id="9Ay-ig-RhL"/>
+                <outlet property="ageView" destination="Efv-U9-rwz" id="EGH-hN-sqv"/>
                 <outlet property="backgroundPetCollectionCell" destination="VmF-mY-2VC" id="oUX-5J-1fR"/>
                 <outlet property="likeButton" destination="qxR-s8-cr3" id="Q8O-UA-m8S"/>
                 <outlet property="nicknameLabel" destination="hXT-u6-vHk" id="ANY-Hb-cyC"/>

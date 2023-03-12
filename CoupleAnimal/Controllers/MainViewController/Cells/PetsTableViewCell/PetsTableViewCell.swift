@@ -71,6 +71,10 @@ extension PetsTableViewCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PetsCollectionViewCell.id, for: indexPath)
         guard let petCell = cell as? PetsCollectionViewCell else { return cell }
+        petCell.layer.masksToBounds = true
+        petCell.layer.cornerRadius = 15
+        petCell.ageView.layer.masksToBounds = true
+        petCell.ageView.layer.cornerRadius = 9
         petCell.set(users: users[indexPath.row])
        /* if petCell.isCellSelected {
             petCell.isSelected = isCellSelected
@@ -97,5 +101,4 @@ extension PetsTableViewCell: UICollectionViewDelegateFlowLayout {
         return CGSize(width: 160.0, height: 200)
         
     }
-    
 }
