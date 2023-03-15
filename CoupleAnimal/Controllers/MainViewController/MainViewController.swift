@@ -48,6 +48,12 @@ class MainViewController: UIViewController, UpdateTableView, CityProtocol {
         mainTableView.dataSource = self
         getAllUsersData()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.isNavigationBarHidden = true
+
+    }
     //MARK: Protocol Fuctions
     func changeCity() {
         let vc = ChooseCityViewController(nibName: "ChooseCityViewController", bundle: nil)
@@ -77,8 +83,10 @@ class MainViewController: UIViewController, UpdateTableView, CityProtocol {
     }
     
     func goToProfile(user: UserModel) {
+        self.navigationController?.isNavigationBarHidden = false
         let vc = ProfileViewController(nibName: "ProfileViewController", bundle: nil)
         vc.email = user.safeEmail
+        vc.navigationController?.isNavigationBarHidden = false
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

@@ -54,8 +54,8 @@ class ProfileViewController: UIViewController, GoToChatController{
                 let gesture = UITapGestureRecognizer(target: self,
                                                      action: #selector(self.didTapChangeProfilePic))
                 self.doggyImage.isUserInteractionEnabled = true
-
                 self.doggyImage.addGestureRecognizer(gesture)
+                self.addBarButton()
             }
         }
        // getData()
@@ -64,7 +64,6 @@ class ProfileViewController: UIViewController, GoToChatController{
         backgroundView.layer.cornerRadius = 50
         registerCell()
         
-        addBarButton()
     }
     
     @objc private func addTapped() {
@@ -91,11 +90,12 @@ class ProfileViewController: UIViewController, GoToChatController{
     
     func goToChatVC(email: String) {
         
-        let vc = ConversationViewController()
-        //self.navigationItem.setHidesBackButton(false, animated: false)
-        vc.title = email
         
-        vc.navigationItem.largeTitleDisplayMode = .never
+        
+        let vc = ConversationViewController(with: email)
+        guard let nickname = personInfo["nickname"] as? String else { return }
+        vc.title = nickname
+        
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
