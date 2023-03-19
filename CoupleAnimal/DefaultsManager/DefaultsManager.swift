@@ -48,5 +48,14 @@ class DefaultsManager {
         }
     }
     
+    static var dogName: String? {
+        get {
+            defaults.value(forKey: #function) as? String
+        }
+        set {
+            defaults.set(newValue, forKey: #function)
+        }
+    }
+    
 }
 

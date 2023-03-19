@@ -15,6 +15,7 @@ class StorageManager {
     
     private let storage = Storage.storage().reference()
     public typealias PictureComplition = ((Result<String, Error>) -> Void)
+    //MARK: Interaction with picture
     
     public func uploadProfilePicture(data: Data, fileName: String, complition: @escaping PictureComplition) {
         storage.child("images/\(fileName)").putData(data, metadata: nil) { metadata, error in
@@ -34,11 +35,6 @@ class StorageManager {
         }
     }
     
-    public enum StorageErrors: Error {
-        case failedToUpload
-        case failedToGetURL
-    }
-    
     public func downloadURL(path: String, complition:@escaping ((Result<URL, Error>) -> Void)) {
         let reference = storage.child(path)
         
@@ -49,5 +45,10 @@ class StorageManager {
             }
             complition(.success(url))
         }
+    }
+    //MARK: Enum errors
+    public enum StorageErrors: Error {
+        case failedToUpload
+        case failedToGetURL
     }
 }

@@ -187,6 +187,7 @@ class FillingDataViewController: UIViewController, CityProtocol {
                         case .success(let downlandUrl):
                             DefaultsManager.profileURL = downlandUrl
                             DefaultsManager.rememberMe = true
+                            DefaultsManager.dogName = nickname
                             if strongSelf.user != nil {
                                 strongSelf.dismiss(animated: true) {
                                     strongSelf.delegate?.updateTableView()

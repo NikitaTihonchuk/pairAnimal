@@ -39,6 +39,7 @@ class LoginViewController: UIViewController {
                     return
                 } else {
                     guard let isFullRegister = userInfo["fullRegister"] as? Bool else { return }
+                    DefaultsManager.dogName = userInfo["nickname"] as? String
                     if isFullRegister {
                         let vc = TabBarController(nibName: "TabBarController", bundle: nil)
                         DefaultsManager.rememberMe = true

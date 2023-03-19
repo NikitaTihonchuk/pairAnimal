@@ -90,13 +90,28 @@ class ProfileViewController: UIViewController, GoToChatController{
     
     func goToChatVC(email: String) {
         
+        DatabaseManager.shared.conversationExists(iwth: email, completion: { [weak self] result in
+            guard let strongSelf = self else {
+                return
+            }
+            switch result {
+            case .success(let conversationId):
+                let vc = ConversationViewController(with: email, id: conversationId)
+                vc.isNewConversation = false
+                guard let nickname = strongSelf.personInfo["nickname"] as? String else { return }
+                vc.title = nickname
+                vc.navigationItem.largeTitleDisplayMode = .never
+                strongSelf.navigationController?.pushViewController(vc, animated: true)
+            case .failure(_):
+                let vc = ConversationViewController(with: email, id: nil)
+                vc.isNewConversation = true
+                guard let nickname = strongSelf.personInfo["nickname"] as? String else { return }
+                vc.title = nickname
+                vc.navigationItem.largeTitleDisplayMode = .never
+                strongSelf.navigationController?.pushViewController(vc, animated: true)
+            }
+        })
         
-        
-        let vc = ConversationViewController(with: email)
-        guard let nickname = personInfo["nickname"] as? String else { return }
-        vc.title = nickname
-        
-        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     private func addBarButton() {
