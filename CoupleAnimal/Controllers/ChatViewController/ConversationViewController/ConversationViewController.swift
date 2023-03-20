@@ -61,8 +61,10 @@ final class ConversationViewController: MessagesViewController {
     public static let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
-        formatter.timeStyle = .long
-        formatter.timeZone = .autoupdatingCurrent
+        //formatter.timeStyle = .medium
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        //formatter.dateFormat = "yyyy'-'MM'-'dd'T':'HH':'mm':'ssZZZ"
+        formatter.timeZone = .current
         return formatter
     }()
     
@@ -179,7 +181,11 @@ extension ConversationViewController: InputBarAccessoryViewDelegate {
         let dateString = Self.dateFormatter.string(from: Date())
         guard let ownEmail = DefaultsManager.safeEmail else { return nil }
         print(dateString)
-        let date = dateString.replacingOccurrences(of: ".", with: "-")
+        var date = dateString.replacingOccurrences(of: ".", with: "-")
+        date = date.replacingOccurrences(of: ",", with: "-")
+        date = date.replacingOccurrences(of: "/", with: "_")
+
+
         let newID = "\(otherUserEmail)_\(ownEmail)_\(date)"
         print(newID)
         return newID

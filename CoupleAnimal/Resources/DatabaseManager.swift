@@ -383,10 +383,15 @@ extension DatabaseManager {
                       let content = dictionary["content"] as? String,
                       let senderEmail = dictionary["sender_email"] as? String,
                       let type = dictionary["type"] as? String,
-                      let dateString = dictionary["date"] as? String,
-                      let date = ConversationViewController.dateFormatter.date(from: dateString) else {
-                        return nil
-                }
+                      let dateString = dictionary["date"] as? String else { return nil }
+                
+                var date = dateString.replacingOccurrences(of: ".", with: "-")
+                date = date.replacingOccurrences(of: ",", with: "-")
+                date = date.replacingOccurrences(of: "/", with: "_")
+            
+                guard let date = ConversationViewController.dateFormatter.date(from: dateString) else {
+                    return nil }
+                
                 print(date)
                 print(dateString)
                 
