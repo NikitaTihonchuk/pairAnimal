@@ -10,6 +10,7 @@ import FirebaseDatabase
 
 //MARK: Database Manager
 final class DatabaseManager {
+    ///singelton
     static let shared = DatabaseManager()
     
     private let database = Database.database().reference()
@@ -17,7 +18,7 @@ final class DatabaseManager {
 }
 //MARK: Read and update users
 extension DatabaseManager {
-    
+    ///update user data
     public func updateUser(user: UserModel) {
         database.child("users").child(user.safeEmail).updateChildValues([
             "nickname" : user.nickname,
@@ -61,12 +62,10 @@ extension DatabaseManager {
             "id" : user.id,
             "fullRegister" : user.isFillingTheData
         ])
-        //DefaultsManager.userID = user.id
         DefaultsManager.safeEmail = user.safeEmail
     }
-    /// update user
+    /// write additional user data
     public func addAditionalInfo(user: UserModel, complition: @escaping(Bool) -> Void) {
-        
         
         database.child("users").child(user.safeEmail).updateChildValues([
             "nickname" : user.nickname,
@@ -91,7 +90,7 @@ extension DatabaseManager {
             complition(true)
         })
     }
-    
+    ///get all users
     public func getAllUsers(completion: @escaping(Result<[String:Any], Error>) -> Void) {
         database.child("users").observeSingleEvent(of: .value) { snapshot in
             guard let value = snapshot.value as? [String:Any] else {
@@ -110,6 +109,7 @@ extension DatabaseManager {
     public func readCountry(completion: @escaping(Result<[String:Any], Error>) -> Void) {
         
         database.child("country").observeSingleEvent(of: .value) { [weak self] snapshot in
+         //   guard let strongSelf = self else { return }
             guard let value = snapshot.value as? [String:Any] else {
                 completion(.failure(DatabaseError.failedToReturn))
                 return
@@ -118,7 +118,7 @@ extension DatabaseManager {
         }
     }
     
-    
+    ///read city
     public func readCity(nameCountry: String, completion: @escaping(Result<[String:Any], Error>) -> Void) {
         database.child("country").child(nameCountry).observeSingleEvent(of: .value) { snapshot in
             guard let value = snapshot.value as? [String:Any] else {
@@ -130,11 +130,11 @@ extension DatabaseManager {
     }
     
 }
+
+//MARK: Error enum
     public enum DatabaseError:Error {
         case failedToReturn
     }
-
-
 
 //MARK: - Sending messages
 extension DatabaseManager {
@@ -153,12 +153,15 @@ extension DatabaseManager {
         
         let ref = database.child("users/\(safeEmail)")
         ///try to find user
-        ref.observeSingleEvent(of: .value) { snapshot in
+        ref.observeSingleEvent(of: .value) { [weak self] snapshot in
+            guard let strongSelf = self else { return }
+            ///userNode - all info about user
             guard var userNode = snapshot.value as? [String: Any] else {
                 complition(false)
                 print("Nothing user is not found")
                 return
             }
+            
             ///prepeare date to write in database
             let messageDate = firstMessage.sentDate
             let dateString = ConversationViewController.dateFormatter.string(from: messageDate)
@@ -188,7 +191,7 @@ extension DatabaseManager {
             case .custom(_):
                 break
             }
-            ///messageID
+            ///create messageID
             let conversationID = "conversation_\(firstMessage.messageId)"
             
             
@@ -216,7 +219,7 @@ extension DatabaseManager {
             ]
             ///update recipient conversation
             
-            self.database.child("users/\(otherUserEmail)/conversations").observeSingleEvent(of: .value) { [weak self] snapshot in
+            strongSelf.database.child("users/\(otherUserEmail)/conversations").observeSingleEvent(of: .value) { [weak self] snapshot in
                 if var conversations = snapshot.value as? [[String: Any]] {
                     //append
                     conversations.append(recipientNewConversationData)
@@ -232,12 +235,13 @@ extension DatabaseManager {
             if var conversations = userNode["conversations"] as? [[String: Any]] {
                 conversations.append(newConversationData)
                 userNode["conversations"] = conversations
-                ref.setValue(userNode, withCompletionBlock: {[weak self] error, _ in
+                ref.setValue(userNode, withCompletionBlock: { [weak self] error, _ in
+                    guard let strongSelf = self else { return }
                     guard error == nil else {
                         complition(false)
                         return
                     }
-                    self?.finishCreatingConversations(conversationID: conversationID,
+                    strongSelf.finishCreatingConversations(conversationID: conversationID,
                                                      name: name,
                                                      firstMessage: firstMessage,
                                                      completion: complition)
