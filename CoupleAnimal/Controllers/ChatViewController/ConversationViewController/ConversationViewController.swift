@@ -147,14 +147,15 @@ extension ConversationViewController: InputBarAccessoryViewDelegate {
                               sentDate: Date(),
                               kind: .text(text))
         if isNewConversation {
-            DatabaseManager.shared.createNewConversation(with: otherUserEmail, name: self.title ?? "User", firstMessage: message) { success in
+            DatabaseManager.shared.createNewConversation(with: otherUserEmail, name: self.title ?? "User", firstMessage: message) { [weak self] success in
+                guard let strongSelf = self else { return }
                 if success {
                     print("message sent")
-                    self.isNewConversation = false
+                    strongSelf.isNewConversation = false
                     let newConversationID = "conversation_\(message.messageId)"
-                    self.conversationID = newConversationID
-                    self.listenForMessages(id: newConversationID, shouldScrollToBottom: true)
-                    self.messageInputBar.inputTextView.text = nil
+                    strongSelf.conversationID = newConversationID
+                    strongSelf.listenForMessages(id: newConversationID, shouldScrollToBottom: true)
+                    strongSelf.messageInputBar.inputTextView.text = nil
                 } else {
                     print("sorry")
                 }
@@ -166,8 +167,9 @@ extension ConversationViewController: InputBarAccessoryViewDelegate {
 
             // append to existing conversation data
             DatabaseManager.shared.sendMessage(to: conversationId, otherUserEmail: otherUserEmail, name: name, newMessage: message, completion: { [weak self] success in
+                guard let strongSelf = self else { return }
                 if success {
-                    self?.messageInputBar.inputTextView.text = nil
+                    strongSelf.messageInputBar.inputTextView.text = nil
                     print("message sent")
                 }
                 else {
