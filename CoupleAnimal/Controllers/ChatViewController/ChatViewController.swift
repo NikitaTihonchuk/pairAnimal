@@ -32,7 +32,7 @@ class ChatViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Messanger"
+        navigationItem.title = "Messanger"
         registerCell()
         chatTableView.dataSource = self
         chatTableView.delegate = self

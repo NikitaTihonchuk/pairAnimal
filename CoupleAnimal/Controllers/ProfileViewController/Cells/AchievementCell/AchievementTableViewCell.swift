@@ -56,28 +56,30 @@ extension AchievementTableViewCell: UICollectionViewDataSource {
                 achievmentCell.valueLabel.text = "Breed"
                 guard let breed = dictionary["breed"] as? String else { return cell }
                 achievmentCell.typeLabel.text = "\(breed)"
+                achievmentCell.backgroundImage.image = UIImage(named: "box_1")
+
             case 1:
                 achievmentCell.valueLabel.text = "Weight"
                 guard let weight = dictionary["weight"] as? Int else { return cell }
                 achievmentCell.typeLabel.text = "\(weight) kg"
-            achievmentCell.backgroundImage.isHidden = true
-            achievmentCell.collectionBackgroundView.backgroundColor = .lightGray
+                achievmentCell.backgroundImage.image = UIImage(named: "box_2")
+            //achievmentCell.collectionBackgroundView.backgroundColor = .lightGray
             case 2:
                 achievmentCell.valueLabel.text = "Height"
                 guard let height = dictionary["height"] as? Int else { return cell }
                 achievmentCell.typeLabel.text = "\(height) сm"
                 achievmentCell.typeLabel.textColor = .white
                 achievmentCell.valueLabel.textColor = .white
-                achievmentCell.backgroundImage.isHidden = true
-                achievmentCell.collectionBackgroundView.backgroundColor = .blue
+                achievmentCell.backgroundImage.image = UIImage(named: "box_3")
+                //achievmentCell.collectionBackgroundView.backgroundColor = .blue
             case 3:
                 achievmentCell.valueLabel.text = "Age"
                 guard let age = dictionary["age"] as? Int else { return cell }
                 achievmentCell.typeLabel.text = "\(age) years"
                 achievmentCell.typeLabel.textColor = .white
                 achievmentCell.valueLabel.textColor = .white
-                achievmentCell.backgroundImage.isHidden = true
-                achievmentCell.collectionBackgroundView.backgroundColor = .systemRed
+                //achievmentCell.backgroundImage.isHidden = true
+               // achievmentCell.collectionBackgroundView.backgroundColor = .systemRed
             default:
                 return achievmentCell
             }

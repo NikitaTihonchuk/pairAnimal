@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -21,8 +20,9 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j4F-KI-WXf">
                         <rect key="frame" x="0.0" y="0.0" width="90" height="80"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="6f3353843f29ccd6deb1659373838826" translatesAutoresizingMaskIntoConstraints="NO" id="3C3-ym-B3d">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="box_3" translatesAutoresizingMaskIntoConstraints="NO" id="3C3-ym-B3d">
                                 <rect key="frame" x="0.0" y="0.0" width="90" height="80"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Male" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PnE-AK-t2c">
                                 <rect key="frame" x="26.000000000000004" y="30.333333333333336" width="38.333333333333343" height="19.333333333333336"/>
@@ -37,7 +37,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBrownColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="HG7-x9-ajv" firstAttribute="top" secondItem="PnE-AK-t2c" secondAttribute="bottom" constant="5" id="1dc-Lk-PDO"/>
                             <constraint firstAttribute="trailing" secondItem="3C3-ym-B3d" secondAttribute="trailing" id="HvM-Dc-tUP"/>
@@ -71,9 +71,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="6f3353843f29ccd6deb1659373838826" width="608" height="342"/>
-        <systemColor name="systemBrownColor">
-            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
+        <image name="box_3" width="92.333335876464844" height="75"/>
     </resources>
 </document>

@@ -33,9 +33,9 @@ final class TabBarController: UITabBarController {
         }
         
         self.viewControllers?.enumerated().forEach {
-            $1.tabBarItem.title = dataSource[$0].title
-            $1.tabBarItem.image = UIImage(systemName: dataSource[$0].iconName)
-            //tabBar.tintColor = .red
+           // $1.tabBarItem.title = dataSource[$0].title
+            let image = UIImage(named: dataSource[$0].iconName)
+            $1.tabBarItem.image = image
             //tabBar.backgroundColor = .white
         }
     }
@@ -91,9 +91,9 @@ private enum TabBarItem {
     var iconName: String {
         switch self {
         case .main:
-            return "house"
+            return "home"
         case .profile:
-            return "person"
+            return "profile_25"
         case .chat:
             return "message"
         }
