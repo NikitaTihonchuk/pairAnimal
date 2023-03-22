@@ -656,6 +656,43 @@ extension DatabaseManager {
             return
         })
     }
+    
+    
+    public func deleteConversation(conversationId: String, completion: @escaping (Bool) -> Void) {
+       
+        guard let safeEmail = DefaultsManager.safeEmail else { return }
+
+        print("Deleting conversation with id: \(conversationId)")
+
+        // Get all conversations for current user
+        // delete conversation in collection with target id
+        // reset those conversations for the user in database
+        let ref = database.child("users/\(safeEmail)/conversations")
+        ref.observeSingleEvent(of: .value) { snapshot in
+            if var conversations = snapshot.value as? [[String: Any]] {
+                var positionToRemove = 0
+                for conversation in conversations {
+                    if let id = conversation["id"] as? String,
+                        id == conversationId {
+                        print("found conversation to delete")
+                        break
+                    }
+                    positionToRemove += 1
+                }
+
+                conversations.remove(at: positionToRemove)
+                ref.setValue(conversations, withCompletionBlock: { error, _  in
+                    guard error == nil else {
+                        completion(false)
+                        print("faield to write new conversatino array")
+                        return
+                    }
+                    print("deleted conversaiton")
+                    completion(true)
+                })
+            }
+        }
+    }
 
 }
 

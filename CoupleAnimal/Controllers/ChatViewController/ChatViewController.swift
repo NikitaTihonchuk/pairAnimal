@@ -27,6 +27,8 @@ class ChatViewController: UIViewController {
     
     @IBOutlet weak var chatTableView: UITableView!
     
+    
+    
     private let spinner = JGProgressHUD(style: .dark)
     private var conversations = [Conversation]()
     
