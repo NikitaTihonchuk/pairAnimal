@@ -96,6 +96,25 @@ extension ChatViewController: UITableViewDelegate {
         navigationController?.pushViewController(vc, animated: true)
     }
     
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let conversationId = conversations[indexPath.row].id
+            tableView.beginUpdates()
+            self.conversations.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .left)
+            DatabaseManager.shared.deleteConversation(conversationId: conversationId, completion: { success in
+                if success {
+                    tableView.endUpdates()
+                }
+            })
+
+        }
+    }
+    
     /*func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 120
     }*/
