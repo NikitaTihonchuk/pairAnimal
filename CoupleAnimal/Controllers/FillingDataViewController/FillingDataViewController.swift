@@ -139,7 +139,7 @@ class FillingDataViewController: UIViewController, CityProtocol {
     
     @IBAction func chooseCityButton(_ sender: UIButton) {
         let vc = ChooseCityViewController(nibName: "ChooseCityViewController", bundle: nil)
-        vc.modalPresentationStyle = .fullScreen
+        //vc.modalPresentationStyle = .fullScreen
         vc.delegate = self
        // navigationController?.pushViewController(vc, animated: true)
         present(vc, animated: true)

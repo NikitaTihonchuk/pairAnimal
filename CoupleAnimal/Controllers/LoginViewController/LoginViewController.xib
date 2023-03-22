@@ -92,6 +92,19 @@
                         <constraint firstAttribute="height" constant="1" id="OkJ-iT-yfe"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jkq-q7-UsA">
+                    <rect key="frame" x="30" y="77" width="35" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="35" id="1JK-uO-6qD"/>
+                        <constraint firstAttribute="height" constant="35" id="j8X-B5-Ubc"/>
+                    </constraints>
+                    <color key="tintColor" red="0.84313725490196079" green="0.28235294117647058" blue="0.29411764705882354" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="chevron.left" catalog="system"/>
+                    <connections>
+                        <action selector="backButttonDidTap:" destination="-1" eventType="touchUpInside" id="LHR-xJ-Lej"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -102,6 +115,7 @@
                 <constraint firstItem="WYY-Ur-anZ" firstAttribute="top" secondItem="mnf-qm-Luj" secondAttribute="bottom" constant="25" id="4xN-Gn-y8r"/>
                 <constraint firstItem="MBh-c8-WAr" firstAttribute="top" secondItem="ebD-Xo-460" secondAttribute="bottom" constant="42" id="DZT-TX-WzT"/>
                 <constraint firstItem="A64-xb-MLM" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="5" id="ItG-Io-sFh"/>
+                <constraint firstItem="jkq-q7-UsA" firstAttribute="centerY" secondItem="Gtv-lD-0Hx" secondAttribute="centerY" id="Khr-WO-eW0"/>
                 <constraint firstItem="MBh-c8-WAr" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="N1p-Qn-tca"/>
                 <constraint firstItem="juh-9z-k2O" firstAttribute="centerY" secondItem="zC7-YT-Hg1" secondAttribute="centerY" id="NhL-ZJ-ccz"/>
                 <constraint firstItem="WYY-Ur-anZ" firstAttribute="width" secondItem="mnf-qm-Luj" secondAttribute="width" id="Ob0-Re-A6V"/>
@@ -116,14 +130,16 @@
                 <constraint firstItem="ebD-Xo-460" firstAttribute="centerX" secondItem="Gtv-lD-0Hx" secondAttribute="centerX" id="lUe-Qq-edh"/>
                 <constraint firstItem="mnf-qm-Luj" firstAttribute="top" secondItem="MBh-c8-WAr" secondAttribute="bottom" constant="25" id="n6H-L4-wFn"/>
                 <constraint firstItem="SvY-vv-Jfd" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="toO-eQ-wOf"/>
+                <constraint firstItem="jkq-q7-UsA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="vnb-vw-5Cl"/>
                 <constraint firstItem="juh-9z-k2O" firstAttribute="leading" secondItem="zC7-YT-Hg1" secondAttribute="trailing" constant="5" id="wvW-1r-R2q"/>
-                <constraint firstItem="Gtv-lD-0Hx" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="70" id="yfq-KC-2Uv"/>
+                <constraint firstItem="Gtv-lD-0Hx" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="11" id="yfq-KC-2Uv"/>
                 <constraint firstItem="zC7-YT-Hg1" firstAttribute="top" secondItem="SvY-vv-Jfd" secondAttribute="bottom" constant="30" id="zWe-ie-6fV"/>
             </constraints>
             <point key="canvasLocation" x="26.717557251908396" y="19.718309859154932"/>
         </view>
     </objects>
     <resources>
+        <image name="chevron.left" catalog="system" width="97" height="128"/>
         <namedColor name="incomingMessageBackground">
             <color red="0.89800000190734863" green="0.89800000190734863" blue="0.9179999828338623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

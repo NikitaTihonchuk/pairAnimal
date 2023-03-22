@@ -12,6 +12,7 @@
 		1109D6FA299E7A8A000CEC3F /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1109D6F8299E7A8A000CEC3F /* ChatTableViewCell.swift */; };
 		1109D6FB299E7A8A000CEC3F /* ChatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1109D6F9299E7A8A000CEC3F /* ChatTableViewCell.xib */; };
 		1109D746299F8801000CEC3F /* ConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1109D745299F8801000CEC3F /* ConversationViewController.swift */; };
+		110AF16829CAEE0800115060 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110AF16729CAEE0800115060 /* UIColorExtensions.swift */; };
 		111F853B29A64D480025985D /* PetsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111F853929A64D480025985D /* PetsTableViewCell.swift */; };
 		111F853C29A64D480025985D /* PetsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 111F853A29A64D480025985D /* PetsTableViewCell.xib */; };
 		111F853F29A64D5B0025985D /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111F853D29A64D5B0025985D /* CategoryTableViewCell.swift */; };
@@ -85,6 +86,7 @@
 		1109D6F8299E7A8A000CEC3F /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
 		1109D6F9299E7A8A000CEC3F /* ChatTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatTableViewCell.xib; sourceTree = "<group>"; };
 		1109D745299F8801000CEC3F /* ConversationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationViewController.swift; sourceTree = "<group>"; };
+		110AF16729CAEE0800115060 /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		111F853929A64D480025985D /* PetsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsTableViewCell.swift; sourceTree = "<group>"; };
 		111F853A29A64D480025985D /* PetsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PetsTableViewCell.xib; sourceTree = "<group>"; };
 		111F853D29A64D5B0025985D /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
@@ -191,6 +193,14 @@
 				1109D745299F8801000CEC3F /* ConversationViewController.swift */,
 			);
 			path = ConversationViewController;
+			sourceTree = "<group>";
+		};
+		110AF16629CAEDD900115060 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				110AF16729CAEE0800115060 /* UIColorExtensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		111F853429A64CA40025985D /* Cells */ = {
@@ -571,6 +581,7 @@
 		11BDFB8129926C0F00B7CFE3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				110AF16629CAEDD900115060 /* Extensions */,
 				11B4B8BF299C1EA90036BA52 /* SetupSceneDelegate */,
 				1194D66C297808C0001E51BC /* SceneDelegate.swift */,
 				1194D66A297808C0001E51BC /* AppDelegate.swift */,
@@ -807,6 +818,7 @@
 				111F853B29A64D480025985D /* PetsTableViewCell.swift in Sources */,
 				1148248B29B4AB2E00733B5E /* ChooseCityViewController.swift in Sources */,
 				111F855B29A680130025985D /* PetsCollectionViewCell.swift in Sources */,
+				110AF16829CAEE0800115060 /* UIColorExtensions.swift in Sources */,
 				11E58952299194A200BAFF53 /* DogGenderEnum.swift in Sources */,
 				1148249529B5398A00733B5E /* ChooseDefiniteCityViewController.swift in Sources */,
 				1194D66D297808C0001E51BC /* SceneDelegate.swift in Sources */,

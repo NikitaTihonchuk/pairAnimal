@@ -118,7 +118,7 @@ class ProfileViewController: UIViewController, GoToChatController{
         let rightBarSettingsButton = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
         let settingsImage = UIImage(systemName: "gear")
         rightBarSettingsButton.setImage(settingsImage, for: .normal)
-        rightBarSettingsButton.tintColor = .red
+        rightBarSettingsButton.tintColor = UIColor().hexStringToUIColor(hex: "#D7484B")
         rightBarSettingsButton.layer.cornerRadius = 15
         rightBarSettingsButton.backgroundColor = UIColor.white
         rightBarSettingsButton.addTarget(self, action: #selector(addTapped), for: .touchUpInside)
@@ -128,7 +128,7 @@ class ProfileViewController: UIViewController, GoToChatController{
         let leftBarCancelButton = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
         let cancelImage = UIImage(systemName: "person.fill")
         leftBarCancelButton.setImage(cancelImage, for: .normal)
-        leftBarCancelButton.tintColor = .red
+        leftBarCancelButton.tintColor = UIColor().hexStringToUIColor(hex: "#D7484B")
         leftBarCancelButton.layer.cornerRadius = 15
         leftBarCancelButton.backgroundColor = UIColor.white
         leftBarCancelButton.addTarget(self, action: #selector(changeAdditionalInformation), for: .touchUpInside)

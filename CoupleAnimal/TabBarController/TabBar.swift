@@ -64,7 +64,8 @@ final class TabBarController: UITabBarController {
         tabBar.itemWidth = width / 5
         tabBar.itemPositioning = .centered
         roundLayer.fillColor = UIColor.white.cgColor
-        tabBar.tintColor = .red
+        tabBar.tintColor = UIColor().hexStringToUIColor(hex: "#D7484B")
+
     }
     
     

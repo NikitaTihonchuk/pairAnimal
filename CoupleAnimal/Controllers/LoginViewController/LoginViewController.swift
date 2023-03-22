@@ -18,6 +18,21 @@ class LoginViewController: UIViewController {
     private let spinner = JGProgressHUD(style: .dark)
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+    }
+    
+    private func showAlert(title: String, message: String, bool: Bool) {
+        let alert = UIAlertController(title: title,
+                                      message: message,
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
+            if alert.title == "Success" {
+                if action.isEnabled {
+                    self.dismiss(animated: true)
+                }
+            }
+        }))
+        present(alert, animated: true)
     }
 
     @IBAction func loginButtonDidTap(_ sender: UIButton) {
@@ -25,7 +40,12 @@ class LoginViewController: UIViewController {
         guard let password = passwordTextField.text else { return }
         spinner.show(in: view)
         FirebaseAuth.Auth.auth().signIn(withEmail: email, password: password) { loginResult, error in
-            guard let result = loginResult, error == nil else { return }
+            guard let result = loginResult, error == nil else {
+                DispatchQueue.main.async {
+                    self.spinner.dismiss()
+                }
+                self.showAlert(title: "Error", message: "Sorry, the data is incorrect", bool: true)
+                return }
         
             DatabaseManager.shared.readUser(email: email) { [weak self] userInfo in
                 guard let strongSelf = self else { return }
@@ -60,5 +80,11 @@ class LoginViewController: UIViewController {
                 }
             }
         }
+        
     }
+    
+    @IBAction func backButttonDidTap(_ sender: UIButton) {
+        self.dismiss(animated: true)
+    }
+    
 }
