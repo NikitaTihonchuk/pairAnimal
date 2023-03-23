@@ -36,7 +36,7 @@ final class TabBarController: UITabBarController {
            // $1.tabBarItem.title = dataSource[$0].title
             let image = UIImage(named: dataSource[$0].iconName)
             $1.tabBarItem.image = image
-            //tabBar.backgroundColor = .white
+            //tabBar.unselectedItemTintColor = .gray
         }
     }
     
@@ -65,6 +65,9 @@ final class TabBarController: UITabBarController {
         tabBar.itemPositioning = .centered
         roundLayer.fillColor = UIColor.white.cgColor
         tabBar.tintColor = UIColor().hexStringToUIColor(hex: "#D7484B")
+        self.tabBar.layer.shadowColor = UIColor.black.withAlphaComponent(0.2).cgColor
+                //self.tabBar.layer.shadowOffset = CGSize(width: -4, height: -6)
+                self.tabBar.layer.shadowOpacity = 0.5
 
     }
     

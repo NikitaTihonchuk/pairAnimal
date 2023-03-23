@@ -97,8 +97,4 @@ extension ChooseCityViewController: UITableViewDataSource {
     
 }
 
-protocol CityProtocol: UIViewController {
-    func update(text: String)
-}
-
 

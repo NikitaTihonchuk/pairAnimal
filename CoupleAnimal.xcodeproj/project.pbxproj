@@ -44,6 +44,9 @@
 		1150359729911F28001F84D5 /* DefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1150359629911F28001F84D5 /* DefaultsManager.swift */; };
 		115815892990145C0043442F /* WelcomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115815872990145C0043442F /* WelcomePageViewController.swift */; };
 		1158158A2990145C0043442F /* WelcomePageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 115815882990145C0043442F /* WelcomePageViewController.xib */; };
+		116604F029CC56F700E62467 /* GoToChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116604EF29CC56F700E62467 /* GoToChatController.swift */; };
+		116604F229CC608100E62467 /* CityProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116604F129CC608100E62467 /* CityProtocol.swift */; };
+		116604F429CC63EF00E62467 /* UpdateTableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116604F329CC63EF00E62467 /* UpdateTableViewProtocol.swift */; };
 		1194D66B297808C0001E51BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1194D66A297808C0001E51BC /* AppDelegate.swift */; };
 		1194D66D297808C0001E51BC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1194D66C297808C0001E51BC /* SceneDelegate.swift */; };
 		1194D674297808C3001E51BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1194D673297808C3001E51BC /* Assets.xcassets */; };
@@ -118,6 +121,9 @@
 		1150359629911F28001F84D5 /* DefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsManager.swift; sourceTree = "<group>"; };
 		115815872990145C0043442F /* WelcomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePageViewController.swift; sourceTree = "<group>"; };
 		115815882990145C0043442F /* WelcomePageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomePageViewController.xib; sourceTree = "<group>"; };
+		116604EF29CC56F700E62467 /* GoToChatController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoToChatController.swift; sourceTree = "<group>"; };
+		116604F129CC608100E62467 /* CityProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityProtocol.swift; sourceTree = "<group>"; };
+		116604F329CC63EF00E62467 /* UpdateTableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTableViewProtocol.swift; sourceTree = "<group>"; };
 		1194D667297808C0001E51BC /* CoupleAnimal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoupleAnimal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1194D66A297808C0001E51BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1194D66C297808C0001E51BC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -384,6 +390,16 @@
 			path = ChangeCityViewController;
 			sourceTree = "<group>";
 		};
+		116604EE29CC56D500E62467 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				116604EF29CC56F700E62467 /* GoToChatController.swift */,
+				116604F129CC608100E62467 /* CityProtocol.swift */,
+				116604F329CC63EF00E62467 /* UpdateTableViewProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		11782B93297D2E3100A89433 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -581,6 +597,7 @@
 		11BDFB8129926C0F00B7CFE3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				116604EE29CC56D500E62467 /* Protocols */,
 				110AF16629CAEDD900115060 /* Extensions */,
 				11B4B8BF299C1EA90036BA52 /* SetupSceneDelegate */,
 				1194D66C297808C0001E51BC /* SceneDelegate.swift */,
@@ -789,6 +806,7 @@
 				1109D746299F8801000CEC3F /* ConversationViewController.swift in Sources */,
 				11A09ACE2985C9150006767B /* InformationTableViewCell.swift in Sources */,
 				1148249A29B53A4700733B5E /* ChooseDefiniteCityTableViewCell.swift in Sources */,
+				116604F229CC608100E62467 /* CityProtocol.swift in Sources */,
 				11D9C09529990C710035BA78 /* StorageManager.swift in Sources */,
 				111F854F29A64E510025985D /* MainEnum.swift in Sources */,
 				1194D68529780C0C001E51BC /* MainViewController.swift in Sources */,
@@ -808,12 +826,14 @@
 				11B4B88F299B649D0036BA52 /* SettingsViewController.swift in Sources */,
 				111F855329A665F90025985D /* CategoryCollectionViewCell.swift in Sources */,
 				11BDFBCD2993DABA00B7CFE3 /* FillingDataViewController.swift in Sources */,
+				116604F029CC56F700E62467 /* GoToChatController.swift in Sources */,
 				1194D69629780C9D001E51BC /* ProfileViewController.swift in Sources */,
 				1109D6F5299E041C000CEC3F /* ChatViewController.swift in Sources */,
 				11A09AC62985C8E90006767B /* AchievementTableViewCell.swift in Sources */,
 				11BDFB8329926C3C00B7CFE3 /* DatabaseManager.swift in Sources */,
 				11BDAD262985E03400ACC21D /* AchievementCollectionViewCell.swift in Sources */,
 				11E99CAA2989B9C40072D357 /* LoginViewController.swift in Sources */,
+				116604F429CC63EF00E62467 /* UpdateTableViewProtocol.swift in Sources */,
 				1109D6FA299E7A8A000CEC3F /* ChatTableViewCell.swift in Sources */,
 				111F853B29A64D480025985D /* PetsTableViewCell.swift in Sources */,
 				1148248B29B4AB2E00733B5E /* ChooseCityViewController.swift in Sources */,

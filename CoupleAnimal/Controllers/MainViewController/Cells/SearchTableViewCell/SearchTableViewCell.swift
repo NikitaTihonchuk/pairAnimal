@@ -36,12 +36,8 @@ class SearchTableViewCell: UITableViewCell {
         searchFilterButton.layer.masksToBounds = true
         
         searchTextField.delegate = self
-        
         searchButton.isHidden = true
 
-       // self.searchBar.translatesAutoresizingMaskIntoConstraints = false
-        //self.searchBar.delegate = self
-       // textFieldSubviews()
     }
     
     func animateGrowShrinkTextFields(grow: Bool) {
@@ -57,19 +53,6 @@ class SearchTableViewCell: UITableViewCell {
             })
         }
     }
-    
-   /* func textFieldSubviews() {
-        if let textField = searchBar.value(forKey: "searchField") as? UITextField {
-            textField.backgroundColor = .white
-            
-            guard let backgroundView = textField.subviews.first else { return }
-            if #available(iOS 11.0, *) {
-                backgroundView.backgroundColor = UIColor.white.withAlphaComponent(0.3)
-                backgroundView.subviews.forEach({ $0.removeFromSuperview() })
-            }
-            backgroundView.layer.masksToBounds = true
-        }
-    }*/
     
     @objc func didTapContentView() {
         contentView.endEditing(true)
@@ -114,28 +97,5 @@ extension SearchTableViewCell: UITextFieldDelegate {
         animateGrowShrinkTextFields(grow: grow)
     }
 }
-
-
-/*extension SearchTableViewCell: UISearchBarDelegate {
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
-        guard searchText != "" || searchText != " " else {
-           
-            print("Empty search")
-            return
-        }
-        word = searchText
-         
-    }
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        delegate?.searchResult(text: word)
-    }
-    
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        delegate?.searchResult(text: "")
-    }
-    
-}*/
 
 

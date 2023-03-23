@@ -35,12 +35,15 @@ class FillingDataViewController: UIViewController, CityProtocol {
     var user: UserModel? 
     var image = UIImage()
     
+    ///delegate that pass change data to profile
     weak var delegate: GoToChatController?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
         petImage.isUserInteractionEnabled = true
         petImage.layer.cornerRadius = 25
         warningLabel.isHidden = true
@@ -48,7 +51,7 @@ class FillingDataViewController: UIViewController, CityProtocol {
         setTextFieldText()
     }
     
-   
+   //MARK: Objc func
     @objc private func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             if self.view.frame.origin.y == 0 {
@@ -71,8 +74,9 @@ class FillingDataViewController: UIViewController, CityProtocol {
         view.endEditing(true)
     }
     
+    //MARK: Functions
     
-    
+    ///this function calls profile to pass the data
     func setTextFields(person: [String:Any], doggyImage: UIImageView ) {
         guard let nickname = person["nickname"] as? String,
               let location = person["location"] as? String,
@@ -127,21 +131,18 @@ class FillingDataViewController: UIViewController, CityProtocol {
         let viewGesture = UITapGestureRecognizer(target: self,
                                              action: #selector(didTapContentView))
         view.addGestureRecognizer(viewGesture)
-
     }
-    
+    //MARK: Protocol functions
     func update(text: String) {
         self.location = text
         chooseCityButton.setTitle(location, for: .normal)
     }
     
     
-    
+    //MARK: IBActions
     @IBAction func chooseCityButton(_ sender: UIButton) {
         let vc = ChooseCityViewController(nibName: "ChooseCityViewController", bundle: nil)
-        //vc.modalPresentationStyle = .fullScreen
         vc.delegate = self
-       // navigationController?.pushViewController(vc, animated: true)
         present(vc, animated: true)
     }
     
@@ -207,6 +208,8 @@ class FillingDataViewController: UIViewController, CityProtocol {
 
 }
 
+//MARK: Extension ImagePickerDelegate and NavControllerDelegate
+
 extension FillingDataViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func presentPhotoActionSheet() {
@@ -266,7 +269,7 @@ extension FillingDataViewController: UIImagePickerControllerDelegate, UINavigati
 }
 
 
-
+//MARK: Extensions TextFieldDelegate
 extension FillingDataViewController: UITextFieldDelegate {
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

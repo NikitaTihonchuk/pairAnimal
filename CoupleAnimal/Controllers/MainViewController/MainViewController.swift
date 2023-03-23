@@ -5,15 +5,6 @@
 //  Created by Nikita on 18.01.23.
 //
 
-
-protocol UpdateTableView: UIViewController {
-    func update(selectedIndex: Int)
-    func goToProfile(user: UserModel)
-    func changeCity()
-    func notificationVC()
-    func searchResult(text: String)
-}
-
 import UIKit
 
 class MainViewController: UIViewController, UpdateTableView, CityProtocol {
@@ -52,8 +43,8 @@ class MainViewController: UIViewController, UpdateTableView, CityProtocol {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.isNavigationBarHidden = true
-
     }
+    
     //MARK: Protocol Fuctions
     func changeCity() {
         let vc = ChooseCityViewController(nibName: "ChooseCityViewController", bundle: nil)
@@ -69,7 +60,7 @@ class MainViewController: UIViewController, UpdateTableView, CityProtocol {
     
     func update(text: String) {
         city = text
-        getAllUsersData()
+        usersFilter()
     }
     
     func update(selectedIndex: Int) {
@@ -79,7 +70,7 @@ class MainViewController: UIViewController, UpdateTableView, CityProtocol {
         } else if selectedIndex == 1 {
             animalType = .cats
         }
-        getAllUsersData()
+        usersFilter()
     }
     
     func goToProfile(user: UserModel) {
@@ -117,10 +108,10 @@ class MainViewController: UIViewController, UpdateTableView, CityProtocol {
         DatabaseManager.shared.getAllUsers { [weak self] result in
             guard let strongSelf = self else { return }
             switch result {
-            case .success(let success):
-                for value in success.keys {
-                    if value != ownEmail {
-                        DatabaseManager.shared.readUser(email: value) { user in
+            case .success(let emails):
+                for email in emails.keys {
+                    if email != ownEmail {
+                        DatabaseManager.shared.readUser(email: email) { user in
                             guard let nickname = user["nickname"] as? String,
                                   let location = user["location"] as? String,
                                   let name = user["name"] as? String,
@@ -132,7 +123,7 @@ class MainViewController: UIViewController, UpdateTableView, CityProtocol {
                                   let height = user["height"] as? Double,
                                   let gender = user["gender"] as? String ,
                                   let animal = user["animal"] as? Int else { return }
-                            let user = UserModel(nickname: nickname, location: location, name: name, additionalInfo: additionalInfo, id: id, species: species, age: age, weight: weight, height: height, gender: gender, emailAddress: value)
+                            let user = UserModel(nickname: nickname, location: location, name: name, additionalInfo: additionalInfo, id: id, species: species, age: age, weight: weight, height: height, gender: gender, emailAddress: email)
                             user.animal = animal
                             
                             strongSelf.usersArray.append(user)

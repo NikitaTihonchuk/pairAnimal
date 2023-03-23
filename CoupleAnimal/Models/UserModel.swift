@@ -20,7 +20,7 @@ class UserModel {
     var id: String
     var gender = DogGenderEnum.male.name
     var emailAddress: String
-    var animal: Int = 2
+    var animal: Int = 0
     
     var safeEmail: String {
         var safemail = emailAddress.replacingOccurrences(of: ".", with: "-")
@@ -30,7 +30,6 @@ class UserModel {
     
     var profileImageLink: String {
         return "\(safeEmail)_profile_picture.png"
-         
     }
     
     var isFillingTheData = false

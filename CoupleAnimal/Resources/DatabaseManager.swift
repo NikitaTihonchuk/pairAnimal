@@ -10,9 +10,8 @@ import FirebaseDatabase
 
 //MARK: Database Manager
 final class DatabaseManager {
-    ///singelton
+
     static let shared = DatabaseManager()
-    
     private let database = Database.database().reference()
     
 }
@@ -55,7 +54,7 @@ extension DatabaseManager {
         }
     }
     
-    ///  Inserts new user to the database
+    ///  Inserts new user to the database(Use only in register)
     public func inserUser(user: UserModel) {
         database.child("users").child(user.safeEmail).setValue([
             "name" : user.name,
@@ -657,7 +656,7 @@ extension DatabaseManager {
         })
     }
     
-    
+    ///delete conversations
     public func deleteConversation(conversationId: String, completion: @escaping (Bool) -> Void) {
        
         guard let safeEmail = DefaultsManager.safeEmail else { return }

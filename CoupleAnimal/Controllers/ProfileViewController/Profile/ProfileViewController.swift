@@ -9,11 +9,6 @@ import UIKit
 import JGProgressHUD
 import SDWebImage
 
-protocol GoToChatController: UIViewController {
-    func goToChatVC(email: String)
-    func updateTableView()
-}
-
 class ProfileViewController: UIViewController, GoToChatController{
 
     @IBOutlet weak var doggyImage: UIImageView!
@@ -34,47 +29,17 @@ class ProfileViewController: UIViewController, GoToChatController{
         super.viewDidLoad()
         emailFirstCheck()
     }
-    
-    func emailFirstCheck() {
-        if let email = email {
-            DatabaseManager.shared.readUser(email: email) { data in
-                self.personInfo = data
-                self.profileTableView.delegate = self
-                self.profileTableView.dataSource = self
-                self.getImage(email: self.email)
-            }
-        } else {
-            self.email = DefaultsManager.safeEmail
-            guard let email = DefaultsManager.safeEmail else { return }
-            DatabaseManager.shared.readUser(email: email) { data in
-                self.personInfo = data
-                self.profileTableView.delegate = self
-                self.profileTableView.dataSource = self
-                self.getImage(email: email)
-                let gesture = UITapGestureRecognizer(target: self,
-                                                     action: #selector(self.didTapChangeProfilePic))
-                self.doggyImage.isUserInteractionEnabled = true
-                self.doggyImage.addGestureRecognizer(gesture)
-                self.addBarButton()
-            }
-        }
-       // getData()
-        
-        backgroundView.layer.masksToBounds = true
-        backgroundView.layer.cornerRadius = 50
-        registerCell()
-        
-    }
+    //MARK: Objc functions
     
     @objc private func addTapped() {
         let vc = SettingsViewController(nibName: SettingsViewController.id, bundle: nil)
         present(vc, animated: true)
     }
-    
+    ///change user data
     @objc private func changeAdditionalInformation() {
         let vc = FillingDataViewController(nibName: FillingDataViewController.id, bundle: nil)
-        guard let ownEmail = email else { return }
-        vc.email = ownEmail
+        guard let userEmail = email else { return }
+        vc.email = userEmail
         vc.delegate = self
         vc.setTextFields(person: personInfo, doggyImage: doggyImage)
         present(vc, animated: true)
@@ -84,35 +49,55 @@ class ProfileViewController: UIViewController, GoToChatController{
         presentPhotoActionSheet()
     }
     
-    func updateTableView() {
-        emailFirstCheck()
+    //MARK: Functions
+
+    private func registerCell() {
+        let nib = UINib(nibName: LocationTableViewCell.id , bundle: nil)
+        profileTableView.register(nib, forCellReuseIdentifier: LocationTableViewCell.id)
+        
+        let nib2 = UINib(nibName: AchievementTableViewCell.id , bundle: nil)
+        profileTableView.register(nib2, forCellReuseIdentifier: AchievementTableViewCell.id)
+        
+        let nib3 = UINib(nibName: OwnerTableViewCell.id , bundle: nil)
+        profileTableView.register(nib3, forCellReuseIdentifier: OwnerTableViewCell.id)
+        
+        let nib4 = UINib(nibName: InformationTableViewCell.id , bundle: nil)
+        profileTableView.register(nib4, forCellReuseIdentifier: InformationTableViewCell.id)
     }
     
-    func goToChatVC(email: String) {
+    ///function that check if user have own email or another and insert data in Profile depending on that email
+    func emailFirstCheck() {
+        if let email = email {
+            DatabaseManager.shared.readUser(email: email) { [weak self] data in
+                guard let strongSelf = self else { return }
+                strongSelf.personInfo = data
+                strongSelf.profileTableView.delegate = strongSelf
+                strongSelf.profileTableView.dataSource = strongSelf
+                strongSelf.getImage(email: strongSelf.email)
+            }
+        } else {
+            self.email = DefaultsManager.safeEmail
+            guard let email = DefaultsManager.safeEmail else { return }
+            DatabaseManager.shared.readUser(email: email) { [weak self] data in
+                guard let strongSelf = self else { return }
+                strongSelf.personInfo = data
+                strongSelf.profileTableView.delegate = strongSelf
+                strongSelf.profileTableView.dataSource = strongSelf
+                strongSelf.getImage(email: email)
+                let gesture = UITapGestureRecognizer(target: strongSelf,
+                                                     action: #selector(strongSelf.didTapChangeProfilePic))
+                strongSelf.doggyImage.isUserInteractionEnabled = true
+                strongSelf.doggyImage.addGestureRecognizer(gesture)
+                strongSelf.addBarButton()
+            }
+        }
         
-        DatabaseManager.shared.conversationExists(iwth: email, completion: { [weak self] result in
-            guard let strongSelf = self else {
-                return
-            }
-            switch result {
-            case .success(let conversationId):
-                let vc = ConversationViewController(with: email, id: conversationId)
-                vc.isNewConversation = false
-                guard let nickname = strongSelf.personInfo["nickname"] as? String else { return }
-                vc.title = nickname
-                vc.navigationItem.largeTitleDisplayMode = .never
-                strongSelf.navigationController?.pushViewController(vc, animated: true)
-            case .failure(_):
-                let vc = ConversationViewController(with: email, id: nil)
-                vc.isNewConversation = true
-                guard let nickname = strongSelf.personInfo["nickname"] as? String else { return }
-                vc.title = nickname
-                vc.navigationItem.largeTitleDisplayMode = .never
-                strongSelf.navigationController?.pushViewController(vc, animated: true)
-            }
-        })
+        backgroundView.layer.masksToBounds = true
+        backgroundView.layer.cornerRadius = 50
+        registerCell()
         
     }
+    
     
     private func addBarButton() {
         let rightBarSettingsButton = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
@@ -137,7 +122,7 @@ class ProfileViewController: UIViewController, GoToChatController{
         
         
     }
-    
+    ///get Image to profile controller and than download
     private func getImage(email: String?) {
         guard let safeEmail = email else { return }
         let fileName = safeEmail+"_profile_picture.png"
@@ -159,7 +144,7 @@ class ProfileViewController: UIViewController, GoToChatController{
         imageView.sd_setImage(with: url)
         spinner.dismiss()
     }
-    
+    ///get data
     private func getData() {
         guard let email = DefaultsManager.safeEmail else { return }
         DatabaseManager.shared.readUser(email: email) { data in
@@ -168,26 +153,40 @@ class ProfileViewController: UIViewController, GoToChatController{
             self.profileTableView.dataSource = self
             self.getImage(email: email)
         }
-        
-        
     }
-
-    private func registerCell() {
-        let nib = UINib(nibName: LocationTableViewCell.id , bundle: nil)
-        profileTableView.register(nib, forCellReuseIdentifier: LocationTableViewCell.id)
+    
+    //MARK: Protocol Functions
+    func updateTableView() {
+        emailFirstCheck()
+    }
+    ///function that pass data about selected user in ConversationController
+    func goToChatVC(email: String) {
         
-        let nib2 = UINib(nibName: AchievementTableViewCell.id , bundle: nil)
-        profileTableView.register(nib2, forCellReuseIdentifier: AchievementTableViewCell.id)
+        DatabaseManager.shared.conversationExists(iwth: email, completion: { [weak self] result in
+            guard let strongSelf = self else { return }
+            
+            switch result {
+            case .success(let conversationId):
+                let vc = ConversationViewController(with: email, id: conversationId)
+                vc.isNewConversation = false
+                guard let nickname = strongSelf.personInfo["nickname"] as? String else { return }
+                vc.title = nickname
+                vc.navigationItem.largeTitleDisplayMode = .never
+                strongSelf.navigationController?.pushViewController(vc, animated: true)
+            case .failure(_):
+                let vc = ConversationViewController(with: email, id: nil)
+                vc.isNewConversation = true
+                guard let nickname = strongSelf.personInfo["nickname"] as? String else { return }
+                vc.title = nickname
+                vc.navigationItem.largeTitleDisplayMode = .never
+                strongSelf.navigationController?.pushViewController(vc, animated: true)
+            }
+        })
         
-        let nib3 = UINib(nibName: OwnerTableViewCell.id , bundle: nil)
-        profileTableView.register(nib3, forCellReuseIdentifier: OwnerTableViewCell.id)
-        
-        let nib4 = UINib(nibName: InformationTableViewCell.id , bundle: nil)
-        profileTableView.register(nib4, forCellReuseIdentifier: InformationTableViewCell.id)
     }
 
 }
-
+//MARK: TableViewDelegate and DataSource
 extension ProfileViewController: UITableViewDelegate {
     
 }
@@ -234,6 +233,8 @@ extension ProfileViewController: UITableViewDataSource {
     }
 }
 
+//MARK: Extension for ImagePickerDelegate and navControllerDelegate
+
 extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func presentPhotoActionSheet() {
@@ -255,7 +256,7 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
         }))
         present(actionSheet, animated: true )
     }
-    
+    ///present camera
     func presentCamera() {
         let vc = UIImagePickerController()
         vc.sourceType = .camera
@@ -264,6 +265,7 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
         present(vc, animated: true)
     }
     
+    ///present photo picker
     func presentPhotoPicker() {
         let vc = UIImagePickerController()
         vc.sourceType = .photoLibrary
@@ -272,7 +274,10 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
         present(vc, animated: true)
     }
     
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        ///get image
         picker.dismiss(animated: true)
         guard let selectedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else { return }
         self.doggyImage.image = selectedImage
@@ -283,20 +288,19 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
             return
         }
         let fileName = "\(name)_profile_picture.png"
-        
+        ///upload image
         StorageManager.shared.uploadProfilePicture(data: data, fileName: fileName) { [weak self] result in
             guard let strongSelf = self else { return }
             switch result {
             case .success(let downlandUrl):
                 DefaultsManager.profileURL = downlandUrl
                 strongSelf.getImage(email: name)
-                print(downlandUrl)
             case .failure(let error):
                 print("Storage error \(error)")
             }
         }
     }
-    
+    ///action for cancel button
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true)
     }

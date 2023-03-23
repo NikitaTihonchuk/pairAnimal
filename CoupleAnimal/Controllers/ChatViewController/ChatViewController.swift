@@ -107,10 +107,11 @@ extension ChatViewController: UITableViewDelegate {
             self.conversations.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .left)
             DatabaseManager.shared.deleteConversation(conversationId: conversationId, completion: { success in
-                if success {
-                    tableView.endUpdates()
+                if !success {
+                    //if error return conversation
                 }
             })
+            tableView.endUpdates()
 
         }
     }

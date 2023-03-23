@@ -31,7 +31,6 @@ class PetsTableViewCell: UITableViewCell, ProfileInformation {
     
     var animalType: CategoryEnum = .dogs {
         didSet {
-            //getAllUsersData()
             petsCollectionView.reloadData()
         }
     }
@@ -49,7 +48,6 @@ class PetsTableViewCell: UITableViewCell, ProfileInformation {
     
     func setAnimal(animal: CategoryEnum) {
         animalType = animal
-        //getAllUsersData()
     }
     
     func setUser(users: [UserModel]) {

@@ -16,6 +16,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     
     private let spinner = JGProgressHUD(style: .dark)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,13 +40,15 @@ class LoginViewController: UIViewController {
         guard let email = emailTextField.text else { return }
         guard let password = passwordTextField.text else { return }
         spinner.show(in: view)
-        FirebaseAuth.Auth.auth().signIn(withEmail: email, password: password) { loginResult, error in
+        FirebaseAuth.Auth.auth().signIn(withEmail: email, password: password) { [weak self] loginResult, error in
+            guard let strongSelf = self else { return }
             guard let result = loginResult, error == nil else {
                 DispatchQueue.main.async {
-                    self.spinner.dismiss()
+                    strongSelf.spinner.dismiss()
                 }
-                self.showAlert(title: "Error", message: "Sorry, the data is incorrect", bool: true)
-                return }
+                strongSelf.showAlert(title: "Error", message: "Sorry, the data is incorrect", bool: true)
+                return
+            }
         
             DatabaseManager.shared.readUser(email: email) { [weak self] userInfo in
                 guard let strongSelf = self else { return }
